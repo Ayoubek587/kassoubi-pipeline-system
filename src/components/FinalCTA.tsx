@@ -3,16 +3,19 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="section-padding relative overflow-hidden">
-      <div className="glow-blob w-[600px] h-[600px] top-[-100px] left-[30%]" style={{ background: "oklch(0.65 0.2 250 / 15%)" }} />
+    <section className="section-padding overflow-hidden">
+      <div className="noise-overlay" />
+      <div className="glow-blob w-[700px] h-[700px] top-[-150px] left-[20%]" style={{ background: "oklch(0.65 0.2 250 / 16%)" }} />
       <div className="mx-auto max-w-3xl relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="glass rounded-3xl p-10 md:p-14"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+          <span className="h-eyebrow mb-6">Let's talk</span>
+          <h2 className="h-display mt-6 text-3xl md:text-5xl">
             Bereit, Ihre{" "}
             <span className="gradient-text">Fachkräfte-Pipeline</span>{" "}
             aufzubauen?
