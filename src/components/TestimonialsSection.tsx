@@ -30,16 +30,19 @@ const stories = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding overflow-hidden">
+      <div className="noise-overlay" />
+      <div className="glow-blob w-[450px] h-[450px] top-[10%] left-[-150px]" style={{ background: "oklch(0.65 0.2 250 / 8%)" }} />
       <div className="mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <span className="h-eyebrow mb-5">Stories</span>
+          <h2 className="h-display mt-5">
             Echte <span className="gradient-text">Erfolgsgeschichten</span>
           </h2>
         </motion.div>
@@ -70,8 +73,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
-              whileHover={{ y: -4 }}
-              className="glass rounded-2xl p-6 transition-shadow"
+              className="glass glass-hover-lift rounded-2xl p-6"
             >
               <Quote size={20} className="text-primary mb-4 opacity-50" />
               <p className="text-sm text-foreground italic leading-relaxed mb-5">"{story.quote}"</p>

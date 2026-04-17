@@ -9,19 +9,22 @@ export default function ROISection() {
   const totalLoss = stellen * monate * costPerMonth;
 
   return (
-    <section id="unternehmen" className="section-padding relative">
+    <section id="unternehmen" className="section-padding overflow-hidden">
+      <div className="noise-overlay" />
+      <div className="glow-blob w-[500px] h-[500px] top-[-100px] right-[-150px]" style={{ background: "oklch(0.7 0.15 195 / 10%)" }} />
       <div className="mx-auto max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <span className="h-eyebrow mb-5">ROI</span>
+          <h2 className="h-display mt-5">
             Was kostet Sie <span className="gradient-text">unbesetzte Stellen?</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
             Berechnen Sie den wirtschaftlichen Verlust — und warum sich eine Pipeline lohnt.
           </p>
         </motion.div>
