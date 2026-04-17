@@ -1,29 +1,41 @@
 import { motion } from "framer-motion";
-import { Play, Quote } from "lucide-react";
+import { Play, Quote, ArrowRight, MapPin, Award } from "lucide-react";
 
 const stories = [
   {
     name: "Ahmed K.",
-    from: "Tunesien → München",
+    age: 22,
+    journey: "Tunesien",
+    arrow: "Deutschland",
+    city: "München",
     role: "Ausbildung Pflege",
-    before: "Arbeitslos, ohne Perspektive",
-    after: "Festanstellung nach Ausbildung, B2-Niveau",
+    before: "Arbeitslos in Tunis, kein Deutsch, keine Perspektive",
+    after: "B2-Zertifikat, Festvertrag in Top-Klinik München",
+    outcome: "Festanstellung + Visum",
     quote: "Kassoubi hat mir eine echte Chance gegeben. Heute arbeite ich in einer der besten Kliniken Münchens.",
   },
   {
     name: "Fatima R.",
-    from: "Marokko → Hamburg",
+    age: 24,
+    journey: "Marokko",
+    arrow: "Deutschland",
+    city: "Hamburg",
     role: "Ausbildung Hotelfach",
-    before: "Keine Deutschkenntnisse",
-    after: "B2-Zertifikat, übernommen nach Ausbildung",
+    before: "Keine Deutschkenntnisse, kein Plan für die Zukunft",
+    after: "B2-Niveau, übernommen nach Ausbildung",
+    outcome: "Ausbildungsvertrag + Wohnung",
     quote: "Die Sprachkurse waren intensiv aber fair. Das Team hat mich nie allein gelassen.",
   },
   {
     name: "Youssef M.",
-    from: "Ägypten → Berlin",
+    age: 21,
+    journey: "Ägypten",
+    arrow: "Deutschland",
+    city: "Berlin",
     role: "Ausbildung Elektrotechnik",
-    before: "Studium abgebrochen",
+    before: "Studium abgebrochen, finanziell unter Druck",
     after: "Top-Azubi im Betrieb, Perspektive Meister",
+    outcome: "Visum + Festanstellung",
     quote: "Vom ersten Tag an fühlte ich mich willkommen. Kassoubi hat alles organisiert.",
   },
 ];
@@ -45,6 +57,9 @@ export default function TestimonialsSection() {
           <h2 className="h-display mt-5">
             Echte <span className="gradient-text">Erfolgsgeschichten</span>
           </h2>
+          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
+            Vom Heimatland bis zum Festvertrag — so sieht der Weg aus.
+          </p>
         </motion.div>
 
         {/* Video placeholder */}
@@ -64,7 +79,7 @@ export default function TestimonialsSection() {
           </div>
         </motion.div>
 
-        {/* Success stories */}
+        {/* Story cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {stories.map((story, i) => (
             <motion.div
@@ -73,22 +88,49 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
-              className="glass glass-hover-lift rounded-2xl p-6"
+              className="glass glass-hover-lift rounded-2xl p-6 flex flex-col"
             >
-              <Quote size={20} className="text-primary mb-4 opacity-50" />
+              {/* Journey header */}
+              <div className="flex items-center gap-2 text-xs font-semibold mb-4">
+                <MapPin size={12} className="text-primary" />
+                <span className="text-muted-foreground">{story.journey}</span>
+                <ArrowRight size={12} className="text-primary" />
+                <span className="gradient-text">{story.arrow}</span>
+                <span className="text-muted-foreground">· {story.city}</span>
+              </div>
+
+              <Quote size={18} className="text-primary mb-3 opacity-60" />
               <p className="text-sm text-foreground italic leading-relaxed mb-5">"{story.quote}"</p>
-              <div className="border-t border-border pt-4">
-                <div className="font-semibold text-sm">{story.name}</div>
-                <div className="text-xs text-muted-foreground">{story.from} · {story.role}</div>
-                <div className="mt-3 grid grid-cols-2 gap-3">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Vorher</div>
-                    <div className="text-xs text-muted-foreground">{story.before}</div>
+
+              <div className="border-t border-border pt-4 mt-auto">
+                <div className="font-semibold text-sm">{story.name}, {story.age}</div>
+                <div className="text-xs text-muted-foreground mb-4">{story.role}</div>
+
+                {/* Before / After */}
+                <div className="space-y-3">
+                  <div
+                    className="rounded-lg px-3 py-2"
+                    style={{ background: "oklch(0.62 0.22 30 / 8%)", border: "1px solid oklch(0.62 0.22 30 / 18%)" }}
+                  >
+                    <div className="text-[10px] uppercase tracking-wider font-semibold mb-1" style={{ color: "oklch(0.78 0.16 35)" }}>
+                      Vorher
+                    </div>
+                    <div className="text-xs text-foreground/80">{story.before}</div>
                   </div>
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-accent mb-1">Nachher</div>
+                  <div
+                    className="rounded-lg px-3 py-2"
+                    style={{ background: "oklch(0.65 0.18 160 / 8%)", border: "1px solid oklch(0.65 0.18 160 / 22%)" }}
+                  >
+                    <div className="text-[10px] uppercase tracking-wider font-semibold mb-1" style={{ color: "oklch(0.78 0.16 160)" }}>
+                      Nachher
+                    </div>
                     <div className="text-xs text-foreground">{story.after}</div>
                   </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 mt-4 text-xs font-semibold">
+                  <Award size={12} className="text-accent" />
+                  <span className="gradient-text">Ergebnis: {story.outcome}</span>
                 </div>
               </div>
             </motion.div>
