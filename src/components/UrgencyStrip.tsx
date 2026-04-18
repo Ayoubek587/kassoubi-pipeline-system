@@ -12,9 +12,9 @@ export default function UrgencyStrip() {
       className="w-full"
       style={{
         background:
-          "linear-gradient(90deg, oklch(0.65 0.2 250 / 12%), oklch(0.7 0.15 195 / 10%), oklch(0.65 0.2 250 / 12%))",
-        borderTop: "1px solid oklch(1 0 0 / 6%)",
-        borderBottom: "1px solid oklch(1 0 0 / 6%)",
+          "linear-gradient(90deg, color-mix(in oklab, var(--glow) 12%, transparent), color-mix(in oklab, var(--glow-secondary) 10%, transparent), color-mix(in oklab, var(--glow) 12%, transparent))",
+        borderTop: "1px solid var(--border-subtle)",
+        borderBottom: "1px solid var(--border-subtle)",
       }}
     >
       <div className="mx-auto max-w-6xl px-5 py-3 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs sm:text-sm">

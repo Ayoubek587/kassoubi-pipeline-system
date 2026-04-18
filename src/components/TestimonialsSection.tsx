@@ -44,7 +44,7 @@ export default function TestimonialsSection() {
   return (
     <section className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[450px] h-[450px] top-[10%] left-[-150px]" style={{ background: "oklch(0.65 0.2 250 / 8%)" }} />
+      <div className="glow-blob w-[450px] h-[450px] top-[10%] left-[-150px]" style={{ background: "var(--blob-primary)" }} />
       <div className="mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

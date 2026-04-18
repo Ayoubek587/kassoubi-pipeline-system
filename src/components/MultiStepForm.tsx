@@ -112,7 +112,7 @@ export default function MultiStepForm() {
 
   return (
     <section id="kontakt" className="section-padding relative">
-      <div className="glow-blob w-[400px] h-[400px] bottom-0 left-[20%]" style={{ background: "oklch(0.65 0.2 250 / 10%)" }} />
+      <div className="glow-blob w-[400px] h-[400px] bottom-0 left-[20%]" style={{ background: "var(--blob-primary)" }} />
       <div className="mx-auto max-w-lg relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
