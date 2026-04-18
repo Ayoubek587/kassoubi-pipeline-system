@@ -8,13 +8,10 @@ export default function FinalCTA() {
       {/* Strong glow background */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 50%, oklch(0.65 0.2 250 / 22%) 0%, transparent 60%)",
-        }}
+        style={{ background: "var(--gradient-glow)" }}
       />
-      <div className="glow-blob w-[800px] h-[800px] top-[-200px] left-[10%]" style={{ background: "oklch(0.65 0.2 250 / 18%)" }} />
-      <div className="glow-blob w-[600px] h-[600px] bottom-[-200px] right-[5%]" style={{ background: "oklch(0.7 0.15 195 / 14%)" }} />
+      <div className="glow-blob w-[800px] h-[800px] top-[-200px] left-[10%]" style={{ background: "var(--blob-primary)" }} />
+      <div className="glow-blob w-[600px] h-[600px] bottom-[-200px] right-[5%]" style={{ background: "var(--blob-accent)" }} />
 
       <div className="mx-auto max-w-4xl relative z-10 text-center">
         <motion.div
@@ -23,7 +20,7 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="glass rounded-3xl p-10 md:p-16"
-          style={{ boxShadow: "0 20px 80px oklch(0.65 0.2 250 / 25%), inset 0 1px 0 0 oklch(1 0 0 / 10%)" }}
+          style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}
         >
           <span className="h-eyebrow mb-6">Let's talk</span>
           <h2 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
