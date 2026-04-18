@@ -14,7 +14,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50" style={{ backdropFilter: "blur(16px)", background: "oklch(0.13 0.035 260 / 80%)", borderBottom: "1px solid oklch(1 0 0 / 6%)" }}>
+    <nav className="fixed top-0 left-0 right-0 z-50" style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", background: "var(--nav-bg)", borderBottom: "1px solid var(--border-subtle)" }}>
       <div className="mx-auto max-w-7xl flex items-center justify-between px-5 py-4">
         <a href="#" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-primary)" }}>
@@ -48,7 +48,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden overflow-hidden"
-            style={{ background: "oklch(0.14 0.035 260 / 95%)", borderTop: "1px solid oklch(1 0 0 / 6%)" }}
+            style={{ background: "var(--nav-bg-mobile)", borderTop: "1px solid var(--border-subtle)" }}
           >
             <div className="px-5 py-4 flex flex-col gap-4">
               {links.map((l) => (
