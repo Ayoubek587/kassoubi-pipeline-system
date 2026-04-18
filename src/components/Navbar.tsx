@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -28,12 +29,16 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <ThemeSwitcher />
           <a href="#kontakt" className="btn-primary text-sm !py-2 !px-5">Kontakt</a>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground" aria-label="Menu">
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeSwitcher />
+          <button onClick={() => setOpen(!open)} className="text-foreground" aria-label="Menu">
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
