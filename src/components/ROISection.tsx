@@ -40,7 +40,7 @@ export default function ROISection() {
   return (
     <section id="unternehmen" className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[500px] h-[500px] top-[-100px] right-[-150px]" style={{ background: "oklch(0.7 0.15 195 / 10%)" }} />
+      <div className="glow-blob w-[500px] h-[500px] top-[-100px] right-[-150px]" style={{ background: "var(--blob-accent)" }} />
       <div className="mx-auto max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
