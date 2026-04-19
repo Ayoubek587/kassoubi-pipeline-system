@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Clock, Zap } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Globe2 } from "lucide-react";
+
+// Replace with real Calendly URL
+const BOOKING_URL = "#";
 
 export default function FinalCTA() {
   return (
-    <section className="section-padding overflow-hidden">
+    <section className="section-dark section-padding overflow-hidden">
       <div className="noise-overlay" />
-      {/* Strong glow background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: "var(--gradient-glow)" }}
@@ -23,29 +25,31 @@ export default function FinalCTA() {
           style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}
         >
           <span className="h-eyebrow mb-6">Let's talk</span>
-          <h2 className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-            Bereit, Ihre{" "}
-            <span className="gradient-text">Fachkräfte-Pipeline</span>{" "}
-            aufzubauen?
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
+            Bereit, internationale{" "}
+            <span className="gradient-text">Fachkräfte</span>{" "}
+            in Ihr Unternehmen zu integrieren?
           </h2>
           <p className="text-muted-foreground mt-6 text-lg md:text-xl max-w-2xl mx-auto">
-            Sprechen Sie mit unserem Team und erfahren Sie, wie wir Ihren Fachkräftebedarf planbar decken.
+            Sprechen Sie mit uns und erfahren Sie, wie wir Ihren Bedarf strukturiert und planbar decken.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="#kontakt"
+              href={BOOKING_URL}
+              target={BOOKING_URL.startsWith("http") ? "_blank" : undefined}
+              rel={BOOKING_URL.startsWith("http") ? "noopener noreferrer" : undefined}
               className="btn-primary flex items-center gap-2 text-base md:text-lg"
               style={{ padding: "1.1rem 2.4rem", fontSize: "1.05rem" }}
             >
-              <Calendar size={18} /> Termin buchen
+              <Calendar size={18} /> Termin vereinbaren
             </a>
             <a
               href="#kontakt"
               className="btn-secondary flex items-center gap-2 text-base md:text-lg"
               style={{ padding: "1.1rem 2.4rem", fontSize: "1.05rem" }}
             >
-              Pipeline starten <ArrowRight size={18} />
+              Anfrage senden <ArrowRight size={18} />
             </a>
           </div>
 
@@ -54,7 +58,7 @@ export default function FinalCTA() {
               <Clock size={14} className="text-accent" /> Antwort in 48h
             </div>
             <div className="flex items-center gap-1.5">
-              <Zap size={14} className="text-accent" /> Nur begrenzte Plätze pro Monat
+              <Globe2 size={14} className="text-accent" /> Internationale Rekrutierung
             </div>
           </div>
         </motion.div>

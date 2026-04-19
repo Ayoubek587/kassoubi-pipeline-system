@@ -4,20 +4,20 @@ import UrgencyBadge from "./UrgencyBadge";
 
 const cards = [
   {
-    icon: GraduationCap,
-    title: "Ich suche eine Ausbildung in Deutschland",
-    desc: "Starte deine Karriere mit einer anerkannten Ausbildung. Wir begleiten dich von der Bewerbung über das Visum bis zur Integration in Deutschland.",
-    cta: "Jetzt Ausbildung sichern",
-    href: "#kontakt",
-    badge: "Nur 25 Plätze pro Monat",
-  },
-  {
     icon: Building2,
-    title: "Ich suche qualifizierte Fachkräfte",
-    desc: "Sichern Sie sich vorqualifizierte, deutschsprachige Fachkräfte für Ihre offenen Stellen — planbar, in 48h Reaktionszeit und ohne Ausfallrisiko.",
-    cta: "Fachkräfte-Pipeline starten",
+    title: "Internationale Fachkräfte für Ihr Unternehmen gewinnen",
+    desc: "Wir identifizieren, qualifizieren und vermitteln Talente aus dem Ausland — passgenau für Ihren Bedarf und Ihre Branche.",
+    cta: "Fachkräfte sichern",
     href: "#kontakt",
     badge: "48h Reaktionszeit",
+  },
+  {
+    icon: GraduationCap,
+    title: "Ausbildung in Deutschland starten — mit strukturiertem Prozess",
+    desc: "Wir unterstützen Sie von der Vorbereitung im Heimatland bis zur erfolgreichen Integration in Deutschland.",
+    cta: "Kostenlos bewerben",
+    href: "#kontakt",
+    badge: "Kostenlos für Bewerber",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function SegmentationSection() {
             Wofür interessieren <span className="gradient-text">Sie sich?</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Wählen Sie Ihren Weg — wir melden uns innerhalb von 48 Stunden.
+            Strukturierte Lösungen für Unternehmen und internationale Bewerber — wir melden uns innerhalb von 48 Stunden.
           </p>
         </motion.div>
 

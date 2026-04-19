@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
-import { UserCheck, Languages, HeartHandshake, Plane } from "lucide-react";
+import { Globe2, Languages, Handshake, HeartHandshake } from "lucide-react";
 
 const cards = [
   {
-    icon: UserCheck,
-    title: "Vorqualifizierte Kandidaten",
-    desc: "Jeder Kandidat durchläuft ein mehrstufiges Assessment — fachlich, sprachlich und kulturell.",
-    stat: "3-stufiges Assessment",
+    icon: Globe2,
+    title: "Gezielte Auswahl im Ausland",
+    desc: "Wir identifizieren geeignete Kandidaten bereits im Herkunftsland und prüfen Qualifikation, Motivation und kulturelle Passung.",
+    stat: "Mehrstufiges Assessment",
   },
   {
     icon: Languages,
-    title: "Deutsch B1/B2 garantiert",
-    desc: "Intensive Sprachkurse mit zertifizierten Lehrkräften. Prüfungserfolg ist vertraglich garantiert.",
-    stat: "96% Prüfungserfolg",
+    title: "Sprachliche Vorbereitung",
+    desc: "Systematische Vorbereitung bis B1–B2 für einen reibungslosen fachlichen und sozialen Einstieg in Deutschland.",
+    stat: "B1–B2 zertifiziert",
+  },
+  {
+    icon: Handshake,
+    title: "Strukturiertes Matching",
+    desc: "Passgenaue Zuordnung zwischen internationalen Kandidaten und deutschen Unternehmen basierend auf Anforderungen und Profil.",
+    stat: "Branchenspezifisch",
   },
   {
     icon: HeartHandshake,
-    title: "End-to-End Betreuung",
-    desc: "Von der ersten Kontaktaufnahme bis zur erfolgreichen Probezeit — ein Ansprechpartner für alles.",
-    stat: "12 Monate Begleitung",
-  },
-  {
-    icon: Plane,
-    title: "Visum + Integration",
-    desc: "Wir übernehmen den kompletten Visa-Prozess und unterstützen bei Wohnung, Konto und Behördengängen.",
-    stat: "98% Visumserfolg",
+    title: "Integration & Begleitung",
+    desc: "Unterstützung im gesamten Prozess — von Visum und Anreise bis zur erfolgreichen Eingliederung im Betrieb und im Alltag.",
+    stat: "End-to-End Betreuung",
   },
 ];
 
 const bigStats = [
-  { value: "120+", label: "Erfolgreiche Vermittlungen" },
+  { value: "120+", label: "Internationale Vermittlungen" },
   { value: "96%", label: "Prüfungserfolg B1/B2" },
   { value: "48h", label: "Reaktionszeit" },
   { value: "98%", label: "Visumserfolg" },
@@ -58,16 +58,15 @@ export default function AuthoritySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="h-eyebrow mb-5">Authority</span>
+          <span className="h-eyebrow mb-5">Warum Kassoubi</span>
           <h2 className="h-display mt-5">
-            Warum <span className="gradient-text">Kassoubi?</span>
+            Warum internationale Rekrutierung mit <span className="gradient-text">Kassoubi funktioniert</span>
           </h2>
-          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Wir sind kein gewöhnliches Vermittlungsbüro. Wir sind ein System für planbare Ergebnisse.
+          <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
+            Wir sind kein klassisches Vermittlungsbüro. Wir betreiben eine strukturierte Fachkräfte-Pipeline aus dem Ausland nach Deutschland.
           </p>
         </motion.div>
 
-        {/* Big stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,46 +95,28 @@ export default function AuthoritySection() {
               <div className="icon-tile h-11 w-11 mb-5">
                 <card.icon size={20} />
               </div>
-              <h3 className="font-semibold mb-2 text-base tracking-tight">{card.title}</h3>
+              <h3 className="font-semibold mb-2 text-base tracking-tight leading-snug">{card.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">{card.desc}</p>
               <div className="text-xs font-semibold gradient-text tracking-wide">{card.stat}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Partner logos strip */}
         <div className="mt-14">
           <div className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
-            Vertrauen von Partnern in ganz Deutschland
+            Vertrauen von Unternehmen in ganz Deutschland
           </div>
           <div className="glass rounded-2xl p-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {partners.map((p) => (
               <div
                 key={p}
-                className="text-sm md:text-base font-semibold tracking-tight opacity-70 hover:opacity-100 transition-opacity"
-                style={{ color: "oklch(0.78 0.04 250)" }}
+                className="text-sm md:text-base font-semibold tracking-tight text-foreground/65 hover:text-foreground transition-colors"
               >
                 {p}
               </div>
             ))}
           </div>
         </div>
-
-        {/* Mini testimonial */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="glass rounded-2xl p-6 md:p-8 mt-10 max-w-3xl mx-auto text-center"
-        >
-          <p className="text-foreground italic leading-relaxed">
-            „Kassoubi hat uns innerhalb von 3 Monaten 8 qualifizierte Azubis vermittelt. Alle mit B1-Zertifikat und sofort einsatzbereit."
-          </p>
-          <div className="mt-4 text-sm text-muted-foreground">
-            — Thomas M., Geschäftsführer Pflegeeinrichtung München
-          </div>
-        </motion.div>
       </div>
     </section>
   );
