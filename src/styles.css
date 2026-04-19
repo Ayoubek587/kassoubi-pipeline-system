@@ -287,6 +287,47 @@
 .section-tint-b { background: var(--section-tint-b); }
 .section-tint-c { background: var(--section-tint-c); }
 
+/* ============================================================
+   .section-dark — Hybrid dark accent block
+   Locks navy/glow tokens locally so the section renders dark
+   regardless of the global theme. Use for Hero, CTA, separators
+   in the corporate light hybrid style.
+   ============================================================ */
+.section-dark {
+  --background: oklch(0.13 0.035 260);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.18 0.035 258);
+  --card-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.2 0.025 258);
+  --muted-foreground: oklch(0.68 0.025 255);
+  --border: oklch(0.25 0.03 258);
+  --primary: oklch(0.7 0.18 245);
+  --primary-foreground: oklch(0.99 0.005 250);
+  --accent: oklch(0.78 0.13 200);
+  --accent-foreground: oklch(0.12 0.03 260);
+  --glow: oklch(0.72 0.18 245);
+  --glow-secondary: oklch(0.78 0.13 200);
+  --gradient-primary: linear-gradient(135deg, oklch(0.7 0.18 245), oklch(0.78 0.13 200));
+  --gradient-hero: linear-gradient(180deg, oklch(0.13 0.035 260) 0%, oklch(0.09 0.035 265) 60%, oklch(0.07 0.03 270) 100%);
+  --gradient-card: linear-gradient(135deg, oklch(0.2 0.04 258 / 80%), oklch(0.14 0.03 260 / 60%));
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, oklch(0.7 0.18 245 / 18%), transparent 60%);
+  --shadow-card: 0 4px 24px oklch(0 0 0 / 30%), 0 0 0 1px oklch(1 0 0 / 5%);
+  --shadow-card-hover: 0 8px 40px oklch(0 0 0 / 40%), 0 0 0 1px oklch(1 0 0 / 8%);
+  --shadow-glow: 0 0 40px oklch(0.7 0.18 245 / 22%);
+  --blob-primary: oklch(0.7 0.18 245 / 14%);
+  --blob-accent: oklch(0.78 0.13 200 / 10%);
+  --overlay-soft: oklch(1 0 0 / 4%);
+  --overlay-medium: oklch(1 0 0 / 8%);
+  --overlay-strong: oklch(1 0 0 / 14%);
+  --border-subtle: oklch(1 0 0 / 8%);
+  --border-strong: oklch(1 0 0 / 14%);
+
+  background: var(--gradient-hero);
+  color: var(--foreground);
+  color-scheme: dark;
+}
+.section-dark .text-muted-foreground { color: var(--muted-foreground); }
+
 /* Soft section divider */
 .section-divider {
   height: 1px;

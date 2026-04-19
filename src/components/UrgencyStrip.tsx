@@ -1,9 +1,9 @@
 import { Clock, Zap, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: Zap, text: "Nur begrenzte Plätze pro Monat" },
-  { icon: Clock, text: "Schnelle Bearbeitung in 48h" },
-  { icon: ShieldCheck, text: "Vertraglich garantierte Qualität" },
+  { icon: Zap, text: "Internationale Talente · planbar verfügbar" },
+  { icon: Clock, text: "Reaktion innerhalb von 48 Stunden" },
+  { icon: ShieldCheck, text: "Strukturierter Prozess · End-to-End begleitet" },
 ];
 
 export default function UrgencyStrip() {

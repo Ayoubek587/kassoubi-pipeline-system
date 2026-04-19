@@ -1,25 +1,25 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar } from "lucide-react";
 
 const trustItems = [
   "100+ Vermittlungen",
   "B1–B2 geprüfte Kandidaten",
   "48h Reaktionszeit",
-  "Deutschlandweite Partner",
+  "Internationale Rekrutierung",
 ];
 
-const pipelineSteps = ["Kandidat", "Training", "Matching", "Unternehmen"];
+const pipelineSteps = ["Herkunftsland", "Vorbereitung", "Matching", "Deutschland"];
+
+// Replace with real Calendly URL when ready
+const BOOKING_URL = "#";
 
 function PipelineVisualization() {
   return (
     <div className="relative mt-12 max-w-xl mx-auto px-4">
-      {/* The connecting line */}
       <div
         className="absolute top-[11px] left-[12%] right-[12%] h-[1.5px]"
         style={{ background: "color-mix(in oklab, var(--glow) 25%, transparent)" }}
       />
-
-      {/* Traveling pulse */}
       <div className="absolute top-[10px] left-[12%] right-[12%] h-[3px] overflow-hidden">
         <motion.div
           className="absolute h-full w-[30%] rounded-full"
@@ -31,8 +31,6 @@ function PipelineVisualization() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
         />
       </div>
-
-      {/* Nodes */}
       <div className="relative flex items-start justify-between">
         {pipelineSteps.map((label, i) => (
           <motion.div
@@ -40,7 +38,7 @@ function PipelineVisualization() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 + i * 0.1, duration: 0.5 }}
-            className="flex flex-col items-center gap-2.5 w-[70px]"
+            className="flex flex-col items-center gap-2.5 w-[80px]"
           >
             <div className="relative">
               <div
@@ -51,7 +49,7 @@ function PipelineVisualization() {
                 }}
               />
             </div>
-            <span className="text-[11px] font-medium text-muted-foreground">{label}</span>
+            <span className="text-[11px] font-medium text-muted-foreground text-center">{label}</span>
           </motion.div>
         ))}
       </div>
@@ -65,7 +63,7 @@ function GridBackground() {
       <div
         className="absolute inset-0"
         style={{
-          opacity: 0.04,
+          opacity: 0.05,
           backgroundImage: `linear-gradient(var(--color-foreground) 1px, transparent 1px),
             linear-gradient(90deg, var(--color-foreground) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
@@ -82,8 +80,7 @@ function GridBackground() {
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{ background: "var(--gradient-hero)" }}
+      className="section-dark relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       <GridBackground />
 
@@ -95,13 +92,13 @@ export default function HeroSection() {
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 text-xs font-medium"
             style={{
-              background: "color-mix(in oklab, var(--glow) 8%, transparent)",
-              border: "1px solid color-mix(in oklab, var(--glow) 18%, transparent)",
+              background: "color-mix(in oklab, var(--glow) 10%, transparent)",
+              border: "1px solid color-mix(in oklab, var(--glow) 22%, transparent)",
               color: "var(--glow)",
             }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            Predictable Talent Pipeline System
+            Internationale Fachkräfte-Pipeline für Deutschland
           </div>
         </motion.div>
 
@@ -109,10 +106,10 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
         >
           Wir bauen Ihre{" "}
-          <span className="gradient-text">Fachkräfte-Pipeline</span>
+          <span className="gradient-text">internationale Fachkräfte-Pipeline</span>
           <br className="hidden sm:block" />
           {" "}für Deutschland
         </motion.h1>
@@ -121,32 +118,39 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-6 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-muted-foreground"
+          className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-muted-foreground"
         >
-          Internationale Azubis. Vollständige Betreuung. Planbare Ergebnisse.
+          Wir gewinnen qualifizierte Talente aus dem Ausland, bereiten sie gezielt vor und integrieren sie erfolgreich in deutsche Unternehmen.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-4 text-base md:text-lg max-w-2xl mx-auto text-muted-foreground/80"
+        >
+          Von der Auswahl im Herkunftsland bis zur erfolgreichen Integration — alles aus einer Hand.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#kontakt"
+            href={BOOKING_URL}
+            target={BOOKING_URL.startsWith("http") ? "_blank" : undefined}
+            rel={BOOKING_URL.startsWith("http") ? "noopener noreferrer" : undefined}
             className="btn-primary group flex items-center gap-2 text-base"
           >
-            <span className="flex items-center gap-2">Jetzt Fachkräfte sichern <ArrowRight size={16} /></span>
+            <Calendar size={16} /> Fachkräfte anfragen <ArrowRight size={16} />
           </a>
-          <a
-            href="#bewerber"
-            className="btn-secondary"
-          >
+          <a href="#bewerber" className="btn-secondary">
             Ausbildung starten
           </a>
         </motion.div>
 
-        {/* Trust strip */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -161,7 +165,6 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        {/* Pipeline */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}>
           <PipelineVisualization />
         </motion.div>

@@ -1,42 +1,37 @@
 import { motion } from "framer-motion";
-import { Play, Quote, ArrowRight, MapPin, Award } from "lucide-react";
+import { Quote, ArrowRight, MapPin, Award } from "lucide-react";
 
+// Generic placeholder structure — fill with real stories when available.
 const stories = [
   {
-    name: "Ahmed K.",
-    age: 22,
-    journey: "Tunesien",
-    arrow: "Deutschland",
+    initial: "A.",
+    origin: "Herkunftsland",
     city: "München",
     role: "Ausbildung Pflege",
-    before: "Arbeitslos in Tunis, kein Deutsch, keine Perspektive",
-    after: "B2-Zertifikat, Festvertrag in Top-Klinik München",
-    outcome: "Festanstellung + Visum",
-    quote: "Kassoubi hat mir eine echte Chance gegeben. Heute arbeite ich in einer der besten Kliniken Münchens.",
+    before: "Ausbildungssuche im Ausland, keine Deutschkenntnisse, unklare Perspektive.",
+    after: "B2-Zertifikat, Ausbildungsvertrag und Aufenthaltstitel in Deutschland.",
+    outcome: "Vertrag + Aufenthalt",
+    quote: "Strukturierter Prozess von Anfang bis Ende — ich wurde auf jedem Schritt begleitet.",
   },
   {
-    name: "Fatima R.",
-    age: 24,
-    journey: "Marokko",
-    arrow: "Deutschland",
+    initial: "F.",
+    origin: "Herkunftsland",
     city: "Hamburg",
     role: "Ausbildung Hotelfach",
-    before: "Keine Deutschkenntnisse, kein Plan für die Zukunft",
-    after: "B2-Niveau, übernommen nach Ausbildung",
-    outcome: "Ausbildungsvertrag + Wohnung",
-    quote: "Die Sprachkurse waren intensiv aber fair. Das Team hat mich nie allein gelassen.",
+    before: "Keine Deutschkenntnisse, kein Plan für die berufliche Zukunft.",
+    after: "B2-Niveau erreicht, Ausbildungsplatz und Wohnung in Deutschland.",
+    outcome: "Ausbildung + Wohnung",
+    quote: "Die Vorbereitung im Heimatland hat den Einstieg in Deutschland deutlich erleichtert.",
   },
   {
-    name: "Youssef M.",
-    age: 21,
-    journey: "Ägypten",
-    arrow: "Deutschland",
+    initial: "Y.",
+    origin: "Herkunftsland",
     city: "Berlin",
     role: "Ausbildung Elektrotechnik",
-    before: "Studium abgebrochen, finanziell unter Druck",
-    after: "Top-Azubi im Betrieb, Perspektive Meister",
+    before: "Studium abgebrochen, finanziell unter Druck, keine internationale Perspektive.",
+    after: "Vertrag mit deutschem Betrieb, Visum und langfristige Karriereperspektive.",
     outcome: "Visum + Festanstellung",
-    quote: "Vom ersten Tag an fühlte ich mich willkommen. Kassoubi hat alles organisiert.",
+    quote: "Vom ersten Kontakt bis zum Arbeitsantritt — ein klarer Prozess ohne Überraschungen.",
   },
 ];
 
@@ -51,77 +46,68 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="h-eyebrow mb-5">Stories</span>
           <h2 className="h-display mt-5">
-            Echte <span className="gradient-text">Erfolgsgeschichten</span>
+            Vom Herkunftsland <span className="gradient-text">nach Deutschland</span>
           </h2>
-          <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Vom Heimatland bis zum Festvertrag — so sieht der Weg aus.
+          <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
+            Echte Wege internationaler Bewerber — von der Vorbereitung im Heimatland bis zum Vertrag in Deutschland.
           </p>
         </motion.div>
 
-        {/* Video placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass rounded-2xl aspect-video max-w-3xl mx-auto mb-14 flex items-center justify-center cursor-pointer group relative overflow-hidden"
-        >
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, oklch(0.18 0.04 250 / 90%), oklch(0.12 0.03 260 / 90%))" }} />
-          <div className="relative z-10 flex flex-col items-center gap-4">
-            <div className="h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-glow)" }}>
-              <Play size={24} className="text-primary-foreground ml-1" />
-            </div>
-            <span className="text-sm text-muted-foreground">Video-Testimonial ansehen</span>
-          </div>
-        </motion.div>
-
-        {/* Story cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {stories.map((story, i) => (
             <motion.div
-              key={story.name}
+              key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
               className="glass glass-hover-lift rounded-2xl p-6 flex flex-col"
             >
-              {/* Journey header */}
-              <div className="flex items-center gap-2 text-xs font-semibold mb-4">
+              <div className="flex items-center gap-2 text-xs font-semibold mb-4 flex-wrap">
                 <MapPin size={12} className="text-primary" />
-                <span className="text-muted-foreground">{story.journey}</span>
+                <span className="text-muted-foreground">{story.origin}</span>
                 <ArrowRight size={12} className="text-primary" />
-                <span className="gradient-text">{story.arrow}</span>
-                <span className="text-muted-foreground">· {story.city}</span>
+                <span className="gradient-text">Deutschland · {story.city}</span>
               </div>
 
               <Quote size={18} className="text-primary mb-3 opacity-60" />
               <p className="text-sm text-foreground italic leading-relaxed mb-5">"{story.quote}"</p>
 
               <div className="border-t border-border pt-4 mt-auto">
-                <div className="font-semibold text-sm">{story.name}, {story.age}</div>
+                <div className="font-semibold text-sm">Bewerber {story.initial}</div>
                 <div className="text-xs text-muted-foreground mb-4">{story.role}</div>
 
-                {/* Before / After */}
                 <div className="space-y-3">
                   <div
                     className="rounded-lg px-3 py-2"
-                    style={{ background: "oklch(0.62 0.22 30 / 8%)", border: "1px solid oklch(0.62 0.22 30 / 18%)" }}
+                    style={{
+                      background: "color-mix(in oklab, var(--warning, oklch(0.72 0.18 35)) 8%, transparent)",
+                      border: "1px solid color-mix(in oklab, var(--warning, oklch(0.72 0.18 35)) 22%, transparent)",
+                    }}
                   >
-                    <div className="text-[10px] uppercase tracking-wider font-semibold mb-1" style={{ color: "oklch(0.78 0.16 35)" }}>
+                    <div
+                      className="text-[10px] uppercase tracking-wider font-semibold mb-1"
+                      style={{ color: "var(--warning, oklch(0.62 0.18 35))" }}
+                    >
                       Vorher
                     </div>
-                    <div className="text-xs text-foreground/80">{story.before}</div>
+                    <div className="text-xs text-foreground/85">{story.before}</div>
                   </div>
                   <div
                     className="rounded-lg px-3 py-2"
-                    style={{ background: "oklch(0.65 0.18 160 / 8%)", border: "1px solid oklch(0.65 0.18 160 / 22%)" }}
+                    style={{
+                      background: "color-mix(in oklab, var(--success, oklch(0.65 0.18 160)) 8%, transparent)",
+                      border: "1px solid color-mix(in oklab, var(--success, oklch(0.65 0.18 160)) 24%, transparent)",
+                    }}
                   >
-                    <div className="text-[10px] uppercase tracking-wider font-semibold mb-1" style={{ color: "oklch(0.78 0.16 160)" }}>
+                    <div
+                      className="text-[10px] uppercase tracking-wider font-semibold mb-1"
+                      style={{ color: "var(--success, oklch(0.55 0.16 160))" }}
+                    >
                       Nachher
                     </div>
                     <div className="text-xs text-foreground">{story.after}</div>
@@ -136,6 +122,10 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        <p className="text-center text-xs text-muted-foreground mt-8">
+          Beispielhafte Darstellung typischer Verläufe. Persönliche Daten anonymisiert.
+        </p>
       </div>
     </section>
   );

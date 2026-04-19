@@ -9,8 +9,8 @@ export default function Navbar() {
   const links = [
     { label: "Für Unternehmen", href: "#unternehmen" },
     { label: "Für Bewerber", href: "#bewerber" },
-    { label: "System", href: "#system" },
-    { label: "Über uns", href: "#authority" },
+    { label: "Prozess", href: "#system" },
+    { label: "Warum Kassoubi", href: "#authority" },
   ];
 
   return (

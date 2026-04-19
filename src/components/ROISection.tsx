@@ -4,12 +4,11 @@ import {
   Building2,
   GraduationCap,
   ArrowRight,
-  Zap,
-  UserCheck,
-  ShieldCheck,
+  Globe2,
+  Briefcase,
+  CalendarCheck,
   HeartHandshake,
   Languages,
-  FileCheck,
   Sparkles,
 } from "lucide-react";
 
@@ -18,26 +17,26 @@ type Mode = "unternehmen" | "bewerber";
 const content = {
   unternehmen: {
     icon: Building2,
-    headline: "Passende Fachkräfte planbar gewinnen",
+    headline: "Internationale Fachkräfte strukturiert gewinnen",
     micro: "Individuelle Lösungen für Ihren Bedarf",
     points: [
-      { icon: Zap, title: "Schnellere Besetzung", desc: "Offene Stellen zügig und planbar besetzen." },
-      { icon: UserCheck, title: "Vorqualifizierte Kandidaten", desc: "Geprüfte Profile mit passender Qualifikation." },
-      { icon: ShieldCheck, title: "Weniger interner Aufwand", desc: "Wir übernehmen Vorauswahl und Koordination." },
-      { icon: HeartHandshake, title: "Persönliche Betreuung", desc: "Ein fester Ansprechpartner im gesamten Prozess." },
+      { icon: Globe2, title: "Zugriff auf geprüfte Talente aus dem Ausland", desc: "Vorqualifizierte Kandidaten mit passender Qualifikation und B1–B2 Sprachniveau." },
+      { icon: Briefcase, title: "Reduzierter interner Aufwand", desc: "Wir übernehmen Auswahl, Vorbereitung, Visum und Onboarding-Koordination." },
+      { icon: CalendarCheck, title: "Planbare Besetzung offener Stellen", desc: "Strukturierte Pipeline mit definierten Zeitfenstern statt Glückstreffer." },
+      { icon: HeartHandshake, title: "Persönliche Betreuung", desc: "Ein fester Ansprechpartner für den gesamten Prozess." },
     ],
     cta: "Kontakt aufnehmen",
     ctaHref: "#kontakt",
   },
   bewerber: {
     icon: GraduationCap,
-    headline: "Ihr Weg zur Ausbildung in Deutschland",
+    headline: "Ihr Weg nach Deutschland — klar strukturiert",
     micro: "Für Bewerber ist unser Service kostenlos",
     points: [
-      { icon: Sparkles, title: "Kostenloser Service", desc: "Keine versteckten Kosten — komplett kostenfrei für Bewerber." },
-      { icon: Languages, title: "Sprache & Bewerbung", desc: "Unterstützung beim Sprachkurs und Ihren Unterlagen." },
-      { icon: FileCheck, title: "Begleitung bis zum Matching", desc: "Wir begleiten Sie bis zum passenden Ausbildungsplatz." },
-      { icon: HeartHandshake, title: "Persönliche Betreuung", desc: "Ein fester Ansprechpartner im gesamten Prozess." },
+      { icon: Languages, title: "Vorbereitung im Heimatland", desc: "Sprachkurs bis B1–B2 und fachliche Vorbereitung — bevor Sie einreisen." },
+      { icon: HeartHandshake, title: "Unterstützung im gesamten Prozess", desc: "Von der Bewerbung über das Visum bis zur Integration in Deutschland." },
+      { icon: Sparkles, title: "Kostenloser Service für Bewerber", desc: "Keine versteckten Kosten — komplett kostenfrei für Sie." },
+      { icon: CalendarCheck, title: "Strukturierter Ablauf", desc: "Klare Schritte, klare Erwartungen, ein fester Ansprechpartner." },
     ],
     cta: "Kostenlos starten",
     ctaHref: "#kontakt",
@@ -73,7 +72,6 @@ export default function ROISection() {
           </p>
         </motion.div>
 
-        {/* Segmented toggle */}
         <div className="flex justify-center mb-8">
           <div
             className="relative inline-flex items-center rounded-full p-1 glass"
@@ -109,7 +107,6 @@ export default function ROISection() {
           </div>
         </div>
 
-        {/* Shared card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

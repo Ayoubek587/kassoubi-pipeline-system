@@ -318,7 +318,7 @@ export const themes: ThemeDef[] = [
   },
 ];
 
-export const DEFAULT_THEME: ThemeId = "midnight";
+export const DEFAULT_THEME: ThemeId = "light";
 export const STORAGE_KEY = "kassoubi-theme";
 
 export function applyTheme(id: ThemeId) {
@@ -336,6 +336,7 @@ export function applyTheme(id: ThemeId) {
 }
 
 export function getSystemPreferredTheme(): ThemeId {
+  // Default brand identity is Corporate Light (hybrid). Honor explicit dark preference only.
   if (typeof window === "undefined" || !window.matchMedia) return DEFAULT_THEME;
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "midnight";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "midnight" : "light";
 }

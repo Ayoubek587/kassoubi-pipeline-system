@@ -27,9 +27,11 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
+      {/* Dark hero (hybrid accent) */}
       <HeroSection />
       <UrgencyStrip />
-      <Divider />
+
+      {/* Light: corporate body sections */}
       <div className="section-tint-a">
         <SegmentationSection />
       </div>
@@ -37,12 +39,14 @@ function Index() {
       <div className="section-tint-b">
         <AuthoritySection />
       </div>
-      <Divider />
-      <div className="section-tint-a">
+
+      {/* Dark accent: emphasizes the structured process */}
+      <div className="section-dark">
         <PipelineSection />
       </div>
-      <Divider />
-      <div className="section-tint-c">
+
+      {/* Light: dual value */}
+      <div className="section-tint-a">
         <ROISection />
       </div>
       <Divider />
@@ -50,13 +54,12 @@ function Index() {
         <TestimonialsSection />
       </div>
       <Divider />
-      <div className="section-tint-a">
+      <div className="section-tint-c">
         <MultiStepForm />
       </div>
-      <Divider />
-      <div className="section-tint-c">
-        <FinalCTA />
-      </div>
+
+      {/* Dark final CTA (hybrid accent) */}
+      <FinalCTA />
       <Footer />
     </div>
   );
