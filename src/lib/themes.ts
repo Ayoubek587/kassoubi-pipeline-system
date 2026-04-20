@@ -318,7 +318,7 @@ export const themes: ThemeDef[] = [
   },
 ];
 
-export const DEFAULT_THEME: ThemeId = "light";
+export const DEFAULT_THEME: ThemeId = "midnight";
 export const STORAGE_KEY = "kassoubi-theme";
 
 export function applyTheme(id: ThemeId) {
