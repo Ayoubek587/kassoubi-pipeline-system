@@ -80,7 +80,7 @@ function GridBackground() {
 export default function HeroSection() {
   return (
     <section
-      className="section-dark relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       <GridBackground />
 
