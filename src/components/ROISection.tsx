@@ -65,7 +65,7 @@ export default function ROISection() {
         >
           <span className="h-eyebrow mb-5">Ihr nächster Schritt</span>
           <h2 className="h-display mt-5">
-            Ihr nächster Schritt <span className="gradient-text">mit Kassoubi</span>
+            Ihr nächster Schritt <span className="gradient-text">mit Barakah</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
             So profitieren Unternehmen und Bewerber — wählen Sie Ihren Weg.

@@ -10,7 +10,7 @@ export default function Navbar() {
     { label: "Für Unternehmen", href: "#unternehmen" },
     { label: "Für Bewerber", href: "#bewerber" },
     { label: "Prozess", href: "#system" },
-    { label: "Warum Kassoubi", href: "#authority" },
+    { label: "Warum Barakah", href: "#authority" },
   ];
 
   return (
@@ -18,9 +18,9 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl flex items-center justify-between px-5 py-4">
         <a href="#" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-primary)" }}>
-            <span className="text-primary-foreground font-bold text-sm">K</span>
+            <span className="text-primary-foreground font-bold text-sm">B</span>
           </div>
-          <span className="font-semibold text-foreground text-lg tracking-tight">Kassoubi</span>
+          <span className="font-semibold text-foreground text-lg tracking-tight">Barakah</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
