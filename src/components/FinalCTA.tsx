@@ -6,7 +6,7 @@ const BOOKING_URL = "#";
 
 export default function FinalCTA() {
   return (
-    <section className="section-dark section-padding overflow-hidden">
+    <section className="section-padding overflow-hidden">
       <div className="noise-overlay" />
       <div
         className="absolute inset-0 pointer-events-none"
