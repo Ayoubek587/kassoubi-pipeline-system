@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Quote, ArrowRight, MapPin, Award } from "lucide-react";
+import { Quote, ArrowRight, MapPin, Award, PlayCircle } from "lucide-react";
 
 // Generic placeholder structure — fill with real stories when available.
 const stories = [
