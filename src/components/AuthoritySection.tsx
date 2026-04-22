@@ -58,9 +58,9 @@ export default function AuthoritySection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="h-eyebrow mb-5">Warum Barakah</span>
+          <span className="h-eyebrow mb-5">Warum Kassoubi</span>
           <h2 className="h-display mt-5">
-            Warum internationale Rekrutierung mit <span className="gradient-text">Barakah funktioniert</span>
+            Warum internationale Rekrutierung mit <span className="gradient-text">Kassoubi funktioniert</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
             Wir sind kein klassisches Vermittlungsbüro. Wir betreiben eine strukturierte Fachkräfte-Pipeline aus dem Ausland nach Deutschland.
