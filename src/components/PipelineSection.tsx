@@ -6,19 +6,19 @@ const steps = [
     icon: Search,
     num: "01",
     title: "Auswahl im Herkunftsland",
-    desc: "Identifizierung und Vorqualifizierung geeigneter Talente direkt vor Ort — fachlich, sprachlich und in der Motivation geprüft.",
+    desc: "Identifizierung und Vorqualifizierung motivierter Auszubildender direkt vor Ort — fachlich, sprachlich und in der Motivation geprüft.",
   },
   {
     icon: BookOpen,
     num: "02",
     title: "Vorbereitung & Qualifizierung",
-    desc: "Systematische Sprachausbildung bis B1/B2 sowie kulturelle und fachliche Vorbereitung auf den deutschen Arbeitsmarkt.",
+    desc: "Systematische Sprachausbildung bis B1/B2 sowie kulturelle und fachliche Vorbereitung auf die Ausbildung in Deutschland.",
   },
   {
     icon: Handshake,
     num: "03",
     title: "Matching mit Unternehmen",
-    desc: "Passgenaue Zuordnung von internationalen Kandidaten zu deutschen Unternehmen — basierend auf Profil, Standort und Kultur.",
+    desc: "Passgenaue Zuordnung internationaler Azubis zu deutschen Ausbildungsbetrieben — basierend auf Profil, Standort und Kultur.",
   },
   {
     icon: Plane,
@@ -43,7 +43,7 @@ export default function PipelineSection() {
         >
           <span className="h-eyebrow mb-5">Der Prozess</span>
           <h2 className="h-display mt-5">
-            Unser strukturierter Prozess für <span className="gradient-text">internationale Fachkräfte</span>
+            Strukturierter Prozess für <span className="gradient-text">internationale Auszubildende</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
             Vom Herkunftsland bis nach Deutschland — ein durchdachter 4-Stufen-Prozess für planbare Ergebnisse.

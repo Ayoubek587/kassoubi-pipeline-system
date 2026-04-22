@@ -56,7 +56,7 @@ export default function MultiStepForm() {
         </div>
         <div className="relative">
           <Briefcase size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
-          <input className={inputClass} style={{ paddingLeft: "2.5rem" }} placeholder="Gesuchte Position" value={data.position} onChange={(e) => update("position", e.target.value)} />
+          <input className={inputClass} style={{ paddingLeft: "2.5rem" }} placeholder="Gesuchter Ausbildungsberuf" value={data.position} onChange={(e) => update("position", e.target.value)} />
         </div>
         <div className="relative">
           <MapPin size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
@@ -85,7 +85,7 @@ export default function MultiStepForm() {
         </div>
       </div>,
       <div key="m">
-        <textarea className={inputClass + " min-h-[120px]"} placeholder="Erzähle uns von dir — Ausbildungswunsch, Sprachniveau, etc." value={data.message} onChange={(e) => update("message", e.target.value)} />
+        <textarea className={inputClass + " min-h-[120px]"} placeholder="Erzähle uns von dir — Ausbildungswunsch, Sprachniveau, Herkunftsland." value={data.message} onChange={(e) => update("message", e.target.value)} />
       </div>,
     ],
   };
@@ -103,7 +103,7 @@ export default function MultiStepForm() {
               <Check size={28} className="text-accent" />
             </div>
             <h3 className="text-xl font-bold mb-2">Vielen Dank!</h3>
-            <p className="text-muted-foreground text-sm">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+            <p className="text-muted-foreground text-sm">Wir melden uns innerhalb von 48 Stunden bei Ihnen.</p>
           </motion.div>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function MultiStepForm() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Jetzt <span className="gradient-text">starten</span>
           </h2>
-          <p className="text-muted-foreground mt-3 text-sm">Füllen Sie das Formular aus — wir melden uns in 24h.</p>
+          <p className="text-muted-foreground mt-3 text-sm">Füllen Sie das Formular aus — wir melden uns innerhalb von 48 Stunden.</p>
         </motion.div>
 
         <div className="glass rounded-2xl p-6 md:p-8">

@@ -1,8 +1,8 @@
 import { Clock, Zap, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: Zap, text: "Internationale Talente · planbar verfügbar" },
-  { icon: Clock, text: "Reaktion innerhalb von 48 Stunden" },
+  { icon: Zap, text: "Internationale Azubis · planbar verfügbar" },
+  { icon: Clock, text: "Rückmeldung innerhalb von 48 Stunden" },
   { icon: ShieldCheck, text: "Strukturierter Prozess · End-to-End begleitet" },
 ];
 
