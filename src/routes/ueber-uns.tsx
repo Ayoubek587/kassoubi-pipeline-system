@@ -7,19 +7,19 @@ import Footer from "../components/Footer";
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({
     meta: [
-      { title: "Über uns — Kassoubi Immigration & Recruitment" },
-      { name: "description", content: "Kassoubi verbindet internationale Talente mit deutschen Unternehmen — als verlässlicher Partner für langfristige Personallösungen." },
+      { title: "Über uns — Verlässlicher Partner für internationale Ausbildung | Kassoubi" },
+      { name: "description", content: "Kassoubi verbindet internationale Auszubildende mit deutschen Unternehmen — als systematischer Rekrutierungsprozess für Ausbildung." },
       { property: "og:title", content: "Über uns — Kassoubi Immigration & Recruitment" },
-      { property: "og:description", content: "Verlässlicher Partner für internationale Rekrutierung und langfristige Personallösungen." },
+      { property: "og:description", content: "Verlässlicher Partner für internationale Ausbildung — strukturiert, transparent und langfristig orientiert." },
     ],
   }),
   component: UeberUnsPage,
 });
 
 const pillars = [
-  { icon: Compass, title: "Unsere Story", desc: "Aus jahrelanger Erfahrung in internationaler Rekrutierung entstand Kassoubi — mit dem klaren Fokus, qualifizierte Talente strukturiert nach Deutschland zu vermitteln." },
-  { icon: Target, title: "Unsere Mission", desc: "Wir verbinden globale Talente mit deutschen Unternehmen — auf Augenhöhe, mit klaren Prozessen und langfristiger Perspektive für beide Seiten." },
-  { icon: ShieldCheck, title: "Unser Anspruch", desc: "Verlässlicher Partner für Unternehmen, die nicht auf Glück setzen wollen — sondern auf eine strukturierte Pipeline mit planbaren Ergebnissen." },
+  { icon: Compass, title: "Unsere Story", desc: "Kassoubi wurde gegründet, um ein konkretes Problem zu lösen: unbesetzte Ausbildungsplätze in Deutschland — trotz tausender motivierter Bewerber im Ausland." },
+  { icon: Target, title: "Unsere Mission", desc: "Wir verbinden internationale Auszubildende mit deutschen Unternehmen — strukturiert, transparent und langfristig orientiert." },
+  { icon: ShieldCheck, title: "Unsere Positionierung", desc: "Kein klassisches Vermittlungsbüro. Sondern ein systematischer Rekrutierungsprozess für internationale Azubis — mit klaren Standards und Verantwortung." },
 ];
 
 function UeberUnsPage() {
@@ -32,10 +32,10 @@ function UeberUnsPage() {
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Über uns</span>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-            Verlässlicher Partner für <span className="gradient-text">internationale Rekrutierung</span>
+            Verlässlicher Partner für <span className="gradient-text">internationale Ausbildung</span>
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Wir bauen Brücken zwischen qualifizierten Talenten im Ausland und deutschen Unternehmen — strukturiert, transparent und langfristig.
+            Wir bauen Brücken zwischen motivierten Auszubildenden im Ausland und deutschen Unternehmen — strukturiert, transparent und langfristig.
           </p>
         </div>
       </section>

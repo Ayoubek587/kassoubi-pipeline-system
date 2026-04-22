@@ -7,21 +7,21 @@ import Footer from "../components/Footer";
 export const Route = createFileRoute("/prozess")({
   head: () => ({
     meta: [
-      { title: "Prozess — Unser strukturierter Vermittlungsprozess | Kassoubi" },
-      { name: "description", content: "Vom Talent Sourcing über Screening und Matching bis zum Vertragsabschluss — ein strukturierter Vermittlungsprozess in fünf Stufen." },
-      { property: "og:title", content: "Prozess — Strukturierter Vermittlungsprozess | Kassoubi" },
-      { property: "og:description", content: "Vom Talent Sourcing bis zum Vertragsabschluss — strukturiert in fünf Stufen." },
+      { title: "Prozess — Strukturierter Vermittlungsprozess für Ausbildung | Kassoubi" },
+      { name: "description", content: "Von der Identifikation bis zur Integration — fünf klar definierte Stufen für die Vermittlung internationaler Auszubildender." },
+      { property: "og:title", content: "Unser strukturierter Vermittlungsprozess | Kassoubi" },
+      { property: "og:description", content: "Fünf Stufen: Sourcing, Screening, Matching, Interviews, Vertrag & Integration." },
     ],
   }),
   component: ProzessPage,
 });
 
 const steps = [
-  { icon: Globe2, num: "01", title: "Talent Sourcing", desc: "Identifizierung qualifizierter Kandidaten direkt im Herkunftsland — über lokale Partner und unser internationales Netzwerk." },
-  { icon: ClipboardCheck, num: "02", title: "Qualifikation & Screening", desc: "Mehrstufige Prüfung: Qualifikation, Sprache (B1/B2), Motivation, kulturelle Passung. Nur geprüfte Profile gehen weiter." },
-  { icon: Handshake, num: "03", title: "Matching mit Unternehmen", desc: "Passgenaue Zuordnung zu Anforderungen, Standort und Unternehmenskultur — basierend auf einem strukturierten Matching-Modell." },
+  { icon: Globe2, num: "01", title: "Talent Sourcing", desc: "Identifikation geeigneter Auszubildender im Herkunftsland — über lokale Partner und unser internationales Netzwerk." },
+  { icon: ClipboardCheck, num: "02", title: "Qualifikation & Screening", desc: "Mehrstufige Prüfung: Sprache (B1/B2), Motivation und kulturelle Eignung. Nur geprüfte Profile gehen in das Matching." },
+  { icon: Handshake, num: "03", title: "Matching", desc: "Passgenaue Zuordnung zu Unternehmen — basierend auf Anforderungsprofil, Standort und Unternehmenskultur." },
   { icon: MessageSquare, num: "04", title: "Interviews", desc: "Begleitete Vorstellungsgespräche, kulturelle Vorbereitung beider Seiten und transparente Rückmeldung." },
-  { icon: FileSignature, num: "05", title: "Vertragsabschluss", desc: "Vertragsverhandlung, Visumsabwicklung, Anreise, Wohnung, Behördengänge — strukturierte Begleitung bis zum Arbeitsantritt." },
+  { icon: FileSignature, num: "05", title: "Vertragsabschluss & Integration", desc: "Visum, Anreise und Begleitung bis zum Arbeitsbeginn — strukturierte Integration in Betrieb und Alltag." },
 ];
 
 function ProzessPage() {
@@ -37,7 +37,7 @@ function ProzessPage() {
             Unser strukturierter <span className="gradient-text">Vermittlungsprozess</span>
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Fünf klar definierte Stufen — vom Herkunftsland bis zum Vertragsabschluss in Deutschland.
+            Von der Identifikation bis zur Integration — klar definiert und effizient umgesetzt.
           </p>
         </div>
       </section>
@@ -70,8 +70,15 @@ function ProzessPage() {
             </div>
           </div>
 
-          <div className="text-center mt-16">
-            <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Prozess starten <ArrowRight size={16} /></Link>
+          <div className="mt-16">
+            <div className="glass rounded-3xl p-10 md:p-12 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
+              <p className="text-2xl md:text-3xl font-bold tracking-tight">
+                Ein klarer Prozess schafft <span className="gradient-text">planbare Ergebnisse</span>.
+              </p>
+              <div className="mt-8">
+                <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Prozess starten <ArrowRight size={16} /></Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

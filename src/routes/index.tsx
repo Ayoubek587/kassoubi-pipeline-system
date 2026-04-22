@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Calendar, GraduationCap, Building2, Globe2, ShieldCheck, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, GraduationCap, Building2, Globe2, ShieldCheck, Clock, AlertTriangle, TrendingDown, Users } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UrgencyStrip from "../components/UrgencyStrip";
@@ -10,10 +10,10 @@ import AuthoritySection from "../components/AuthoritySection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kassoubi – Immigration & Recruitment | Internationale Fachkräfte für Deutschland" },
-      { name: "description", content: "Wir verbinden internationale Fachkräfte mit deutschen Unternehmen. Strukturierte Rekrutierung aus dem Ausland — schnell, planbar und zuverlässig." },
-      { property: "og:title", content: "Kassoubi – Immigration & Recruitment" },
-      { property: "og:description", content: "Wir verbinden internationale Fachkräfte mit deutschen Unternehmen." },
+      { title: "Kassoubi – Immigration & Recruitment | Internationale Auszubildende für Deutschland" },
+      { name: "description", content: "Wir vermitteln internationale Auszubildende an deutsche Unternehmen — sprachlich vorbereitet, kulturell integriert und langfristig einsetzbar." },
+      { property: "og:title", content: "Kassoubi – Internationale Auszubildende für deutsche Unternehmen" },
+      { property: "og:description", content: "Strukturierte Rekrutierung motivierter Azubis aus dem Ausland — sprachlich vorbereitet und langfristig einsetzbar." },
     ],
   }),
   component: Index,
@@ -22,22 +22,28 @@ export const Route = createFileRoute("/")({
 const trustItems = [
   "+500 Kandidaten im Netzwerk",
   "+50 Partnerunternehmen",
-  "B1–B2 geprüft",
-  "Schnelle Vermittlung",
+  "B1–B2 sprachlich geprüft",
+  "98% Vermittlungsquote",
 ];
 
 const pillars = [
-  { icon: Globe2, title: "International Sourcing", desc: "Direkter Zugang zu qualifizierten Talenten im Ausland." },
-  { icon: ShieldCheck, title: "Strukturierter Prozess", desc: "Eine geprüfte Pipeline statt zufälliger Treffer." },
-  { icon: CheckCircle2, title: "Vorausgewählte Kandidaten", desc: "Sprachlich, fachlich und kulturell vorbereitet." },
-  { icon: Clock, title: "Zeitersparnis", desc: "Wir übernehmen Auswahl, Vorbereitung und Koordination." },
+  { icon: Globe2, title: "Gezieltes internationales Sourcing", desc: "Direkter Zugang zu motivierten Auszubildenden in ausgewählten Herkunftsländern." },
+  { icon: ShieldCheck, title: "Mehrstufiges Screening", desc: "Sprache, Motivation und kulturelle Eignung — strukturiert geprüft, bevor Sie investieren." },
+  { icon: CheckCircle2, title: "Strukturierter Matching-Prozess", desc: "Passgenaue Zuordnung zu Ihrem Ausbildungsbetrieb — basierend auf Profil, Branche und Standort." },
+  { icon: Clock, title: "Begleitete Integration", desc: "Vom Visum bis zum ersten Ausbildungstag — eine durchgängige Betreuung in Deutschland." },
 ];
 
 const stats = [
   { v: "+500", l: "Kandidaten im Netzwerk" },
   { v: "+50", l: "Partnerunternehmen" },
-  { v: "48h", l: "Reaktionszeit" },
-  { v: "98%", l: "Visumserfolg" },
+  { v: "48h", l: "Rückmeldung" },
+  { v: "98%", l: "Vermittlungsquote" },
+];
+
+const painPoints = [
+  { icon: AlertTriangle, text: "Tausende Ausbildungsplätze bleiben jährlich unbesetzt." },
+  { icon: TrendingDown, text: "Lokale Bewerber reichen quantitativ und qualitativ nicht mehr aus." },
+  { icon: Users, text: "Unternehmen verlieren Wachstum, Planungssicherheit und operative Stabilität." },
 ];
 
 function Hero() {
@@ -51,7 +57,7 @@ function Hero() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <span className="h-eyebrow mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            Immigration & Recruitment
+            Immigration & Recruitment für Ausbildung
           </span>
         </motion.div>
 
@@ -61,10 +67,10 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
         >
-          Wir verbinden{" "}
-          <span className="gradient-text">internationale Fachkräfte</span>
+          Wir vermitteln{" "}
+          <span className="gradient-text">internationale Auszubildende</span>
           <br className="hidden sm:block" />
-          {" "}mit deutschen Unternehmen
+          {" "}an deutsche Unternehmen
         </motion.h1>
 
         <motion.p
@@ -73,7 +79,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-muted-foreground"
         >
-          Effiziente Rekrutierung aus dem Ausland — strukturiert, schnell und zuverlässig.
+          Strukturierte Rekrutierung motivierter Azubis aus dem Ausland — sprachlich vorbereitet, kulturell integriert und langfristig einsetzbar.
         </motion.p>
 
         <motion.div
@@ -106,6 +112,49 @@ function Hero() {
   );
 }
 
+function PainSection() {
+  return (
+    <section className="section-padding">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center mb-12">
+          <span className="h-eyebrow mb-5">Marktlage</span>
+          <h2 className="h-display mt-5">
+            Der Ausbildungsmarkt in Deutschland steht <span className="gradient-text">unter Druck</span>
+          </h2>
+          <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
+            Wer heute auf klassische Kanäle setzt, verliert Zeit, Wachstum und Marktanteile.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-5 mb-10">
+          {painPoints.map((p, i) => (
+            <motion.div
+              key={p.text}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="glass rounded-2xl p-6"
+            >
+              <div className="icon-tile h-11 w-11 mb-4" style={{ color: "var(--warning)", borderColor: "color-mix(in oklab, var(--warning) 25%, transparent)", background: "color-mix(in oklab, var(--warning) 10%, transparent)" }}>
+                <p.icon size={20} />
+              </div>
+              <p className="text-foreground/85 leading-relaxed text-sm">{p.text}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="glass rounded-2xl p-8 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
+          <p className="text-lg md:text-xl font-semibold tracking-tight">
+            Kassoubi löst dieses Problem durch eine{" "}
+            <span className="gradient-text">strukturierte Pipeline internationaler Auszubildender</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function StatsBar() {
   return (
     <section className="px-5 pb-4 -mt-4 relative z-10">
@@ -126,7 +175,7 @@ function ServicesSplit() {
     {
       icon: Building2,
       title: "Für Unternehmen",
-      desc: "Internationale Fachkräfte strukturiert gewinnen — wir liefern geprüfte Talente passgenau für Ihren Bedarf.",
+      desc: "Internationale Azubis strukturiert gewinnen — statt auf unzuverlässige Bewerbungen zu warten. Wir liefern geprüfte Kandidaten passgenau für Ihre Ausbildungsstellen.",
       cta: "Kontakt aufnehmen",
       to: "/unternehmen" as const,
       badge: "B2B",
@@ -134,7 +183,7 @@ function ServicesSplit() {
     {
       icon: GraduationCap,
       title: "Für Bewerber",
-      desc: "Ihr Weg nach Deutschland — Ausbildung und Jobs mit voller Begleitung. Kostenlos für Bewerber.",
+      desc: "Starte deine Ausbildung in Deutschland — mit klarer Begleitung von Anfang bis Ankunft. Komplett kostenfrei für Bewerber.",
       cta: "Jetzt bewerben",
       to: "/bewerber" as const,
       badge: "Kostenlos",
@@ -178,7 +227,10 @@ function WhyUs() {
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <span className="h-eyebrow mb-5">Warum Kassoubi</span>
-          <h2 className="h-display mt-5">Vier Säulen für <span className="gradient-text">planbare Ergebnisse</span></h2>
+          <h2 className="h-display mt-5">Planbare Ergebnisse <span className="gradient-text">statt Zufall</span></h2>
+          <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
+            Vier Säulen, die unsere Vermittlung zu einem belastbaren System machen — nicht zu einem Glücksspiel.
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {pillars.map((p, i) => (
@@ -201,6 +253,27 @@ function WhyUs() {
   );
 }
 
+function ProcessPreview() {
+  return (
+    <section className="section-padding">
+      <div className="mx-auto max-w-3xl text-center">
+        <span className="h-eyebrow mb-5">Der Weg</span>
+        <h2 className="h-display mt-5">
+          Vom Herkunftsland bis zum <span className="gradient-text">Vertragsabschluss</span>
+        </h2>
+        <p className="text-muted-foreground mt-5 text-lg">
+          Ein klar definierter Prozess in vier Schritten — transparent, planbar und ohne Überraschungen.
+        </p>
+        <div className="mt-8">
+          <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">
+            Prozess im Detail <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ClosingCTA() {
   return (
     <section className="section-padding overflow-hidden relative">
@@ -209,7 +282,7 @@ function ClosingCTA() {
       <div className="mx-auto max-w-4xl relative z-10 text-center">
         <div className="glass rounded-3xl p-10 md:p-16" style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
-            Finden Sie die richtigen <span className="gradient-text">Talente</span> — ohne Aufwand
+            Finden Sie die passenden <span className="gradient-text">Auszubildenden</span> — ohne Zeitverlust
           </h2>
           <p className="text-muted-foreground mt-6 text-lg max-w-2xl mx-auto">
             Sprechen Sie mit uns. Wir melden uns innerhalb von 48 Stunden mit einem strukturierten nächsten Schritt.
@@ -232,10 +305,12 @@ function Index() {
       <Hero />
       <UrgencyStrip />
       <StatsBar />
+      <PainSection />
       <ServicesSplit />
-      <WhyUs />
       <AuthoritySection />
+      <WhyUs />
       <PipelineSection />
+      <ProcessPreview />
       <ClosingCTA />
       <Footer />
     </div>

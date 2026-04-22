@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
             Vom Herkunftsland <span className="gradient-text">nach Deutschland</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
-            Echte Wege internationaler Bewerber — von der Vorbereitung im Heimatland bis zum Vertrag in Deutschland.
+            Echte Wege internationaler Auszubildender — von der Vorbereitung im Heimatland bis zum Ausbildungsvertrag in Deutschland.
           </p>
         </motion.div>
 
