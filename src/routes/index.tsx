@@ -144,8 +144,8 @@ function PainSection() {
           ))}
         </div>
 
-        <div className="glass rounded-2xl p-8 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
-          <p className="text-lg md:text-xl font-semibold tracking-tight">
+        <div className="glass rounded-2xl p-6 sm:p-8 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
+          <p className="text-base sm:text-lg md:text-xl font-semibold tracking-tight">
             Kassoubi löst dieses Problem durch eine{" "}
             <span className="gradient-text">strukturierte Pipeline internationaler Auszubildender</span>.
           </p>
@@ -202,7 +202,7 @@ function ServicesSplit() {
             <Link
               key={c.to}
               to={c.to}
-              className="glass glass-hover-lift rounded-2xl p-8 md:p-10 group block"
+              className="glass glass-hover-lift rounded-2xl p-6 sm:p-8 md:p-10 group block"
             >
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="icon-tile h-14 w-14"><c.icon size={26} /></div>
