@@ -45,7 +45,7 @@ function ProzessPage() {
       <section className="section-padding">
         <div className="mx-auto max-w-4xl">
           <div className="relative">
-            <div className="absolute left-[35px] top-4 bottom-4 w-[2px] hidden md:block"
+            <div className="absolute left-7 sm:left-[35px] top-4 bottom-4 w-[2px] hidden sm:block"
               style={{ background: "linear-gradient(180deg, color-mix(in oklab, var(--glow) 35%, transparent), color-mix(in oklab, var(--glow-secondary) 25%, transparent), transparent)" }} />
             <div className="space-y-6">
               {steps.map((s, i) => (
@@ -55,15 +55,15 @@ function ProzessPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative flex gap-6 items-start"
+                  className="relative flex gap-4 sm:gap-6 items-start"
                 >
-                  <div className="icon-tile shrink-0 relative z-10 h-[72px] w-[72px]" style={{ background: "var(--gradient-primary)", borderColor: "color-mix(in oklab, var(--glow) 30%, transparent)" }}>
-                    <s.icon size={28} className="text-primary-foreground" />
+                  <div className="icon-tile shrink-0 relative z-10 h-14 w-14 sm:h-[72px] sm:w-[72px]" style={{ background: "var(--gradient-primary)", borderColor: "color-mix(in oklab, var(--glow) 30%, transparent)" }}>
+                    <s.icon size={24} className="text-primary-foreground" />
                   </div>
-                  <div className="glass rounded-2xl p-6 flex-1">
+                  <div className="glass rounded-2xl p-5 sm:p-6 flex-1 min-w-0">
                     <div className="text-xs font-semibold tracking-widest text-primary mb-2">STUFE {s.num}</div>
-                    <h3 className="text-xl font-semibold mb-2 tracking-tight">{s.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 tracking-tight">{s.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">{s.desc}</p>
                   </div>
                 </motion.div>
               ))}

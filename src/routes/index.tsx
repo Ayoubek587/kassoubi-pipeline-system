@@ -48,7 +48,7 @@ const painPoints = [
 
 function Hero() {
   return (
-    <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-24 pb-16">
+    <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-24 pb-12 px-4">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-hero)" }} />
       <div className="glow-blob w-[600px] h-[600px] top-[-150px] left-[-150px]" style={{ background: "var(--blob-primary)" }} />
       <div className="glow-blob w-[500px] h-[500px] bottom-[-100px] right-[-100px]" style={{ background: "var(--blob-accent)" }} />
@@ -65,7 +65,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+          className="mt-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]"
         >
           Wir vermitteln{" "}
           <span className="gradient-text">internationale Auszubildende</span>
@@ -280,14 +280,14 @@ function ClosingCTA() {
       <div className="absolute inset-0 pointer-events-none" style={{ background: "var(--gradient-glow)" }} />
       <div className="glow-blob w-[700px] h-[700px] top-[-200px] left-[10%]" style={{ background: "var(--blob-primary)" }} />
       <div className="mx-auto max-w-4xl relative z-10 text-center">
-        <div className="glass rounded-3xl p-10 md:p-16" style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[1.05]">
+        <div className="glass rounded-3xl p-6 sm:p-10 md:p-16" style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]">
             Finden Sie die passenden <span className="gradient-text">Auszubildenden</span> — ohne Zeitverlust
           </h2>
-          <p className="text-muted-foreground mt-6 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground mt-6 text-base sm:text-lg max-w-2xl mx-auto">
             Sprechen Sie mit uns. Wir melden uns innerhalb von 48 Stunden mit einem strukturierten nächsten Schritt.
           </p>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-8 sm:mt-10 flex justify-center">
             <Link to="/kontakt" className="btn-primary flex items-center gap-2 text-base">
               <Calendar size={18} /> Termin buchen
             </Link>
