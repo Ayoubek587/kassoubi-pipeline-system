@@ -42,11 +42,11 @@ function UnternehmenPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
         <div className="glow-blob w-[600px] h-[600px] top-[-200px] left-[-150px]" style={{ background: "var(--blob-accent)" }} />
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Für Unternehmen</span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Internationale <span className="gradient-text">Auszubildende</span> für Ihr Unternehmen
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -155,8 +155,8 @@ function UnternehmenPage() {
 
       <section className="section-padding">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="glass rounded-3xl p-10 md:p-14" style={{ boxShadow: "var(--shadow-elevated)" }}>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+          <div className="glass rounded-3xl p-6 sm:p-10 md:p-14" style={{ boxShadow: "var(--shadow-elevated)" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
               Besetzen Sie Ihre Ausbildungsplätze <span className="gradient-text">planbar und strukturiert</span>
             </h2>
             <p className="text-muted-foreground mt-4">Antwort innerhalb von 48 Stunden.</p>

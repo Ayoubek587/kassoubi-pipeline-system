@@ -29,11 +29,11 @@ function ProzessPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 overflow-hidden">
         <div className="glow-blob w-[600px] h-[600px] top-[-200px] left-[40%]" style={{ background: "var(--blob-primary)" }} />
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Unser System</span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Unser strukturierter <span className="gradient-text">Vermittlungsprozess</span>
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -70,9 +70,9 @@ function ProzessPage() {
             </div>
           </div>
 
-          <div className="mt-16">
-            <div className="glass rounded-3xl p-10 md:p-12 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
-              <p className="text-2xl md:text-3xl font-bold tracking-tight">
+          <div className="mt-12 sm:mt-16">
+            <div className="glass rounded-3xl p-6 sm:p-10 md:p-12 text-center" style={{ boxShadow: "var(--shadow-elevated)" }}>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
                 Ein klarer Prozess schafft <span className="gradient-text">planbare Ergebnisse</span>.
               </p>
               <div className="mt-8">

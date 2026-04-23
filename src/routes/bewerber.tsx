@@ -34,11 +34,11 @@ function BewerberPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
         <div className="glow-blob w-[600px] h-[600px] top-[-200px] right-[-150px]" style={{ background: "var(--blob-primary)" }} />
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Für Bewerber</span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Starte deine <span className="gradient-text">Ausbildung in Deutschland</span>
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -108,14 +108,14 @@ function BewerberPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass rounded-3xl p-10 md:p-14 text-center"
+            className="glass rounded-3xl p-6 sm:p-10 md:p-14 text-center"
             style={{ boxShadow: "var(--shadow-elevated)" }}
           >
             <div className="icon-tile h-12 w-12 mx-auto mb-6"><ShieldCheck size={22} /></div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
               Baue dir eine <span className="gradient-text">Zukunft in Deutschland</span> auf.
             </h2>
-            <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
+            <p className="text-muted-foreground mt-6 text-base sm:text-lg leading-relaxed">
               Wir begleiten dich strukturiert und persönlich — von deinem Heimatland bis zu deinem Start in Deutschland.
             </p>
             <div className="mt-8">

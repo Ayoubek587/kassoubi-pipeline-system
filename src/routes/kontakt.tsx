@@ -29,11 +29,11 @@ function KontaktPage() {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
 
-      <section className="relative pt-32 pb-12 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-8 sm:pb-12 overflow-hidden">
         <div className="glow-blob w-[600px] h-[600px] top-[-200px] left-[20%]" style={{ background: "var(--blob-primary)" }} />
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Kontakt</span>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
             Kostenloses <span className="gradient-text">Erstgespräch</span> vereinbaren
           </motion.h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
