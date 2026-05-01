@@ -40,7 +40,7 @@ export default function Navbar() {
             </Link>
           ))}
           <ThemeSwitcher />
-          <Link to="/kontakt" className="btn-primary text-sm !py-2 !px-5">Termin buchen</Link>
+          <Link to="/kontakt" className="btn-primary text-sm !py-2 !px-5">Analyse starten</Link>
         </div>
 
         <div className="lg:hidden flex items-center gap-2">
@@ -74,7 +74,7 @@ export default function Navbar() {
                   {l.label}
                 </Link>
               ))}
-              <Link to="/kontakt" onClick={() => setOpen(false)} className="btn-primary text-sm text-center !py-2">Termin buchen</Link>
+              <Link to="/kontakt" onClick={() => setOpen(false)} className="btn-primary text-sm text-center !py-2">Analyse starten</Link>
             </div>
           </motion.div>
         )}
