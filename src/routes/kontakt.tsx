@@ -13,10 +13,10 @@ const EMAIL = "kontakt@kassoubi.de";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — Kostenloses Erstgespräch vereinbaren | Kassoubi" },
-      { name: "description", content: "Wir analysieren Ihren Bedarf und zeigen Ihnen den nächsten Schritt. Antwort innerhalb von 48 Stunden." },
-      { property: "og:title", content: "Kontakt — Kostenloses Erstgespräch | Kassoubi" },
-      { property: "og:description", content: "Termin buchen, Nachricht senden oder per WhatsApp schreiben. Antwort innerhalb von 48 Stunden." },
+      { title: "Analyse starten — Strukturierter nächster Schritt in 48 Stunden | Kassoubi" },
+      { name: "description", content: "Wir prüfen Ihren Bedarf und liefern innerhalb von 48 Stunden einen konkreten Plan für Ihre internationale Ausbildungs-Pipeline." },
+      { property: "og:title", content: "Analyse starten — Kassoubi" },
+      { property: "og:description", content: "Pipeline aufbauen, Kapazität sichern, Gespräch vereinbaren — Antwort innerhalb von 48 Stunden." },
     ],
   }),
   component: KontaktPage,
