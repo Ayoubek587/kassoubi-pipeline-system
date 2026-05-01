@@ -13,10 +13,10 @@ const EMAIL = "kontakt@kassoubi.de";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — Kostenloses Erstgespräch vereinbaren | Kassoubi" },
-      { name: "description", content: "Wir analysieren Ihren Bedarf und zeigen Ihnen den nächsten Schritt. Antwort innerhalb von 48 Stunden." },
-      { property: "og:title", content: "Kontakt — Kostenloses Erstgespräch | Kassoubi" },
-      { property: "og:description", content: "Termin buchen, Nachricht senden oder per WhatsApp schreiben. Antwort innerhalb von 48 Stunden." },
+      { title: "Analyse starten — Strukturierter nächster Schritt in 48 Stunden | Kassoubi" },
+      { name: "description", content: "Wir prüfen Ihren Bedarf und liefern innerhalb von 48 Stunden einen konkreten Plan für Ihre internationale Ausbildungs-Pipeline." },
+      { property: "og:title", content: "Analyse starten — Kassoubi" },
+      { property: "og:description", content: "Pipeline aufbauen, Kapazität sichern, Gespräch vereinbaren — Antwort innerhalb von 48 Stunden." },
     ],
   }),
   component: KontaktPage,
@@ -34,10 +34,10 @@ function KontaktPage() {
         <div className="mx-auto max-w-4xl px-5 text-center relative z-10">
           <span className="h-eyebrow mb-6">Kontakt</span>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-            Kostenloses <span className="gradient-text">Erstgespräch</span> vereinbaren
+            Analyse starten — <span className="gradient-text">in 48 Stunden zum nächsten Schritt</span>.
           </motion.h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Wir analysieren Ihren Bedarf und zeigen Ihnen den nächsten Schritt.
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Wir prüfen Ihren Bedarf, zeigen die passende Pipeline und liefern einen konkreten Plan. Kostenfrei. Verbindlich. Strukturiert.
           </p>
         </div>
       </section>
