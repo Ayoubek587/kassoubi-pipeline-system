@@ -78,8 +78,8 @@ function UeberUnsPage() {
               Antwort innerhalb von 48 Stunden — mit konkretem nächsten Schritt.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Gespräch vereinbaren <ArrowRight size={16} /></Link>
-              <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">System ansehen</Link>
+              <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Analyse starten <ArrowRight size={16} /></Link>
+              <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">Prozess ansehen</Link>
             </div>
           </div>
         </div>

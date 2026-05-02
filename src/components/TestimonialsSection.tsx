@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               </div>
               <div className="text-sm font-semibold text-foreground">Video-Testimonial</div>
               <div className="text-xs text-muted-foreground max-w-sm">
-                Echte Erfahrungen unserer Bewerber — bald verfügbar.
+                Erfahrungen aus dem Vermittlungsprozess werden hier kuratiert eingebunden.
               </div>
             </div>
           </div>
@@ -113,13 +113,13 @@ export default function TestimonialsSection() {
                   <div
                     className="rounded-lg px-3 py-2"
                     style={{
-                      background: "color-mix(in oklab, var(--warning, oklch(0.72 0.18 35)) 8%, transparent)",
-                      border: "1px solid color-mix(in oklab, var(--warning, oklch(0.72 0.18 35)) 22%, transparent)",
+                      background: "color-mix(in oklab, var(--accent) 8%, transparent)",
+                      border: "1px solid color-mix(in oklab, var(--accent) 22%, transparent)",
                     }}
                   >
                     <div
                       className="text-[10px] uppercase tracking-wider font-semibold mb-1"
-                      style={{ color: "var(--warning, oklch(0.62 0.18 35))" }}
+                      style={{ color: "var(--accent)" }}
                     >
                       Vorher
                     </div>
@@ -128,13 +128,13 @@ export default function TestimonialsSection() {
                   <div
                     className="rounded-lg px-3 py-2"
                     style={{
-                      background: "color-mix(in oklab, var(--success, oklch(0.65 0.18 160)) 8%, transparent)",
-                      border: "1px solid color-mix(in oklab, var(--success, oklch(0.65 0.18 160)) 24%, transparent)",
+                      background: "color-mix(in oklab, var(--primary) 8%, transparent)",
+                      border: "1px solid color-mix(in oklab, var(--primary) 24%, transparent)",
                     }}
                   >
                     <div
                       className="text-[10px] uppercase tracking-wider font-semibold mb-1"
-                      style={{ color: "var(--success, oklch(0.55 0.16 160))" }}
+                      style={{ color: "var(--primary)" }}
                     >
                       Nachher
                     </div>

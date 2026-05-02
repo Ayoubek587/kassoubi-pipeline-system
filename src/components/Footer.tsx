@@ -14,8 +14,8 @@ export default function Footer() {
           <Link to="/ueber-uns" className="hover:text-foreground transition-colors">Über uns</Link>
           <Link to="/prozess" className="hover:text-foreground transition-colors">Prozess</Link>
           <Link to="/kontakt" className="hover:text-foreground transition-colors">Kontakt</Link>
-          <a href="#" className="hover:text-foreground transition-colors">Impressum</a>
-          <a href="#" className="hover:text-foreground transition-colors">Datenschutz</a>
+          <Link to="/impressum" className="hover:text-foreground transition-colors">Impressum</Link>
+          <Link to="/datenschutz" className="hover:text-foreground transition-colors">Datenschutz</Link>
         </div>
         <span>© 2026 Kassoubi</span>
       </div>

@@ -89,7 +89,7 @@ function ProzessPage() {
                 Ein klar definierter Prozess <span className="gradient-text">schafft planbare Ergebnisse</span>.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Pipeline aufbauen <ArrowRight size={16} /></Link>
+                <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Analyse starten <ArrowRight size={16} /></Link>
                 <Link to="/unternehmen" className="btn-secondary inline-flex items-center gap-2">Für Unternehmen</Link>
               </div>
             </div>

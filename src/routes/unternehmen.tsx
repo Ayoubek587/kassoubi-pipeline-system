@@ -73,8 +73,8 @@ function UnternehmenPage() {
             Eine strukturierte, internationale Pipeline qualifizierter Auszubildender — vorbereitet, vermittelt, integriert.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Pipeline aufbauen <ArrowRight size={16} /></Link>
-            <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">System ansehen</Link>
+            <Link to="/kontakt" className="btn-primary inline-flex items-center gap-2">Analyse starten <ArrowRight size={16} /></Link>
+            <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">Prozess ansehen</Link>
           </div>
         </div>
       </section>
@@ -104,9 +104,9 @@ function UnternehmenPage() {
                 <div
                   className="icon-tile h-11 w-11 mb-4"
                   style={{
-                    color: "var(--warning, oklch(0.72 0.18 45))",
-                    borderColor: "color-mix(in oklab, var(--warning, oklch(0.72 0.18 45)) 25%, transparent)",
-                    background: "color-mix(in oklab, var(--warning, oklch(0.72 0.18 45)) 10%, transparent)",
+                    color: "var(--accent)",
+                    borderColor: "color-mix(in oklab, var(--accent) 25%, transparent)",
+                    background: "color-mix(in oklab, var(--accent) 10%, transparent)",
                   }}
                 >
                   <p.icon size={20} />

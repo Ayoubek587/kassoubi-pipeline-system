@@ -10,7 +10,7 @@ type Props = {
 export default function VideoSection({
   eyebrow = "Video",
   title = "So funktioniert unsere Vermittlung",
-  description = "In 2 Minuten erklären wir Ihnen unseren strukturierten Prozess.",
+  description = "Ein kurzer Überblick über unseren Vermittlungsprozess wird hier eingebunden.",
 }: Props) {
   return (
     <section className="section-padding">
@@ -40,9 +40,9 @@ export default function VideoSection({
               <div className="icon-tile w-20 h-20 rounded-full transition-transform group-hover:scale-110">
                 <PlayCircle size={36} />
               </div>
-              <div className="text-sm font-semibold tracking-tight">Video bald verfügbar</div>
+              <div className="text-sm font-semibold tracking-tight">Vermittlungsprozess im Überblick</div>
               <div className="text-xs text-muted-foreground max-w-sm">
-                Strukturierter Ablauf · Internationale Pipeline · Planbare Ergebnisse
+                Ein kurzer Überblick über unseren Vermittlungsprozess wird hier eingebunden.
               </div>
             </div>
           </div>

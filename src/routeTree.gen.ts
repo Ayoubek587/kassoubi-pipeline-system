@@ -13,6 +13,8 @@ import { Route as UnternehmenRouteImport } from './routes/unternehmen'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
 import { Route as ProzessRouteImport } from './routes/prozess'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as BewerberRouteImport } from './routes/bewerber'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -36,6 +38,16 @@ const KontaktRoute = KontaktRouteImport.update({
   path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BewerberRoute = BewerberRouteImport.update({
   id: '/bewerber',
   path: '/bewerber',
@@ -50,6 +62,8 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bewerber': typeof BewerberRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
@@ -58,6 +72,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bewerber': typeof BewerberRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
@@ -67,6 +83,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/bewerber': typeof BewerberRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
@@ -77,6 +95,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/bewerber'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/prozess'
     | '/ueber-uns'
@@ -85,6 +105,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/bewerber'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/prozess'
     | '/ueber-uns'
@@ -93,6 +115,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/bewerber'
+    | '/datenschutz'
+    | '/impressum'
     | '/kontakt'
     | '/prozess'
     | '/ueber-uns'
@@ -102,6 +126,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BewerberRoute: typeof BewerberRoute
+  DatenschutzRoute: typeof DatenschutzRoute
+  ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   ProzessRoute: typeof ProzessRoute
   UeberUnsRoute: typeof UeberUnsRoute
@@ -138,6 +164,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bewerber': {
       id: '/bewerber'
       path: '/bewerber'
@@ -158,6 +198,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BewerberRoute: BewerberRoute,
+  DatenschutzRoute: DatenschutzRoute,
+  ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   ProzessRoute: ProzessRoute,
   UeberUnsRoute: UeberUnsRoute,

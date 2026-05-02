@@ -5,9 +5,9 @@ export default function UrgencyBadge({ text = "Nur noch wenige Plätze diesen Mo
     <div
       className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold"
       style={{
-        background: "oklch(0.62 0.22 30 / 12%)",
-        border: "1px solid oklch(0.62 0.22 30 / 30%)",
-        color: "oklch(0.78 0.16 35)",
+        background: "color-mix(in oklab, var(--accent) 12%, transparent)",
+        border: "1px solid color-mix(in oklab, var(--accent) 28%, transparent)",
+        color: "var(--accent)",
       }}
     >
       <Flame size={12} />

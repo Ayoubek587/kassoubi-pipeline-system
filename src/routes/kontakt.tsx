@@ -16,7 +16,7 @@ export const Route = createFileRoute("/kontakt")({
       { title: "Analyse starten — Strukturierter nächster Schritt in 48 Stunden | Kassoubi" },
       { name: "description", content: "Wir prüfen Ihren Bedarf und liefern innerhalb von 48 Stunden einen konkreten Plan für Ihre internationale Ausbildungs-Pipeline." },
       { property: "og:title", content: "Analyse starten — Kassoubi" },
-      { property: "og:description", content: "Pipeline aufbauen, Kapazität sichern, Gespräch vereinbaren — Antwort innerhalb von 48 Stunden." },
+      { property: "og:description", content: "Analyse starten, Bedarf klären und nächsten Schritt erhalten — Rückmeldung innerhalb von 48 Stunden." },
     ],
   }),
   component: KontaktPage,

@@ -99,7 +99,7 @@ export default function MultiStepForm() {
             animate={{ opacity: 1, scale: 1 }}
             className="glass rounded-2xl p-10 text-center"
           >
-            <div className="h-16 w-16 rounded-full mx-auto flex items-center justify-center mb-5" style={{ background: "oklch(0.7 0.15 160 / 15%)" }}>
+            <div className="h-16 w-16 rounded-full mx-auto flex items-center justify-center mb-5" style={{ background: "color-mix(in oklab, var(--accent) 14%, transparent)" }}>
               <Check size={28} className="text-accent" />
             </div>
             <h3 className="text-xl font-bold mb-2">Vielen Dank!</h3>
@@ -135,7 +135,7 @@ export default function MultiStepForm() {
                 <div
                   key={i}
                   className="h-1 rounded-full flex-1 transition-all duration-300"
-                  style={{ background: i <= step ? "var(--gradient-primary)" : "oklch(1 0 0 / 8%)" }}
+                  style={{ background: i <= step ? "var(--gradient-primary)" : "var(--overlay-medium)" }}
                 />
               ))}
             </div>
