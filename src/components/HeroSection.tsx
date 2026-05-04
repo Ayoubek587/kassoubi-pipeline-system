@@ -11,7 +11,7 @@ const trustItems = [
 const pipelineSteps = ["Herkunftsland", "Vorbereitung", "Matching", "Deutschland"];
 
 // Replace with real Calendly URL when ready
-const BOOKING_URL = "#";
+const BOOKING_URL = "/kontakt";
 
 function PipelineVisualization() {
   return (
@@ -146,7 +146,7 @@ export default function HeroSection() {
           >
             <Calendar size={16} /> Fachkräfte anfragen <ArrowRight size={16} />
           </a>
-          <a href="#bewerber" className="btn-secondary">
+          <a href="/bewerber" className="btn-secondary">
             Ausbildung starten
           </a>
         </motion.div>

@@ -91,71 +91,101 @@
   --font-display: "Geist", system-ui, sans-serif;
   --font-body: "Geist", system-ui, sans-serif;
 
-  /* Deep navy base */
-  --background: oklch(0.13 0.035 260);
-  --foreground: oklch(0.95 0.01 250);
+  --background: hsl(220 45% 98%);
+  --foreground: hsl(224 34% 14%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(224 34% 14%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(224 34% 14%);
+  --primary: hsl(222 76% 46%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(220 32% 94%);
+  --secondary-foreground: hsl(224 34% 20%);
+  --muted: hsl(220 28% 94%);
+  --muted-foreground: hsl(222 15% 42%);
+  --accent: hsl(204 78% 42%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 72% 48%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(220 20% 86%);
+  --input: hsl(220 25% 92%);
+  --ring: hsl(222 76% 46%);
+  --surface: hsl(220 38% 96%);
+  --surface-foreground: hsl(224 34% 18%);
+  --glow: var(--primary);
+  --glow-secondary: var(--accent);
 
-  /* Cards: glassmorphism surface */
-  --card: oklch(0.18 0.035 258);
-  --card-foreground: oklch(0.95 0.01 250);
+  --chart-1: var(--primary);
+  --chart-2: var(--accent);
+  --chart-3: color-mix(in oklab, var(--primary) 70%, var(--accent));
+  --chart-4: color-mix(in oklab, var(--accent) 72%, var(--foreground));
+  --chart-5: color-mix(in oklab, var(--primary) 62%, var(--foreground));
 
-  --popover: oklch(0.16 0.035 258);
-  --popover-foreground: oklch(0.95 0.01 250);
+  --sidebar: var(--card);
+  --sidebar-foreground: var(--card-foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--secondary-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 
-  /* Primary: electric blue */
-  --primary: oklch(0.65 0.2 250);
-  --primary-foreground: oklch(0.98 0.005 250);
+  --overlay-soft: color-mix(in oklab, var(--foreground) 3%, transparent);
+  --overlay-medium: color-mix(in oklab, var(--foreground) 7%, transparent);
+  --overlay-strong: color-mix(in oklab, var(--foreground) 13%, transparent);
+  --border-subtle: color-mix(in oklab, var(--border) 72%, transparent);
+  --border-strong: color-mix(in oklab, var(--border) 100%, var(--foreground) 8%);
+  --text-on-glass: var(--foreground);
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-hero: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    color-mix(in oklab, var(--background) 86%, var(--primary) 14%) 100%
+  );
+  --gradient-card: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--card) 88%, transparent),
+    color-mix(in oklab, var(--surface) 78%, transparent)
+  );
+  --gradient-glow: radial-gradient(
+    ellipse at 50% 0%,
+    color-mix(in oklab, var(--primary) 12%, transparent),
+    transparent 62%
+  );
+  --shadow-glow: 0 0 40px color-mix(in oklab, var(--primary) 16%, transparent);
+  --shadow-card:
+    0 4px 20px color-mix(in oklab, var(--foreground) 8%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--border) 55%, transparent);
+  --shadow-card-hover:
+    0 12px 36px color-mix(in oklab, var(--foreground) 13%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--border) 70%, transparent);
+  --shadow-elevated: 0 20px 60px color-mix(in oklab, var(--foreground) 16%, transparent);
+  --blob-primary: color-mix(in oklab, var(--primary) 12%, transparent);
+  --blob-accent: color-mix(in oklab, var(--accent) 10%, transparent);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(15, 23, 42, 0.08);
+  --nav-bg-mobile: rgba(255, 255, 255, 0.98);
+  --section-tint-a: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    color-mix(in oklab, var(--background) 92%, var(--primary) 8%) 100%
+  );
+  --section-tint-b: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--background) 94%, var(--primary) 6%) 0%,
+    color-mix(in oklab, var(--background) 92%, var(--accent) 8%) 100%
+  );
+  --section-tint-c: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--background) 92%, var(--accent) 8%) 0%,
+    var(--background) 100%
+  );
+}
 
-  /* Secondary: soft blue-gray */
-  --secondary: oklch(0.22 0.03 258);
-  --secondary-foreground: oklch(0.88 0.02 250);
-
-  --muted: oklch(0.2 0.025 258);
-  --muted-foreground: oklch(0.6 0.03 255);
-
-  /* Accent: teal-cyan glow */
-  --accent: oklch(0.7 0.15 195);
-  --accent-foreground: oklch(0.12 0.03 260);
-
-  --destructive: oklch(0.58 0.24 27);
-  --destructive-foreground: oklch(0.98 0.005 250);
-
-  --border: oklch(0.25 0.03 258);
-  --input: oklch(0.22 0.03 258);
-  --ring: oklch(0.65 0.2 250);
-
-  /* Custom tokens */
-  --surface: oklch(0.16 0.03 258);
-  --surface-foreground: oklch(0.9 0.015 250);
-  --glow: oklch(0.65 0.2 250);
-  --glow-secondary: oklch(0.7 0.15 195);
-
-  --chart-1: oklch(0.65 0.2 250);
-  --chart-2: oklch(0.7 0.15 195);
-  --chart-3: oklch(0.75 0.12 150);
-  --chart-4: oklch(0.7 0.18 280);
-  --chart-5: oklch(0.65 0.15 320);
-
-  --sidebar: oklch(0.14 0.035 260);
-  --sidebar-foreground: oklch(0.95 0.01 250);
-  --sidebar-primary: oklch(0.65 0.2 250);
-  --sidebar-primary-foreground: oklch(0.98 0.005 250);
-  --sidebar-accent: oklch(0.22 0.03 258);
-  --sidebar-accent-foreground: oklch(0.88 0.02 250);
-  --sidebar-border: oklch(0.25 0.03 258);
-  --sidebar-ring: oklch(0.65 0.2 250);
-
-  /* Gradient tokens */
-  --gradient-primary: linear-gradient(135deg, oklch(0.65 0.2 250), oklch(0.7 0.15 195));
-  --gradient-hero: linear-gradient(180deg, oklch(0.13 0.035 260), oklch(0.1 0.04 265));
-  --gradient-card: linear-gradient(135deg, oklch(0.18 0.035 258 / 80%), oklch(0.14 0.03 260 / 60%));
-  --gradient-glow: radial-gradient(ellipse at 50% 0%, oklch(0.65 0.2 250 / 15%), transparent 60%);
-
-  /* Shadow tokens */
-  --shadow-glow: 0 0 40px oklch(0.65 0.2 250 / 20%);
-  --shadow-card: 0 4px 24px oklch(0 0 0 / 30%), 0 0 0 1px oklch(1 0 0 / 5%);
-  --shadow-card-hover: 0 8px 40px oklch(0 0 0 / 40%), 0 0 0 1px oklch(1 0 0 / 8%);
-  --shadow-elevated: 0 16px 64px oklch(0 0 0 / 50%);
+.dark {
+  --nav-bg: rgba(8, 13, 26, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --nav-bg-mobile: rgba(8, 13, 26, 0.98);
 }
 
 @layer base {
@@ -793,42 +823,8 @@ section > .hero-glow {
    in the corporate light hybrid style.
    ============================================================ */
 .section-dark {
-  --background: oklch(0.13 0.035 260);
-  --foreground: oklch(0.95 0.01 250);
-  --card: oklch(0.18 0.035 258);
-  --card-foreground: oklch(0.95 0.01 250);
-  --muted: oklch(0.2 0.025 258);
-  --muted-foreground: oklch(0.68 0.025 255);
-  --border: oklch(0.25 0.03 258);
-  --primary: oklch(0.7 0.18 245);
-  --primary-foreground: oklch(0.99 0.005 250);
-  --accent: oklch(0.78 0.13 200);
-  --accent-foreground: oklch(0.12 0.03 260);
-  --glow: oklch(0.72 0.18 245);
-  --glow-secondary: oklch(0.78 0.13 200);
-  --gradient-primary: linear-gradient(135deg, oklch(0.7 0.18 245), oklch(0.78 0.13 200));
-  --gradient-hero: linear-gradient(
-    180deg,
-    oklch(0.13 0.035 260) 0%,
-    oklch(0.09 0.035 265) 60%,
-    oklch(0.07 0.03 270) 100%
-  );
-  --gradient-card: linear-gradient(135deg, oklch(0.2 0.04 258 / 80%), oklch(0.14 0.03 260 / 60%));
-  --gradient-glow: radial-gradient(ellipse at 50% 0%, oklch(0.7 0.18 245 / 18%), transparent 60%);
-  --shadow-card: 0 4px 24px oklch(0 0 0 / 30%), 0 0 0 1px oklch(1 0 0 / 5%);
-  --shadow-card-hover: 0 8px 40px oklch(0 0 0 / 40%), 0 0 0 1px oklch(1 0 0 / 8%);
-  --shadow-glow: 0 0 40px oklch(0.7 0.18 245 / 22%);
-  --blob-primary: oklch(0.7 0.18 245 / 14%);
-  --blob-accent: oklch(0.78 0.13 200 / 10%);
-  --overlay-soft: oklch(1 0 0 / 4%);
-  --overlay-medium: oklch(1 0 0 / 8%);
-  --overlay-strong: oklch(1 0 0 / 14%);
-  --border-subtle: oklch(1 0 0 / 8%);
-  --border-strong: oklch(1 0 0 / 14%);
-
   background: var(--gradient-hero);
   color: var(--foreground);
-  color-scheme: dark;
 }
 .section-dark .text-muted-foreground {
   color: var(--muted-foreground);

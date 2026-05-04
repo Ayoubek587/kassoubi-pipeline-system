@@ -1,0 +1,27 @@
+<svg width="210" height="56" viewBox="0 0 210 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kvBlue" x1="6" y1="6" x2="74" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#93C5FD"/>
+      <stop offset="0.48" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#1E40AF"/>
+    </linearGradient>
+    <linearGradient id="kvBlue2" x1="18" y1="8" x2="78" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <path d="M6 8H18V48H6V8Z" fill="url(#kvBlue)"/>
+    <path d="M18 30L42 8H58L34 29L58 48H41L18 30Z" fill="url(#kvBlue)"/>
+    <path d="M50 8H64L76 35L88 8H102L82 48H70L50 8Z" fill="url(#kvBlue2)"/>
+    <path d="M18 48L34 29L42 36L31 48H18Z" fill="#020617" opacity="0.65"/>
+    <path d="M65 18C70 20 74 24 76 30L70 43L60 20L65 18Z" fill="#020617" opacity="0.55"/>
+    <path d="M88 8H102L96 20H83L88 8Z" fill="#60A5FA"/>
+  </g>
+
+  <line x1="116" y1="12" x2="116" y2="44" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+
+  <text x="130" y="27" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#FFFFFF">KASSOUBI</text>
+  <text x="130" y="43" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="4" fill="#93C5FD">VERMITTLUNG</text>
+</svg>

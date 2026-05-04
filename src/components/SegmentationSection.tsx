@@ -8,7 +8,7 @@ const cards = [
     title: "Internationale Fachkräfte für Ihr Unternehmen gewinnen",
     desc: "Wir identifizieren, qualifizieren und vermitteln Talente aus dem Ausland — passgenau für Ihren Bedarf und Ihre Branche.",
     cta: "Fachkräfte sichern",
-    href: "#kontakt",
+    href: "/kontakt",
     badge: "48h Reaktionszeit",
   },
   {
@@ -16,7 +16,7 @@ const cards = [
     title: "Ausbildung in Deutschland starten — mit strukturiertem Prozess",
     desc: "Wir unterstützen Sie von der Vorbereitung im Heimatland bis zur erfolgreichen Integration in Deutschland.",
     cta: "Kostenlos bewerben",
-    href: "#kontakt",
+    href: "/kontakt",
     badge: "Kostenlos für Bewerber",
   },
 ];

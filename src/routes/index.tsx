@@ -17,7 +17,6 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import VideoSection from "../components/VideoSection";
-import heroBg from "../assets/hero-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -233,25 +232,12 @@ function PipelineDashboardVisual() {
 
 function Hero() {
   return (
-    <section className="relative min-h-[92vh] overflow-hidden px-4 pb-14 pt-24 sm:pb-16 lg:flex lg:min-h-[88vh] lg:items-center lg:pt-28">
-      {/* Subtle blurred background image */}
-      <div className="hero-bg-layer absolute inset-0">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover opacity-15"
-          style={{ filter: "blur(12px)", transform: "scale(1.04)" }}
-          width={1920}
-          height={1280}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, color-mix(in oklab, var(--background) 70%, transparent) 0%, var(--background) 90%)",
-          }}
-        />
-      </div>
+    <section className="relative overflow-hidden border-b border-slate-900/10 bg-gradient-to-b from-white to-slate-50 dark:border-white/10 dark:from-[#080D1A] dark:to-[#0B1020]">
+      <div className="hero-bg-layer absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.06),transparent_38%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.15),transparent_42%)]" />
+      <div
+        className="hero-glow glow-blob right-[6%] top-1/2 h-[520px] w-[520px] -translate-y-1/2 bg-blue-500/10 dark:bg-blue-500/18"
+        aria-hidden="true"
+      />
       <div
         className="hero-glow glow-blob w-[600px] h-[600px] top-[-150px] left-[-150px]"
         style={{ background: "var(--blob-primary)" }}
@@ -261,7 +247,7 @@ function Hero() {
         style={{ background: "var(--blob-accent)" }}
       />
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-[minmax(0,1fr)_minmax(320px,0.92fr)] md:gap-12 lg:gap-16">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-14 md:py-20 lg:grid-cols-2 lg:py-24">
         <div className="max-w-2xl text-left">
           <div>
             <span className="h-eyebrow mb-6">
@@ -271,14 +257,25 @@ function Hero() {
           </div>
 
           <h1
-            className="mt-5 text-3xl font-bold leading-[1.05] tracking-tight [text-wrap:balance] sm:mt-6 sm:text-5xl lg:text-6xl"
+            className="mt-5 max-w-[900px] text-4xl font-bold leading-[1.05] tracking-tight [text-wrap:balance] sm:mt-6 md:text-6xl"
           >
             Ausbildungsplätze besetzen — <br className="hidden sm:block" />
-            <span className="gradient-text">planbar, strukturiert, international</span>.
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              planbar
+            </span>
+            ,{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              strukturiert
+            </span>
+            ,{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              international
+            </span>
+            .
           </h1>
 
           <p
-            className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground [text-wrap:balance] sm:text-lg md:text-xl"
+            className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground [text-wrap:balance]"
           >
             Kassoubi Vermittlung unterstützt Unternehmen dabei, passende Auszubildende aus
             internationalen Märkten zu gewinnen — mit klarer Vorauswahl, strukturierter
@@ -286,18 +283,18 @@ function Hero() {
           </p>
 
           <div
-            className="mt-10 flex flex-col items-start gap-3 sm:mt-11 sm:flex-row sm:gap-4"
+            className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:gap-4"
           >
             <Link
               to="/kontakt"
-              className="btn-primary group flex min-w-[220px] items-center gap-2 sm:min-w-0 sm:!px-8"
+              className="group inline-flex h-12 min-w-[220px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition hover:brightness-110 sm:min-w-0"
             >
               <Building2 size={16} /> Analyse starten{" "}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               to="/bewerber"
-              className="btn-secondary group flex min-w-[180px] items-center gap-2 opacity-90 hover:opacity-100"
+              className="group inline-flex h-12 min-w-[180px] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-6 text-sm font-semibold text-foreground transition hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/[0.04] dark:hover:border-white/25 dark:hover:bg-white/[0.07]"
             >
               <GraduationCap size={16} /> Für Bewerber
             </Link>
@@ -305,7 +302,7 @@ function Hero() {
         </div>
 
         <div
-          className="hero-visual-shell relative mx-auto w-full max-w-[540px] md:mx-0 md:justify-self-end"
+          className="hero-visual-shell relative mx-auto w-full max-w-[540px] rounded-2xl shadow-xl dark:shadow-[0_20px_80px_rgba(37,99,235,0.25)] lg:mx-0 lg:justify-self-end"
         >
           <PipelineDashboardVisual />
         </div>

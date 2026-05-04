@@ -45,7 +45,7 @@ function KontaktPage() {
       <section className="px-5 pb-12">
         <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-4">
           <a
-            href={calendlyAvailable ? CALENDLY_URL : "#kontakt"}
+            href={calendlyAvailable ? CALENDLY_URL : "/kontakt"}
             target={calendlyAvailable ? "_blank" : undefined}
             rel={calendlyAvailable ? "noopener noreferrer" : undefined}
             className="glass glass-hover-lift rounded-2xl p-6 flex items-center gap-4"

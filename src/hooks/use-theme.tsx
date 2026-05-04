@@ -38,15 +38,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const mode = themes.find((t) => t.id === theme)?.mode ?? "dark";
 
   const toggleMode = useCallback(() => {
-    // Toggle between current dark and a sensible light counterpart (or vice-versa)
     const currentTheme = themes.find((t) => t.id === theme);
     if (!currentTheme) return;
-    if (currentTheme.mode === "dark") {
-      // Prefer minimal-light if user is on minimal-dark, otherwise corporate light
-      setTheme(currentTheme.id === "minimal-dark" ? "minimal-light" : "light");
-    } else {
-      setTheme(currentTheme.id === "minimal-light" ? "minimal-dark" : "midnight");
-    }
+    setTheme(currentTheme.mode === "dark" ? "light" : "dark");
   }, [theme, setTheme]);
 
   return (

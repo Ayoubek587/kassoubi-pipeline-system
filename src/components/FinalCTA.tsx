@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, Globe2 } from "lucide-react";
 
 // Replace with real Calendly URL
-const BOOKING_URL = "#";
+const BOOKING_URL = "/kontakt";
 
 export default function FinalCTA() {
   return (
@@ -45,7 +45,7 @@ export default function FinalCTA() {
               <Calendar size={18} /> Termin vereinbaren
             </a>
             <a
-              href="#kontakt"
+              href="/kontakt"
               className="btn-secondary flex items-center gap-2 text-base md:text-lg"
               style={{ padding: "1.1rem 2.4rem", fontSize: "1.05rem" }}
             >
