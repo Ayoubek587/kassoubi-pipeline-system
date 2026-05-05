@@ -1,29 +1,49 @@
-import { useState } from "react";
-import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, Briefcase, Building2, Check, Mail, MapPin, Phone, User } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Building2,
+  Check,
+  GraduationCap,
+  Hash,
+  Languages,
+  Mail,
+  MessageSquareText,
+  Phone,
+  User,
+  Globe2,
+} from "lucide-react";
+
+type Audience = "unternehmen" | "bewerber";
 
 type FormData = {
-  type: string;
+  type: Audience;
   name: string;
   email: string;
   phone: string;
   company: string;
-  position: string;
-  location: string;
+  trainingSlots: string;
+  industry: string;
+  country: string;
+  desiredTraining: string;
+  germanLevel: string;
   message: string;
 };
 
-const initialData: FormData = {
-  type: "",
+const createInitialData = (type: Audience): FormData => ({
+  type,
   name: "",
   email: "",
   phone: "",
   company: "",
-  position: "",
-  location: "",
+  trainingSlots: "",
+  industry: "",
+  country: "",
+  desiredTraining: "",
+  germanLevel: "",
   message: "",
-};
+});
 
 function Field({
   id,
@@ -36,7 +56,7 @@ function Field({
 }: {
   id: string;
   label: string;
-  icon: typeof User;
+  icon: LucideIcon;
   value: string;
   onChange: (value: string) => void;
   placeholder: string;
@@ -44,13 +64,13 @@ function Field({
 }) {
   return (
     <div className="relative">
-      <label htmlFor={id} className="sr-only">
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-foreground">
         {label}
       </label>
-      <Icon size={16} className="absolute left-3 top-3.5 text-muted-foreground" aria-hidden="true" />
+      <Icon size={16} className="absolute left-3 top-[2.7rem] text-muted-foreground" aria-hidden="true" />
       <input
         id={id}
-        className="w-full rounded-xl border border-border bg-secondary px-4 py-3 pl-10 text-sm text-foreground transition placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 pl-10 text-sm text-foreground transition placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 dark:border-white/10 dark:bg-white/[0.04]"
         placeholder={placeholder}
         type={type}
         value={value}
@@ -74,13 +94,14 @@ function TextArea({
   placeholder: string;
 }) {
   return (
-    <div>
-      <label htmlFor={id} className="sr-only">
+    <div className="relative md:col-span-2">
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-foreground">
         {label}
       </label>
+      <MessageSquareText size={16} className="absolute left-3 top-[2.7rem] text-muted-foreground" aria-hidden="true" />
       <textarea
         id={id}
-        className="min-h-[120px] w-full rounded-xl border border-border bg-secondary px-4 py-3 text-sm text-foreground transition placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+        className="min-h-[140px] w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 pl-10 text-sm text-foreground transition placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 dark:border-white/10 dark:bg-white/[0.04]"
         placeholder={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
@@ -89,153 +110,70 @@ function TextArea({
   );
 }
 
-export default function MultiStepForm() {
-  const [step, setStep] = useState(0);
-  const [data, setData] = useState<FormData>(initialData);
+export default function MultiStepForm({ selectedType }: { selectedType: Audience }) {
+  const [data, setData] = useState<FormData>(() => createInitialData(selectedType));
   const [submitted, setSubmitted] = useState(false);
 
-  const totalSteps = data.type === "unternehmen" ? 4 : 3;
-  const update = (field: keyof FormData, value: string) => setData((current) => ({ ...current, [field]: value }));
-  const selectType = (type: "unternehmen" | "bewerber") => {
-    setData((current) => ({ ...current, type }));
-    setStep(1);
-  };
-  const next = () => step < totalSteps - 1 && setStep(step + 1);
-  const prev = () => step > 0 && setStep(step - 1);
+  useEffect(() => {
+    setSubmitted(false);
+    setData(createInitialData(selectedType));
+  }, [selectedType]);
 
-  const steps: Record<string, ReactNode[]> = {
-    unternehmen: [
-      null,
-      <div key="contact" className="space-y-4">
-        <Field id="company-name" label="Ihr Name" icon={User} placeholder="Ihr Name" value={data.name} onChange={(value) => update("name", value)} />
-        <Field id="company-email" label="E-Mail" icon={Mail} placeholder="E-Mail" type="email" value={data.email} onChange={(value) => update("email", value)} />
-        <Field id="company-phone" label="Telefon" icon={Phone} placeholder="Telefon" value={data.phone} onChange={(value) => update("phone", value)} />
-      </div>,
-      <div key="company" className="space-y-4">
-        <Field id="company-company" label="Unternehmen" icon={Building2} placeholder="Unternehmen" value={data.company} onChange={(value) => update("company", value)} />
-        <Field id="company-position" label="Gesuchter Ausbildungsberuf" icon={Briefcase} placeholder="Gesuchter Ausbildungsberuf" value={data.position} onChange={(value) => update("position", value)} />
-        <Field id="company-location" label="Standort" icon={MapPin} placeholder="Standort" value={data.location} onChange={(value) => update("location", value)} />
-      </div>,
-      <TextArea
-        key="message"
-        id="company-message"
-        label="Ihre Nachricht"
-        placeholder="Ihre Nachricht (optional)"
-        value={data.message}
-        onChange={(value) => update("message", value)}
-      />,
-    ],
-    bewerber: [
-      null,
-      <div key="contact" className="space-y-4">
-        <Field id="applicant-name" label="Dein Name" icon={User} placeholder="Dein Name" value={data.name} onChange={(value) => update("name", value)} />
-        <Field id="applicant-email" label="E-Mail" icon={Mail} placeholder="E-Mail" type="email" value={data.email} onChange={(value) => update("email", value)} />
-        <Field id="applicant-phone" label="Telefon / WhatsApp" icon={Phone} placeholder="Telefon / WhatsApp" value={data.phone} onChange={(value) => update("phone", value)} />
-      </div>,
-      <TextArea
-        key="message"
-        id="applicant-message"
-        label="Ausbildungswunsch, Sprachniveau und Herkunftsland"
-        placeholder="Erzähle uns von dir — Ausbildungswunsch, Sprachniveau, Herkunftsland."
-        value={data.message}
-        onChange={(value) => update("message", value)}
-      />,
-    ],
+  const update = (field: keyof FormData, value: string) => {
+    setData((current) => ({ ...current, [field]: value }));
   };
+
+  const confirmationText =
+    selectedType === "bewerber"
+      ? "Wir prüfen Ihr Profil und melden uns mit der kostenfreien Ersteinschätzung."
+      : "Wir melden uns innerhalb von 48 Stunden mit dem passenden nächsten Schritt.";
 
   if (submitted) {
     return (
-      <section id="kontakt" className="section-padding">
-        <div className="mx-auto max-w-lg">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="glass rounded-2xl p-10 text-center"
-          >
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-accent/15">
-              <Check size={28} className="text-accent" aria-hidden="true" />
-            </div>
-            <h3 className="mb-2 text-xl font-bold">Vielen Dank!</h3>
-            <p className="text-sm text-muted-foreground">Wir melden uns innerhalb von 48 Stunden bei Ihnen.</p>
-          </motion.div>
+      <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="rounded-2xl border border-accent/20 bg-accent/10 p-8 text-center">
+        <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/15">
+          <Check size={26} className="text-accent" aria-hidden="true" />
         </div>
-      </section>
+        <h3 className="mb-2 text-xl font-bold">Vielen Dank!</h3>
+        <p className="text-sm text-muted-foreground">{confirmationText}</p>
+      </motion.div>
     );
   }
 
   return (
-    <section id="kontakt" className="section-padding relative">
-      <div className="glow-blob bottom-0 left-[20%] h-[400px] w-[400px] bg-[var(--blob-primary)]" />
-      <div className="relative z-10 mx-auto max-w-lg">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 text-center"
-        >
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Jetzt <span className="gradient-text">starten</span>
-          </h2>
-          <p className="mt-3 text-sm text-muted-foreground">Füllen Sie das Formular aus — wir melden uns innerhalb von 48 Stunden.</p>
-        </motion.div>
-
-        <div className="glass rounded-2xl p-6 md:p-8">
-          {data.type && (
-            <div className="mb-8 flex gap-1.5" aria-hidden="true">
-              {Array.from({ length: totalSteps }).map((_, index) => (
-                <div
-                  key={index}
-                  className={index <= step ? "h-1 flex-1 rounded-full bg-[var(--gradient-primary)] transition-all duration-300" : "h-1 flex-1 rounded-full bg-[var(--overlay-medium)] transition-all duration-300"}
-                />
-              ))}
-            </div>
-          )}
-
-          {step === 0 ? (
-            <div>
-              <p className="mb-4 text-sm font-medium text-muted-foreground">Ich bin...</p>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { key: "unternehmen", label: "Unternehmen", icon: Building2 },
-                  { key: "bewerber", label: "Bewerber/in", icon: User },
-                ].map((option) => (
-                  <button
-                    key={option.key}
-                    type="button"
-                    onClick={() => {
-                      selectType(option.key as "unternehmen" | "bewerber");
-                    }}
-                    className="glass rounded-xl p-5 text-center transition-all hover:border-primary/30"
-                  >
-                    <option.icon size={24} className="mx-auto mb-2 text-primary transition-transform" aria-hidden="true" />
-                    <span className="text-sm font-medium">{option.label}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <div>{steps[data.type]?.[step]}</div>
-          )}
-
-          {step > 0 && (
-            <div className="mt-6 flex justify-between gap-3">
-              <button type="button" onClick={prev} className="btn-secondary flex items-center gap-2 !px-4 !py-2 text-sm">
-                <ArrowLeft size={14} aria-hidden="true" /> Zurück
-              </button>
-              {step < totalSteps - 1 ? (
-                <button type="button" onClick={next} className="btn-primary flex items-center gap-2 !px-4 !py-2 text-sm">
-                  Weiter <ArrowRight size={14} aria-hidden="true" />
-                </button>
-              ) : (
-                <button type="button" onClick={() => setSubmitted(true)} className="btn-primary flex items-center gap-2 !px-4 !py-2 text-sm">
-                  Absenden <Check size={14} aria-hidden="true" />
-                </button>
-              )}
-            </div>
-          )}
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        setSubmitted(true);
+      }}
+    >
+      {selectedType === "unternehmen" ? (
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field id="company-name" label="Name" icon={User} placeholder="Ihr Name" value={data.name} onChange={(value) => update("name", value)} />
+          <Field id="company-company" label="Unternehmen" icon={Building2} placeholder="Name des Unternehmens" value={data.company} onChange={(value) => update("company", value)} />
+          <Field id="company-email" label="E-Mail" icon={Mail} placeholder="name@unternehmen.de" type="email" value={data.email} onChange={(value) => update("email", value)} />
+          <Field id="company-phone" label="Telefon" icon={Phone} placeholder="+49 ..." value={data.phone} onChange={(value) => update("phone", value)} />
+          <Field id="company-slots" label="Anzahl Ausbildungsplätze" icon={Hash} placeholder="z. B. 3" type="number" value={data.trainingSlots} onChange={(value) => update("trainingSlots", value)} />
+          <Field id="company-industry" label="Branche" icon={BriefcaseBusiness} placeholder="z. B. Pflege, Handwerk, Industrie" value={data.industry} onChange={(value) => update("industry", value)} />
+          <TextArea id="company-message" label="Nachricht" placeholder="Was sollen wir zu Ihrem Bedarf wissen?" value={data.message} onChange={(value) => update("message", value)} />
         </div>
+      ) : (
+        <div className="grid gap-4 md:grid-cols-2">
+          <Field id="applicant-name" label="Name" icon={User} placeholder="Ihr Name" value={data.name} onChange={(value) => update("name", value)} />
+          <Field id="applicant-email" label="E-Mail" icon={Mail} placeholder="name@email.com" type="email" value={data.email} onChange={(value) => update("email", value)} />
+          <Field id="applicant-country" label="Herkunftsland" icon={Globe2} placeholder="z. B. Marokko" value={data.country} onChange={(value) => update("country", value)} />
+          <Field id="applicant-training" label="Gewünschter Ausbildungsbereich" icon={GraduationCap} placeholder="z. B. Pflege, IT, Handwerk" value={data.desiredTraining} onChange={(value) => update("desiredTraining", value)} />
+          <Field id="applicant-german-level" label="Deutschlevel" icon={Languages} placeholder="z. B. A2, B1, B2" value={data.germanLevel} onChange={(value) => update("germanLevel", value)} />
+          <TextArea id="applicant-message" label="Nachricht" placeholder="Was möchten Sie uns zu Ihrem Profil mitteilen?" value={data.message} onChange={(value) => update("message", value)} />
+        </div>
+      )}
+
+      <div className="mt-7 flex justify-end">
+        <button type="submit" className="btn-primary w-full gap-2 sm:w-auto">
+          {selectedType === "unternehmen" ? "Anfrage für Unternehmen senden" : "Profilprüfung anfragen"}
+          <Check size={15} aria-hidden="true" />
+        </button>
       </div>
-    </section>
+    </form>
   );
 }
