@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, Globe2 } from "lucide-react";
 
-// Replace with real Calendly URL
-const BOOKING_URL = "/kontakt";
+const BOOKING_URL = "/analyse";
 
 export default function FinalCTA() {
   return (
@@ -12,8 +11,14 @@ export default function FinalCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{ background: "var(--gradient-glow)" }}
       />
-      <div className="glow-blob w-[800px] h-[800px] top-[-200px] left-[10%]" style={{ background: "var(--blob-primary)" }} />
-      <div className="glow-blob w-[600px] h-[600px] bottom-[-200px] right-[5%]" style={{ background: "var(--blob-accent)" }} />
+      <div
+        className="glow-blob w-[800px] h-[800px] top-[-200px] left-[10%]"
+        style={{ background: "var(--blob-primary)" }}
+      />
+      <div
+        className="glow-blob w-[600px] h-[600px] bottom-[-200px] right-[5%]"
+        style={{ background: "var(--blob-accent)" }}
+      />
 
       <div className="mx-auto max-w-4xl relative z-10 text-center">
         <motion.div
@@ -26,12 +31,12 @@ export default function FinalCTA() {
         >
           <span className="h-eyebrow mb-6">Let's talk</span>
           <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
-            Bereit, internationale{" "}
-            <span className="gradient-text">Fachkräfte</span>{" "}
-            in Ihr Unternehmen zu integrieren?
+            Bereit, Auszubildende und <span className="gradient-text">Fachkräfte aus Marokko</span>{" "}
+            kennenzulernen?
           </h2>
           <p className="text-muted-foreground mt-6 text-lg md:text-xl max-w-2xl mx-auto">
-            Sprechen Sie mit uns und erfahren Sie, wie wir Ihren Bedarf strukturiert und planbar decken.
+            Sprechen Sie mit uns über Ihren Bedarf und den realistischen nächsten Schritt im
+            Vermittlungsprozess.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -58,7 +63,7 @@ export default function FinalCTA() {
               <Clock size={14} className="text-accent" /> Antwort in 48h
             </div>
             <div className="flex items-center gap-1.5">
-              <Globe2 size={14} className="text-accent" /> Internationale Rekrutierung
+              <Globe2 size={14} className="text-accent" /> Marokko-Fokus
             </div>
           </div>
         </motion.div>

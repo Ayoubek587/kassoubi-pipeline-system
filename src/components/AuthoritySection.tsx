@@ -4,35 +4,35 @@ import { Globe2, Languages, Handshake, HeartHandshake } from "lucide-react";
 const cards = [
   {
     icon: Globe2,
-    title: "Gezielte Auswahl im Herkunftsland",
-    desc: "Wir identifizieren motivierte Auszubildende bereits vor Ort und prüfen Qualifikation, Motivation und kulturelle Passung.",
+    title: "Gezielte Auswahl in Marokko",
+    desc: "Wir identifizieren motivierte Auszubildende und Fachkräfte in Marokko und prüfen Qualifikation, Motivation und kulturelle Passung.",
     stat: "Mehrstufiges Assessment",
   },
   {
     icon: Languages,
     title: "Sprachliche Vorbereitung",
-    desc: "Systematische Sprachausbildung bis B1–B2 für einen reibungslosen fachlichen und sozialen Einstieg in den Ausbildungsbetrieb.",
+    desc: "Systematische Sprachausbildung bis B1–B2 für einen reibungslosen fachlichen und sozialen Einstieg in Betrieb oder Ausbildung.",
     stat: "B1–B2 zertifiziert",
   },
   {
     icon: Handshake,
     title: "Strukturiertes Matching",
-    desc: "Passgenaue Zuordnung zwischen internationalen Azubis und deutschen Ausbildungsbetrieben — basierend auf Profil und Anforderung.",
+    desc: "Passgenaue Zuordnung zwischen Kandidaten aus Marokko und deutschen Unternehmen — basierend auf Profil und Anforderung.",
     stat: "Branchenspezifisch",
   },
   {
     icon: HeartHandshake,
     title: "Begleitete Integration",
-    desc: "Unterstützung im gesamten Prozess — von Visum und Anreise bis zur erfolgreichen Eingliederung im Betrieb und im Alltag.",
+    desc: "Unterstützung im Prozess — von Unterlagen und Anreise bis zur Eingliederung im Betrieb und im Alltag.",
     stat: "End-to-End Betreuung",
   },
 ];
 
 const bigStats = [
-  { value: "+500", label: "Kandidaten im Netzwerk" },
+  { value: "Marokko", label: "Fokussierter Kandidatenmarkt" },
   { value: "+50", label: "Partnerunternehmen" },
   { value: "48h", label: "Rückmeldung" },
-  { value: "98%", label: "Vermittlungsquote" },
+  { value: "B1/B2", label: "Sprachziel je nach Profil" },
 ];
 
 const partners = [
@@ -48,8 +48,14 @@ export default function AuthoritySection() {
   return (
     <section id="authority" className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[500px] h-[500px] top-[10%] right-[-200px]" style={{ background: "var(--blob-accent)" }} />
-      <div className="glow-blob w-[400px] h-[400px] bottom-[5%] left-[-150px]" style={{ background: "var(--blob-primary)" }} />
+      <div
+        className="glow-blob w-[500px] h-[500px] top-[10%] right-[-200px]"
+        style={{ background: "var(--blob-accent)" }}
+      />
+      <div
+        className="glow-blob w-[400px] h-[400px] bottom-[5%] left-[-150px]"
+        style={{ background: "var(--blob-primary)" }}
+      />
       <div className="mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +69,8 @@ export default function AuthoritySection() {
             Warum unsere Vermittlung <span className="gradient-text">funktioniert</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
-            Wir sind kein klassisches Vermittlungsbüro. Wir betreiben eine strukturierte Pipeline internationaler Auszubildender für deutsche Unternehmen.
+            Wir sind kein klassisches Vermittlungsbüro. Wir unterstützen deutsche Unternehmen bei
+            der strukturierten Gewinnung von Auszubildenden und Fachkräften aus Marokko.
           </p>
         </motion.div>
 
@@ -76,7 +83,9 @@ export default function AuthoritySection() {
         >
           {bigStats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text tracking-tight">{s.value}</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text tracking-tight">
+                {s.value}
+              </div>
               <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.label}</div>
             </div>
           ))}
@@ -95,7 +104,9 @@ export default function AuthoritySection() {
               <div className="icon-tile h-11 w-11 mb-5">
                 <card.icon size={20} />
               </div>
-              <h3 className="font-semibold mb-2 text-base tracking-tight leading-snug">{card.title}</h3>
+              <h3 className="font-semibold mb-2 text-base tracking-tight leading-snug">
+                {card.title}
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-4">{card.desc}</p>
               <div className="text-xs font-semibold gradient-text tracking-wide">{card.stat}</div>
             </motion.div>
@@ -104,7 +115,7 @@ export default function AuthoritySection() {
 
         <div className="mt-14">
           <div className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground mb-6">
-            Vertrauen von Ausbildungsbetrieben in ganz Deutschland
+            Vertrauen von Arbeitgebern und Ausbildungsbetrieben in ganz Deutschland
           </div>
           <div className="glass rounded-2xl p-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {partners.map((p) => (

@@ -16,7 +16,23 @@ import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as BewerberRouteImport } from './routes/bewerber'
+import { Route as AnalyseTerminRouteImport } from './routes/analyse-termin'
+import { Route as AnalyseRouteImport } from './routes/analyse'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminUnternehmenRouteImport } from './routes/admin.unternehmen'
+import { Route as AdminTermineRouteImport } from './routes/admin.termine'
+import { Route as AdminSystemstatusRouteImport } from './routes/admin.systemstatus'
+import { Route as AdminPipelineRouteImport } from './routes/admin.pipeline'
+import { Route as AdminNachrichtenRouteImport } from './routes/admin.nachrichten'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminLeadsRouteImport } from './routes/admin.leads'
+import { Route as AdminEinstellungenRouteImport } from './routes/admin.einstellungen'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminBewerberRouteImport } from './routes/admin.bewerber'
+import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
+import { Route as ApiCalendlyWebhookRouteImport } from './routes/api.calendly.webhook'
+import { Route as AdminLeadsNewRouteImport } from './routes/admin.leads.new'
+import { Route as AdminLeadsIdEditRouteImport } from './routes/admin.leads.$id.edit'
 
 const UnternehmenRoute = UnternehmenRouteImport.update({
   id: '/unternehmen',
@@ -53,14 +69,96 @@ const BewerberRoute = BewerberRouteImport.update({
   path: '/bewerber',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyseTerminRoute = AnalyseTerminRouteImport.update({
+  id: '/analyse-termin',
+  path: '/analyse-termin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyseRoute = AnalyseRouteImport.update({
+  id: '/analyse',
+  path: '/analyse',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminUnternehmenRoute = AdminUnternehmenRouteImport.update({
+  id: '/admin/unternehmen',
+  path: '/admin/unternehmen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminTermineRoute = AdminTermineRouteImport.update({
+  id: '/admin/termine',
+  path: '/admin/termine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSystemstatusRoute = AdminSystemstatusRouteImport.update({
+  id: '/admin/systemstatus',
+  path: '/admin/systemstatus',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPipelineRoute = AdminPipelineRouteImport.update({
+  id: '/admin/pipeline',
+  path: '/admin/pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminNachrichtenRoute = AdminNachrichtenRouteImport.update({
+  id: '/admin/nachrichten',
+  path: '/admin/nachrichten',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLeadsRoute = AdminLeadsRouteImport.update({
+  id: '/admin/leads',
+  path: '/admin/leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEinstellungenRoute = AdminEinstellungenRouteImport.update({
+  id: '/admin/einstellungen',
+  path: '/admin/einstellungen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBewerberRoute = AdminBewerberRouteImport.update({
+  id: '/admin/bewerber',
+  path: '/admin/bewerber',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
+  id: '/admin/analytics',
+  path: '/admin/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCalendlyWebhookRoute = ApiCalendlyWebhookRouteImport.update({
+  id: '/api/calendly/webhook',
+  path: '/api/calendly/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminLeadsNewRoute = AdminLeadsNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => AdminLeadsRoute,
+} as any)
+const AdminLeadsIdEditRoute = AdminLeadsIdEditRouteImport.update({
+  id: '/$id/edit',
+  path: '/$id/edit',
+  getParentRoute: () => AdminLeadsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analyse': typeof AnalyseRoute
+  '/analyse-termin': typeof AnalyseTerminRoute
   '/bewerber': typeof BewerberRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
@@ -68,9 +166,25 @@ export interface FileRoutesByFullPath {
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/bewerber': typeof AdminBewerberRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/einstellungen': typeof AdminEinstellungenRoute
+  '/admin/leads': typeof AdminLeadsRouteWithChildren
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/nachrichten': typeof AdminNachrichtenRoute
+  '/admin/pipeline': typeof AdminPipelineRoute
+  '/admin/systemstatus': typeof AdminSystemstatusRoute
+  '/admin/termine': typeof AdminTermineRoute
+  '/admin/unternehmen': typeof AdminUnternehmenRoute
+  '/admin/leads/new': typeof AdminLeadsNewRoute
+  '/api/calendly/webhook': typeof ApiCalendlyWebhookRoute
+  '/admin/leads/$id/edit': typeof AdminLeadsIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analyse': typeof AnalyseRoute
+  '/analyse-termin': typeof AnalyseTerminRoute
   '/bewerber': typeof BewerberRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
@@ -78,10 +192,26 @@ export interface FileRoutesByTo {
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/bewerber': typeof AdminBewerberRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/einstellungen': typeof AdminEinstellungenRoute
+  '/admin/leads': typeof AdminLeadsRouteWithChildren
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/nachrichten': typeof AdminNachrichtenRoute
+  '/admin/pipeline': typeof AdminPipelineRoute
+  '/admin/systemstatus': typeof AdminSystemstatusRoute
+  '/admin/termine': typeof AdminTermineRoute
+  '/admin/unternehmen': typeof AdminUnternehmenRoute
+  '/admin/leads/new': typeof AdminLeadsNewRoute
+  '/api/calendly/webhook': typeof ApiCalendlyWebhookRoute
+  '/admin/leads/$id/edit': typeof AdminLeadsIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analyse': typeof AnalyseRoute
+  '/analyse-termin': typeof AnalyseTerminRoute
   '/bewerber': typeof BewerberRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
@@ -89,11 +219,27 @@ export interface FileRoutesById {
   '/prozess': typeof ProzessRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
+  '/admin/bewerber': typeof AdminBewerberRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/einstellungen': typeof AdminEinstellungenRoute
+  '/admin/leads': typeof AdminLeadsRouteWithChildren
+  '/admin/login': typeof AdminLoginRoute
+  '/admin/nachrichten': typeof AdminNachrichtenRoute
+  '/admin/pipeline': typeof AdminPipelineRoute
+  '/admin/systemstatus': typeof AdminSystemstatusRoute
+  '/admin/termine': typeof AdminTermineRoute
+  '/admin/unternehmen': typeof AdminUnternehmenRoute
+  '/admin/leads/new': typeof AdminLeadsNewRoute
+  '/api/calendly/webhook': typeof ApiCalendlyWebhookRoute
+  '/admin/leads/$id/edit': typeof AdminLeadsIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/analyse'
+    | '/analyse-termin'
     | '/bewerber'
     | '/datenschutz'
     | '/impressum'
@@ -101,9 +247,25 @@ export interface FileRouteTypes {
     | '/prozess'
     | '/ueber-uns'
     | '/unternehmen'
+    | '/admin/analytics'
+    | '/admin/bewerber'
+    | '/admin/dashboard'
+    | '/admin/einstellungen'
+    | '/admin/leads'
+    | '/admin/login'
+    | '/admin/nachrichten'
+    | '/admin/pipeline'
+    | '/admin/systemstatus'
+    | '/admin/termine'
+    | '/admin/unternehmen'
+    | '/admin/leads/new'
+    | '/api/calendly/webhook'
+    | '/admin/leads/$id/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/analyse'
+    | '/analyse-termin'
     | '/bewerber'
     | '/datenschutz'
     | '/impressum'
@@ -111,9 +273,25 @@ export interface FileRouteTypes {
     | '/prozess'
     | '/ueber-uns'
     | '/unternehmen'
+    | '/admin/analytics'
+    | '/admin/bewerber'
+    | '/admin/dashboard'
+    | '/admin/einstellungen'
+    | '/admin/leads'
+    | '/admin/login'
+    | '/admin/nachrichten'
+    | '/admin/pipeline'
+    | '/admin/systemstatus'
+    | '/admin/termine'
+    | '/admin/unternehmen'
+    | '/admin/leads/new'
+    | '/api/calendly/webhook'
+    | '/admin/leads/$id/edit'
   id:
     | '__root__'
     | '/'
+    | '/analyse'
+    | '/analyse-termin'
     | '/bewerber'
     | '/datenschutz'
     | '/impressum'
@@ -121,10 +299,26 @@ export interface FileRouteTypes {
     | '/prozess'
     | '/ueber-uns'
     | '/unternehmen'
+    | '/admin/analytics'
+    | '/admin/bewerber'
+    | '/admin/dashboard'
+    | '/admin/einstellungen'
+    | '/admin/leads'
+    | '/admin/login'
+    | '/admin/nachrichten'
+    | '/admin/pipeline'
+    | '/admin/systemstatus'
+    | '/admin/termine'
+    | '/admin/unternehmen'
+    | '/admin/leads/new'
+    | '/api/calendly/webhook'
+    | '/admin/leads/$id/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyseRoute: typeof AnalyseRoute
+  AnalyseTerminRoute: typeof AnalyseTerminRoute
   BewerberRoute: typeof BewerberRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
@@ -132,6 +326,18 @@ export interface RootRouteChildren {
   ProzessRoute: typeof ProzessRoute
   UeberUnsRoute: typeof UeberUnsRoute
   UnternehmenRoute: typeof UnternehmenRoute
+  AdminAnalyticsRoute: typeof AdminAnalyticsRoute
+  AdminBewerberRoute: typeof AdminBewerberRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminEinstellungenRoute: typeof AdminEinstellungenRoute
+  AdminLeadsRoute: typeof AdminLeadsRouteWithChildren
+  AdminLoginRoute: typeof AdminLoginRoute
+  AdminNachrichtenRoute: typeof AdminNachrichtenRoute
+  AdminPipelineRoute: typeof AdminPipelineRoute
+  AdminSystemstatusRoute: typeof AdminSystemstatusRoute
+  AdminTermineRoute: typeof AdminTermineRoute
+  AdminUnternehmenRoute: typeof AdminUnternehmenRoute
+  ApiCalendlyWebhookRoute: typeof ApiCalendlyWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -185,6 +391,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BewerberRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analyse-termin': {
+      id: '/analyse-termin'
+      path: '/analyse-termin'
+      fullPath: '/analyse-termin'
+      preLoaderRoute: typeof AnalyseTerminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyse': {
+      id: '/analyse'
+      path: '/analyse'
+      fullPath: '/analyse'
+      preLoaderRoute: typeof AnalyseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -192,11 +412,125 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/unternehmen': {
+      id: '/admin/unternehmen'
+      path: '/admin/unternehmen'
+      fullPath: '/admin/unternehmen'
+      preLoaderRoute: typeof AdminUnternehmenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/termine': {
+      id: '/admin/termine'
+      path: '/admin/termine'
+      fullPath: '/admin/termine'
+      preLoaderRoute: typeof AdminTermineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/systemstatus': {
+      id: '/admin/systemstatus'
+      path: '/admin/systemstatus'
+      fullPath: '/admin/systemstatus'
+      preLoaderRoute: typeof AdminSystemstatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/pipeline': {
+      id: '/admin/pipeline'
+      path: '/admin/pipeline'
+      fullPath: '/admin/pipeline'
+      preLoaderRoute: typeof AdminPipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/nachrichten': {
+      id: '/admin/nachrichten'
+      path: '/admin/nachrichten'
+      fullPath: '/admin/nachrichten'
+      preLoaderRoute: typeof AdminNachrichtenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/leads': {
+      id: '/admin/leads'
+      path: '/admin/leads'
+      fullPath: '/admin/leads'
+      preLoaderRoute: typeof AdminLeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/einstellungen': {
+      id: '/admin/einstellungen'
+      path: '/admin/einstellungen'
+      fullPath: '/admin/einstellungen'
+      preLoaderRoute: typeof AdminEinstellungenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/bewerber': {
+      id: '/admin/bewerber'
+      path: '/admin/bewerber'
+      fullPath: '/admin/bewerber'
+      preLoaderRoute: typeof AdminBewerberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/analytics': {
+      id: '/admin/analytics'
+      path: '/admin/analytics'
+      fullPath: '/admin/analytics'
+      preLoaderRoute: typeof AdminAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/calendly/webhook': {
+      id: '/api/calendly/webhook'
+      path: '/api/calendly/webhook'
+      fullPath: '/api/calendly/webhook'
+      preLoaderRoute: typeof ApiCalendlyWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/leads/new': {
+      id: '/admin/leads/new'
+      path: '/new'
+      fullPath: '/admin/leads/new'
+      preLoaderRoute: typeof AdminLeadsNewRouteImport
+      parentRoute: typeof AdminLeadsRoute
+    }
+    '/admin/leads/$id/edit': {
+      id: '/admin/leads/$id/edit'
+      path: '/$id/edit'
+      fullPath: '/admin/leads/$id/edit'
+      preLoaderRoute: typeof AdminLeadsIdEditRouteImport
+      parentRoute: typeof AdminLeadsRoute
+    }
   }
 }
 
+interface AdminLeadsRouteChildren {
+  AdminLeadsNewRoute: typeof AdminLeadsNewRoute
+  AdminLeadsIdEditRoute: typeof AdminLeadsIdEditRoute
+}
+
+const AdminLeadsRouteChildren: AdminLeadsRouteChildren = {
+  AdminLeadsNewRoute: AdminLeadsNewRoute,
+  AdminLeadsIdEditRoute: AdminLeadsIdEditRoute,
+}
+
+const AdminLeadsRouteWithChildren = AdminLeadsRoute._addFileChildren(
+  AdminLeadsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyseRoute: AnalyseRoute,
+  AnalyseTerminRoute: AnalyseTerminRoute,
   BewerberRoute: BewerberRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
@@ -204,6 +538,18 @@ const rootRouteChildren: RootRouteChildren = {
   ProzessRoute: ProzessRoute,
   UeberUnsRoute: UeberUnsRoute,
   UnternehmenRoute: UnternehmenRoute,
+  AdminAnalyticsRoute: AdminAnalyticsRoute,
+  AdminBewerberRoute: AdminBewerberRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminEinstellungenRoute: AdminEinstellungenRoute,
+  AdminLeadsRoute: AdminLeadsRouteWithChildren,
+  AdminLoginRoute: AdminLoginRoute,
+  AdminNachrichtenRoute: AdminNachrichtenRoute,
+  AdminPipelineRoute: AdminPipelineRoute,
+  AdminSystemstatusRoute: AdminSystemstatusRoute,
+  AdminTermineRoute: AdminTermineRoute,
+  AdminUnternehmenRoute: AdminUnternehmenRoute,
+  ApiCalendlyWebhookRoute: ApiCalendlyWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

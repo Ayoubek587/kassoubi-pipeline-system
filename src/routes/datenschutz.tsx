@@ -9,21 +9,23 @@ export const Route = createFileRoute("/datenschutz")({
       {
         name: "description",
         content:
-          "Datenschutzerklärung von Kassoubi Vermittlung. Platzhalter bitte vor Veröffentlichung mit den korrekten Datenschutzangaben ersetzen.",
+          "Datenschutzerklärung von Kassoubi Vermittlung mit Informationen zur Verarbeitung personenbezogener Daten im Rahmen der Vermittlung von Kandidaten aus Marokko.",
       },
     ],
   }),
   component: DatenschutzPage,
 });
 
+const companyAddress = "AV AL QODS L IMCOPA LT2 N 11 ETAGE 3, AOUAMA, TANGER";
+
 const sections = [
   {
     title: "1. Verantwortliche Stelle",
-    body: "[Name/Firma], [Adresse], [E-Mail], [Telefon]. Verantwortliche Person: [Vertretungsberechtigte Person].",
+    body: `Verantwortlich für die Datenverarbeitung auf dieser Website und im Rahmen der Kontaktaufnahme ist Kassoubi Vermittlung, ${companyAddress}. Berufssteuer-ID: 57137565. Steuer-ID: 66287721. ICE: 003704454000031. Weitere Informationen erhalten Sie auf Anfrage.`,
   },
   {
     title: "2. Allgemeine Hinweise",
-    body: "Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website und bei Kontaktaufnahme verarbeitet werden. Die Angaben sind vor Veröffentlichung rechtlich zu prüfen und mit den tatsächlichen Prozessen abzugleichen.",
+    body: "Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten beim Besuch dieser Website, bei Kontaktaufnahme sowie im Rahmen von Recruiting-, Headhunting- und Kandidatenvermittlungsprozessen verarbeitet werden. Die Verarbeitung erfolgt ausschließlich zweckgebunden und nach Maßgabe der jeweils anwendbaren Datenschutzvorschriften.",
   },
   {
     title: "3. Kontaktaufnahme",
@@ -31,19 +33,19 @@ const sections = [
   },
   {
     title: "4. Bewerber- und Unternehmensdaten",
-    body: "Im Rahmen der Vermittlung können Daten verarbeitet werden, die für Vorauswahl, Kommunikation, Dokumentenprüfung und Prozessbegleitung erforderlich sind. Die konkrete Datenverarbeitung ist abhängig vom finalen Vermittlungsprozess und muss vor Launch detailliert ergänzt werden.",
+    body: "Im Rahmen der Kandidatenvermittlung aus Marokko nach Deutschland können Daten verarbeitet werden, die für Vorauswahl, Kommunikation, Dokumentenprüfung, Matching, Terminabstimmung und Prozessbegleitung erforderlich sind. Dazu können insbesondere Profilangaben, Qualifikationen, Sprachlevel, gewünschte Einsatzbereiche, Unternehmensbedarfe und vermittlungsrelevante Kommunikationsinhalte gehören.",
   },
   {
     title: "5. Rechtsgrundlagen",
-    body: "Die Verarbeitung erfolgt je nach Zweck auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, Art. 6 Abs. 1 lit. f DSGVO oder einer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Bitte mit rechtlicher Beratung final prüfen.",
+    body: "Die Verarbeitung erfolgt je nach Zweck auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, Art. 6 Abs. 1 lit. f DSGVO oder einer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Soweit gesetzliche Aufbewahrungs- oder Nachweispflichten bestehen, kann die Verarbeitung zusätzlich auf den jeweils einschlägigen gesetzlichen Vorgaben beruhen.",
   },
   {
     title: "6. Speicherdauer",
-    body: "Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Konkrete Löschfristen sind vor Veröffentlichung zu ergänzen.",
+    body: "Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Sobald der Verarbeitungszweck entfällt und keine gesetzlichen Pflichten entgegenstehen, werden die Daten gelöscht oder datenschutzkonform eingeschränkt.",
   },
   {
     title: "7. Weitergabe von Daten",
-    body: "Eine Weitergabe kann erfolgen, wenn sie für die Bearbeitung einer Anfrage, die Vermittlung, die Kommunikation mit Partnerunternehmen oder gesetzliche Pflichten erforderlich ist. Empfängergruppen und Dienstleister sind vor Launch konkret zu benennen.",
+    body: "Eine Weitergabe kann erfolgen, wenn sie für die Bearbeitung einer Anfrage, die Kandidatenvermittlung, die Kommunikation mit Partnerunternehmen, die Prüfung von Profilen oder gesetzliche Pflichten erforderlich ist. Empfänger können insbesondere interessierte Arbeitgeber, Partnerunternehmen, technische Dienstleister oder zuständige Stellen sein, soweit dies für den jeweiligen Prozess notwendig ist.",
   },
   {
     title: "8. Ihre Rechte",
@@ -51,11 +53,11 @@ const sections = [
   },
   {
     title: "9. Beschwerderecht",
-    body: "Sie haben das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren. Die zuständige Behörde ist abhängig vom Sitz des Unternehmens und muss ergänzt werden.",
+    body: "Sie haben das Recht, sich bei einer zuständigen Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen Datenschutzrecht verstößt. Weitere Informationen zur zuständigen Stelle erhalten Sie auf Anfrage.",
   },
   {
     title: "10. Externe Dienste",
-    body: "Falls Dienste wie Terminbuchung, Analysewerkzeuge, Hosting-Provider, Formularanbieter oder Messenger-Dienste eingesetzt werden, müssen diese vor Veröffentlichung konkret benannt und datenschutzrechtlich bewertet werden.",
+    body: "Für den Betrieb der Website und die Bearbeitung von Anfragen können technische Dienstleister, Hosting-Leistungen, Formularfunktionen, Kommunikationsdienste oder Terminabstimmungslösungen eingesetzt werden. Die Auswahl und Nutzung solcher Dienste erfolgt unter Berücksichtigung datenschutzrechtlicher Anforderungen. Weitere Informationen erhalten Sie auf Anfrage.",
   },
 ];
 
@@ -75,8 +77,8 @@ function DatenschutzPage() {
             Datenschutzerklärung
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Strukturierte Datenschutzvorlage für Kassoubi Vermittlung. Bitte vor Veröffentlichung
-            mit den tatsächlichen Prozessen, Tools und Unternehmensdaten finalisieren.
+            Informationen zur Verarbeitung personenbezogener Daten durch Kassoubi Vermittlung im
+            Rahmen dieser Website, der Kontaktaufnahme und der Kandidatenvermittlung aus Marokko.
           </p>
         </div>
       </section>

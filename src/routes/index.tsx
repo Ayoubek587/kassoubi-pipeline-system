@@ -16,25 +16,24 @@ import {
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import VideoSection from "../components/VideoSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kassoubi — Strukturiertes Recruiting-System für Ausbildung in Deutschland" },
+      { title: "Kassoubi — Auszubildende & Fachkräfte aus Marokko für Deutschland" },
       {
         name: "description",
         content:
-          "Kein Vermittler. Ein System. Wir bauen für deutsche Unternehmen eine planbare, internationale Pipeline qualifizierter Auszubildender — strukturiert, geprüft, integriert.",
+          "Vermittlung für Unternehmen in Deutschland: motivierte Auszubildende und Fachkräfte aus Marokko gewinnen — strukturiert vorausgewählt, sprachlich vorbereitet und begleitet.",
       },
       {
         property: "og:title",
-        content: "Kassoubi — Recruiting-System für internationale Auszubildende",
+        content: "Kassoubi — Auszubildende und Fachkräfte aus Marokko",
       },
       {
         property: "og:description",
         content:
-          "Planbare Ausbildungsbesetzung statt Zufall. Internationale Pipeline. Strukturierter Prozess. Messbare Ergebnisse.",
+          "Strukturierte Vermittlung von Auszubildenden und Fachkräften aus Marokko für Unternehmen in Deutschland.",
       },
     ],
   }),
@@ -42,8 +41,8 @@ export const Route = createFileRoute("/")({
 });
 
 const stats = [
-  { v: "Pool", l: "Kandidatenpool im Aufbau" },
-  { v: "Mehrere", l: "Zielländer" },
+  { v: "Marokko", l: "Sourcing direkt im Kandidatenmarkt" },
+  { v: "Profile", l: "Auszubildende & Fachkräfte" },
   { v: "48h", l: "Strukturierte Rückmeldung" },
   { v: "Qualität", l: "Prozessqualität im Fokus" },
 ];
@@ -51,31 +50,34 @@ const stats = [
 const pillars = [
   {
     icon: Globe2,
-    title: "Internationales Sourcing",
-    desc: "Direktzugang zu motivierten Auszubildenden im Herkunftsland — nicht limitiert auf den lokalen Markt.",
+    title: "Sourcing in Marokko",
+    desc: "Direktzugang zu motivierten Auszubildenden und Fachkräften aus Marokko — nicht limitiert auf den lokalen deutschen Markt.",
   },
   {
     icon: ShieldCheck,
     title: "Mehrstufiges Screening",
-    desc: "Sprache, Motivation, Eignung — strukturiert geprüft, bevor Sie investieren.",
+    desc: "Sprache, Motivation, Eignung und Dokumentenstand — strukturiert geprüft, bevor Sie Zeit investieren.",
   },
   {
     icon: Target,
     title: "Passgenaues Matching",
-    desc: "Zuordnung nach Profil, Branche und Kultur — keine Zufallstreffer.",
+    desc: "Zuordnung nach Profil, Branche, Standort und Unternehmenskultur — keine Zufallstreffer.",
   },
   {
     icon: Plane,
     title: "End-to-End Integration",
-    desc: "Visum, Anreise, Onboarding. Ein durchgehender Prozess bis zum ersten Ausbildungstag.",
+    desc: "Kommunikation, Unterlagen, Anreise und Onboarding. Ein durchgehender Prozess bis zum Ausbildungs- oder Arbeitsbeginn.",
   },
 ];
 
 const painPoints = [
-  { icon: AlertTriangle, text: "Tausende Ausbildungsplätze bleiben jedes Jahr unbesetzt." },
+  {
+    icon: AlertTriangle,
+    text: "Ausbildungsplätze und Fachkräftepositionen bleiben in vielen deutschen Betrieben unbesetzt.",
+  },
   {
     icon: TrendingDown,
-    text: "Der lokale Bewerbermarkt liefert weder die Quantität noch die Qualität.",
+    text: "Der lokale Kandidatenmarkt liefert oft weder ausreichend Bewerbungen noch verlässlich passende Profile.",
   },
   { icon: Users, text: "Operative Engpässe, verlorenes Wachstum, gefährdete Planungssicherheit." },
 ];
@@ -83,26 +85,27 @@ const painPoints = [
 const results = [
   {
     sector: "Pflegebetrieb",
-    outcome: "6 Auszubildende in 3 Monaten",
-    detail: "Strukturierte Sourcing-Welle aus zwei Herkunftsländern, B2-vorbereitet.",
+    outcome: "6 Kandidaten in 3 Monaten",
+    detail:
+      "Strukturierte Vorauswahl marokkanischer Profile mit sprachlicher und kultureller Vorbereitung.",
   },
   {
     sector: "Handwerk",
-    outcome: "4 Auszubildende in 6 Wochen",
-    detail: "Direkte Zuordnung passender Profile aus laufender Pipeline.",
+    outcome: "4 passende Profile in 6 Wochen",
+    detail: "Direkte Zuordnung geprüfter Profile aus Marokko zu konkreten Anforderungen.",
   },
   {
     sector: "Gastronomie",
-    outcome: "Volle Ausbildungsklasse besetzt",
-    detail: "Planbare Pipeline statt jährlichem Bewerbungszufall.",
+    outcome: "Ausbildungs- und Arbeitsbedarf gedeckt",
+    detail: "Planbarer Vermittlungsprozess statt jährlichem Bewerbungszufall.",
   },
 ];
 
 const authorityItems = [
   {
     icon: Globe2,
-    title: "Internationale Vorauswahl",
-    desc: "Profile werden früh nach Motivation, Ausbildungswunsch, Sprache und grundsätzlicher Passung eingeordnet.",
+    title: "Vorauswahl in Marokko",
+    desc: "Profile werden früh nach Motivation, Zielrolle, Sprache, Dokumentenstand und grundsätzlicher Passung eingeordnet.",
   },
   {
     icon: Layers,
@@ -112,17 +115,17 @@ const authorityItems = [
   {
     icon: Users,
     title: "Klare Kommunikation",
-    desc: "Bewerber erhalten Orientierung zum Ablauf, zu Erwartungen und zur Vorbereitung auf Gespräche.",
+    desc: "Kandidaten aus Marokko erhalten Orientierung zum Ablauf, zu Erwartungen und zur Vorbereitung auf Gespräche mit deutschen Unternehmen.",
   },
   {
     icon: GraduationCap,
-    title: "Fokus auf Ausbildung",
-    desc: "Der Prozess ist auf Ausbildungsplätze ausgerichtet, nicht auf allgemeine kurzfristige Jobvermittlung.",
+    title: "Fokus auf Ausbildung & Arbeit",
+    desc: "Der Prozess ist auf Ausbildungsplätze und Fachkräftebedarf in deutschen Unternehmen ausgerichtet.",
   },
   {
     icon: Plane,
     title: "Begleitung bis zum Start",
-    desc: "Der Prozess bleibt nicht beim Matching stehen, sondern begleitet die kritische Phase bis zum Ausbildungsbeginn.",
+    desc: "Der Prozess bleibt nicht beim Matching stehen, sondern begleitet die kritische Phase bis zum Ausbildungs- oder Arbeitsbeginn.",
   },
 ];
 
@@ -135,19 +138,19 @@ const entryOptions = [
     badge: "B2B",
     title: "Für Unternehmen",
     description:
-      "Internationale Auszubildende strukturiert gewinnen. Geprüfte Kandidaten, planbare Zeitfenster, messbare Ergebnisse.",
-    cta: "Analyse starten",
+      "Auszubildende und Fachkräfte aus Marokko strukturiert gewinnen. Vorausgewählte Profile, klare Kommunikation und weniger interner Rekrutierungsaufwand.",
+    cta: "Personal aus Marokko anfragen",
   },
   {
     id: "bewerber",
-    label: "Für Bewerber",
+    label: "Für Kandidaten",
     to: "/bewerber" as const,
     icon: GraduationCap,
     badge: "Kostenlos",
-    title: "Für Bewerber",
+    title: "Für Kandidaten",
     description:
-      "Starte dein neues Leben in Deutschland — mit einer sicheren Ausbildung, klarem Plan und persönlicher Begleitung.",
-    cta: "Jetzt bewerben",
+      "Du kommst aus Marokko und möchtest dich für Ausbildung oder Arbeit in Deutschland bewerben? Wir prüfen Profil, Sprache, Unterlagen und passende Anforderungen.",
+    cta: "Kandidatenprofil einreichen",
   },
 ] as const;
 
@@ -155,7 +158,7 @@ const pipelineStages = [
   { label: "Vorauswahl", detail: "Profil geprüft", icon: ShieldCheck },
   { label: "Dokumente", detail: "Unterlagen klar", icon: Layers },
   { label: "Interview", detail: "Termin geplant", icon: Users },
-  { label: "Ausbildung", detail: "Start bereit", icon: Plane },
+  { label: "Start", detail: "Einsatz bereit", icon: Plane },
 ];
 
 const candidateCards = [
@@ -164,15 +167,15 @@ const candidateCards = [
   { name: "Nour E.", role: "Handwerk", language: "B2 Deutsch", status: "Vorauswahl" },
 ];
 
-function PipelineDashboardVisual() {
+function RecruitingDashboardVisual() {
   return (
     <div className="hero-visual-frame">
       <div className="hero-map-grid" />
 
       <div className="hero-dashboard-header">
         <div>
-          <div className="hero-dashboard-kicker">Kassoubi Pipeline OS</div>
-          <div className="hero-dashboard-title">Internationaler Talentfluss</div>
+          <div className="hero-dashboard-kicker">Marokko → Deutschland</div>
+          <div className="hero-dashboard-title">Vermittlung für deutsche Unternehmen</div>
         </div>
         <div className="hero-dashboard-signal">
           <span />
@@ -247,64 +250,56 @@ function Hero() {
         style={{ background: "var(--blob-accent)" }}
       />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-14 md:py-20 lg:grid-cols-2 lg:py-24">
-        <div className="max-w-2xl text-left">
+      <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl grid-cols-1 items-center gap-8 px-5 pb-12 pt-24 sm:gap-12 sm:px-6 sm:py-14 md:py-20 lg:grid-cols-2 lg:py-24">
+        <div className="hero-copy min-w-0 max-w-2xl text-left">
           <div>
             <span className="h-eyebrow mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-              Internationale Ausbildungspipeline für Unternehmen
+              Auszubildende & Fachkräfte aus Marokko
             </span>
           </div>
 
-          <h1
-            className="mt-5 max-w-[900px] text-4xl font-bold leading-[1.05] tracking-tight [text-wrap:balance] sm:mt-6 md:text-6xl"
-          >
-            Ausbildungsplätze besetzen — <br className="hidden sm:block" />
+          <h1 className="mt-5 max-w-[900px] text-[2rem] font-bold leading-[1.08] tracking-tight [overflow-wrap:anywhere] [text-wrap:balance] sm:mt-6 sm:text-4xl md:text-6xl">
+            Auszubildende & Fachkräfte aus Marokko gewinnen — <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               planbar
             </span>
-            ,{" "}
+            , <br className="sm:hidden" />
             <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               strukturiert
             </span>
-            ,{" "}
+            , <br className="sm:hidden" />
             <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-              international
+              vorbereitet
             </span>
             .
           </h1>
 
-          <p
-            className="mt-6 max-w-[520px] text-lg leading-relaxed text-muted-foreground [text-wrap:balance]"
-          >
-            Kassoubi Vermittlung unterstützt Unternehmen dabei, passende Auszubildende aus
-            internationalen Märkten zu gewinnen — mit klarer Vorauswahl, strukturierter
-            Kommunikation und einem verlässlichen Prozess bis zum Start.
+          <p className="mt-5 max-w-[520px] text-base leading-relaxed text-muted-foreground [text-wrap:balance] sm:mt-6 sm:text-lg">
+            Kassoubi Vermittlung unterstützt Unternehmen in Deutschland dabei, motivierte
+            Auszubildende und Fachkräfte aus Marokko zu finden, vorauszuwählen und durch einen
+            klaren Vermittlungsprozess bis zum Start zu begleiten.
           </p>
 
-          <div
-            className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:gap-4"
-          >
+          <div className="mt-7 flex w-full max-w-sm flex-col items-stretch gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:items-start sm:gap-4">
             <Link
               to="/kontakt"
-              className="group inline-flex h-12 min-w-[220px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition hover:brightness-110 sm:min-w-0"
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-6 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition hover:brightness-110 sm:min-w-0"
             >
-              <Building2 size={16} /> Analyse starten{" "}
+              <Building2 size={16} /> Personal aus Marokko anfragen{" "}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </Link>
             <Link
               to="/bewerber"
-              className="group inline-flex h-12 min-w-[180px] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-6 text-sm font-semibold text-foreground transition hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/[0.04] dark:hover:border-white/25 dark:hover:bg-white/[0.07]"
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/70 px-6 text-sm font-semibold text-foreground transition hover:border-slate-400 hover:bg-white dark:border-white/15 dark:bg-white/[0.04] dark:hover:border-white/25 dark:hover:bg-white/[0.07]"
             >
-              <GraduationCap size={16} /> Für Bewerber
+              <GraduationCap size={16} /> Für Kandidaten
             </Link>
           </div>
         </div>
 
-        <div
-          className="hero-visual-shell relative mx-auto w-full max-w-[540px] rounded-2xl shadow-xl dark:shadow-[0_20px_80px_rgba(37,99,235,0.25)] lg:mx-0 lg:justify-self-end"
-        >
-          <PipelineDashboardVisual />
+        <div className="hero-visual-shell relative mx-auto min-w-0 w-full max-w-[540px] rounded-2xl shadow-xl dark:shadow-[0_20px_80px_rgba(37,99,235,0.25)] lg:mx-0 lg:justify-self-end">
+          <RecruitingDashboardVisual />
         </div>
       </div>
     </section>
@@ -313,12 +308,16 @@ function Hero() {
 
 function StatsBar() {
   return (
-    <section className="px-5 pb-2 -mt-10 relative z-20">
-      <div className="mx-auto max-w-6xl glass rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <section className="relative z-20 -mt-6 px-4 pb-6 sm:-mt-10 sm:px-5 sm:pb-8 md:pb-10">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 rounded-2xl p-4 sm:p-6 md:grid-cols-4 md:gap-6 md:p-8 glass">
         {stats.map((s) => (
           <div key={s.l} className="text-center">
-            <div className="text-2xl md:text-3xl font-bold gradient-text tracking-tight">{s.v}</div>
-            <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.l}</div>
+            <div className="text-xl font-bold tracking-tight gradient-text sm:text-2xl md:text-3xl">
+              {s.v}
+            </div>
+            <div className="mt-1 text-[11px] leading-snug text-muted-foreground sm:text-xs md:text-sm">
+              {s.l}
+            </div>
           </div>
         ))}
       </div>
@@ -328,16 +327,17 @@ function StatsBar() {
 
 function PainSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding homepage-first-section">
       <div className="mx-auto max-w-5xl">
         <div className="text-center mb-12">
           <span className="h-eyebrow mb-5">Marktlage</span>
           <h2 className="h-display mt-5">
-            Der Ausbildungsmarkt steht <span className="gradient-text">unter Druck</span>.
+            Deutsche Unternehmen brauchen{" "}
+            <span className="gradient-text">verlässliche Profile</span>.
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-base sm:text-lg">
-            Klassische Kanäle liefern nicht mehr. Wer wartet, verliert Zeit, Wachstum und
-            Marktanteile.
+            Wenn lokale Bewerbungen ausbleiben, braucht Recruiting einen klaren Zugang zu passenden
+            Kandidaten aus Marokko.
           </p>
         </div>
 
@@ -355,10 +355,8 @@ function PainSection() {
                 className="icon-tile h-11 w-11 mb-4"
                 style={{
                   color: "var(--accent)",
-                  borderColor:
-                    "color-mix(in oklab, var(--accent) 25%, transparent)",
-                  background:
-                    "color-mix(in oklab, var(--accent) 10%, transparent)",
+                  borderColor: "color-mix(in oklab, var(--accent) 25%, transparent)",
+                  background: "color-mix(in oklab, var(--accent) 10%, transparent)",
                 }}
               >
                 <p.icon size={20} />
@@ -379,10 +377,10 @@ function AuthoritySection() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <span className="h-eyebrow mb-5">Vertrauen</span>
           <h2 className="h-display mt-5">
-            Warum Unternehmen <span className="gradient-text">Kassoubi vertrauen</span>
+            Warum deutsche Unternehmen <span className="gradient-text">Kassoubi vertrauen</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Eine internationale Ausbildungspipeline funktioniert nur, wenn Auswahl, Dokumente und
+            Die Vermittlung aus Marokko funktioniert nur, wenn Auswahl, Dokumente, Sprache und
             Kommunikation sauber geführt werden. Genau darauf ist unser Prozess ausgelegt.
           </p>
         </div>
@@ -444,11 +442,11 @@ function SystemPositioning() {
           >
             <div className="text-xs font-semibold tracking-widest gradient-text mb-3">KASSOUBI</div>
             <h3 className="text-xl sm:text-2xl font-semibold tracking-tight mb-4">
-              <span className="gradient-text">Planbare Pipeline.</span>
+              <span className="gradient-text">Strukturierte Vermittlung aus Marokko.</span>
             </h3>
             <ul className="space-y-2 text-sm text-foreground/90">
-              <li>+ Proaktiv. Sourcing direkt im Herkunftsland.</li>
-              <li>+ International. Skalierbarer Talentpool jenseits Deutschlands.</li>
+              <li>+ Proaktiv. Sourcing direkt in Marokko.</li>
+              <li>+ Fokussiert. Kandidatenpool für Ausbildung und Fachkräftebedarf.</li>
               <li>+ Strukturiert. Definierte Stufen, definierte Standards.</li>
               <li>+ Vorbereitet. B1/B2, kulturell gebrieft, ab Tag eins arbeitsfähig.</li>
             </ul>
@@ -457,8 +455,8 @@ function SystemPositioning() {
 
         <div className="text-center mt-10">
           <p className="text-base sm:text-lg md:text-xl font-semibold tracking-tight max-w-3xl mx-auto">
-            Kein Vermittler.{" "}
-            <span className="gradient-text">Ein strukturiertes Recruiting-System.</span>
+            Kein reiner Anzeigenkanal.{" "}
+            <span className="gradient-text">Ein strukturierter Recruiting-Prozess.</span>
           </p>
         </div>
       </div>
@@ -473,11 +471,12 @@ function InternationalAdvantage() {
         <div className="text-center mb-12">
           <span className="h-eyebrow mb-5">Unser Vorsprung</span>
           <h2 className="h-display mt-5">
-            Eine <span className="gradient-text">internationale Pipeline</span> — nicht der lokale
+            Kandidaten aus <span className="gradient-text">Marokko</span> — nicht nur der lokale
             Markt.
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-base sm:text-lg">
-            Vier Komponenten machen unsere Vermittlung zu einem System — keine vier Versprechen.
+            Vier Komponenten machen die Vermittlung nach Deutschland belastbar — keine vier
+            Versprechen.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -510,7 +509,7 @@ function ResultsSection() {
         <div className="text-center mb-12">
           <span className="h-eyebrow mb-5">Ergebnisse aus der Praxis</span>
           <h2 className="h-display mt-5">
-            Was unsere Pipeline <span className="gradient-text">liefert</span>.
+            Was die Vermittlung aus <span className="gradient-text">Marokko</span> liefert.
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -634,7 +633,8 @@ function ProcessPreview() {
           Fünf Stufen. Ein <span className="gradient-text">verlässliches Ergebnis</span>.
         </h2>
         <p className="text-muted-foreground mt-5 text-base sm:text-lg">
-          Vom Sourcing bis zur Integration — jeder Schritt definiert, dokumentiert, wiederholbar.
+          Vom Sourcing in Marokko bis zum Start in Deutschland — jeder Schritt definiert,
+          dokumentiert, wiederholbar.
         </p>
         <div className="mt-8">
           <Link to="/prozess" className="btn-secondary inline-flex items-center gap-2">
@@ -667,16 +667,16 @@ function ClosingCTA() {
           style={{ boxShadow: "var(--shadow-elevated), var(--shadow-glow)" }}
         >
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.1]">
-            Bauen Sie Ihre <span className="gradient-text">Pipeline</span> — bevor es Ihre
-            Wettbewerber tun.
+            Sichern Sie Auszubildende und{" "}
+            <span className="gradient-text">Fachkräfte aus Marokko</span>.
           </h2>
           <p className="text-muted-foreground mt-6 text-base sm:text-lg max-w-2xl mx-auto">
-            Wir analysieren Ihren Bedarf und liefern innerhalb von 48 Stunden einen strukturierten
-            nächsten Schritt.
+            Wir analysieren Ihren Bedarf und zeigen Ihnen, welche Profile aus Marokko realistisch zu
+            Ihrem Unternehmen passen.
           </p>
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/kontakt" className="btn-primary flex items-center gap-2">
-              Analyse starten <ArrowRight size={16} />
+              Personal aus Marokko anfragen <ArrowRight size={16} />
             </Link>
             <Link to="/prozess" className="btn-secondary flex items-center gap-2">
               Prozess ansehen
@@ -694,7 +694,6 @@ function Index() {
       <Navbar />
       <Hero />
       <StatsBar />
-      <VideoSection />
       <PainSection />
       <AuthoritySection />
       <SystemPositioning />

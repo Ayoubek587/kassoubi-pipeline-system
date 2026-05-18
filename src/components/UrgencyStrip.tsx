@@ -1,7 +1,7 @@
 import { Clock, Zap, ShieldCheck } from "lucide-react";
 
 const items = [
-  { icon: Zap, text: "Internationale Azubis · planbar verfügbar" },
+  { icon: Zap, text: "Auszubildende & Fachkräfte aus Marokko" },
   { icon: Clock, text: "Rückmeldung innerhalb von 48 Stunden" },
   { icon: ShieldCheck, text: "Strukturierter Prozess · End-to-End begleitet" },
 ];

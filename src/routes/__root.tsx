@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/hooks/use-theme";
 
 function NotFoundComponent() {
@@ -30,11 +31,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kassoubi – Immigration & Recruitment | Internationale Fachkräfte für Deutschland" },
-      { name: "description", content: "Wir verbinden internationale Fachkräfte mit deutschen Unternehmen — strukturiert, schnell und zuverlässig." },
-      { name: "author", content: "Kassoubi – Immigration & Recruitment" },
-      { property: "og:title", content: "Kassoubi – Immigration & Recruitment" },
-      { property: "og:description", content: "Internationale Fachkräfte für deutsche Unternehmen — strukturiert und planbar." },
+      { title: "Kassoubi Vermittlung | Auszubildende & Fachkräfte aus Marokko" },
+      {
+        name: "description",
+        content:
+          "Wir unterstützen Unternehmen in Deutschland dabei, Auszubildende und Fachkräfte aus Marokko strukturiert zu finden, zu prüfen und zu rekrutieren.",
+      },
+      { name: "author", content: "Kassoubi Vermittlung" },
+      { property: "og:title", content: "Kassoubi Vermittlung" },
+      {
+        property: "og:description",
+        content: "Auszubildende und Fachkräfte aus Marokko für Unternehmen in Deutschland.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -94,6 +102,7 @@ function RootComponent() {
   return (
     <ThemeProvider>
       <Outlet />
+      <Toaster />
     </ThemeProvider>
   );
 }

@@ -5,34 +5,37 @@ const steps = [
   {
     icon: Search,
     num: "01",
-    title: "Auswahl im Herkunftsland",
-    desc: "Identifizierung und Vorqualifizierung motivierter Auszubildender direkt vor Ort — fachlich, sprachlich und in der Motivation geprüft.",
+    title: "Auswahl in Marokko",
+    desc: "Identifizierung und Vorqualifizierung motivierter Auszubildender und Fachkräfte direkt in Marokko — fachlich, sprachlich und in der Motivation geprüft.",
   },
   {
     icon: BookOpen,
     num: "02",
     title: "Vorbereitung & Qualifizierung",
-    desc: "Systematische Sprachausbildung bis B1/B2 sowie kulturelle und fachliche Vorbereitung auf die Ausbildung in Deutschland.",
+    desc: "Systematische Sprachausbildung bis B1/B2 sowie kulturelle und fachliche Vorbereitung auf Ausbildung oder Arbeit in Deutschland.",
   },
   {
     icon: Handshake,
     num: "03",
     title: "Matching mit Unternehmen",
-    desc: "Passgenaue Zuordnung internationaler Azubis zu deutschen Ausbildungsbetrieben — basierend auf Profil, Standort und Kultur.",
+    desc: "Passgenaue Zuordnung von Kandidaten aus Marokko zu deutschen Unternehmen — basierend auf Profil, Standort und Kultur.",
   },
   {
     icon: Plane,
     num: "04",
     title: "Integration in Deutschland",
-    desc: "Visumsabwicklung, Anreise, Wohnung, Behördengänge und Onboarding — strukturierte Begleitung bis zur erfolgreichen Eingliederung.",
+    desc: "Unterlagen, Anreise, Wohnung, Behördengänge und Onboarding — strukturierte Begleitung bis zum Start.",
   },
 ];
 
-export default function PipelineSection() {
+export default function RecruitingProcessSection() {
   return (
     <section id="system" className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[600px] h-[600px] top-[20%] left-[-200px]" style={{ background: "var(--blob-primary)" }} />
+      <div
+        className="glow-blob w-[600px] h-[600px] top-[20%] left-[-200px]"
+        style={{ background: "var(--blob-primary)" }}
+      />
       <div className="mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,10 +46,11 @@ export default function PipelineSection() {
         >
           <span className="h-eyebrow mb-5">Der Prozess</span>
           <h2 className="h-display mt-5">
-            Strukturierter Prozess für <span className="gradient-text">internationale Auszubildende</span>
+            Strukturierter Prozess für <span className="gradient-text">Kandidaten aus Marokko</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
-            Vom Herkunftsland bis nach Deutschland — ein durchdachter 4-Stufen-Prozess für planbare Ergebnisse.
+            Von Marokko bis nach Deutschland — ein durchdachter Vermittlungsprozess für deutsche
+            Unternehmen.
           </p>
         </motion.div>
 
@@ -70,11 +74,16 @@ export default function PipelineSection() {
             >
               <div
                 className="icon-tile relative z-10 mx-auto h-[72px] w-[72px] -mt-12 mb-5"
-                style={{ background: "var(--gradient-primary)", borderColor: "color-mix(in oklab, var(--glow) 30%, transparent)" }}
+                style={{
+                  background: "var(--gradient-primary)",
+                  borderColor: "color-mix(in oklab, var(--glow) 30%, transparent)",
+                }}
               >
                 <step.icon size={26} className="text-primary-foreground" />
               </div>
-              <div className="text-xs font-semibold tracking-widest text-primary mb-2">{step.num}</div>
+              <div className="text-xs font-semibold tracking-widest text-primary mb-2">
+                {step.num}
+              </div>
               <h3 className="font-semibold mb-2 tracking-tight leading-snug">{step.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{step.desc}</p>
             </motion.div>

@@ -5,16 +5,16 @@ import UrgencyBadge from "./UrgencyBadge";
 const cards = [
   {
     icon: Building2,
-    title: "Internationale Fachkräfte für Ihr Unternehmen gewinnen",
-    desc: "Wir identifizieren, qualifizieren und vermitteln Talente aus dem Ausland — passgenau für Ihren Bedarf und Ihre Branche.",
-    cta: "Fachkräfte sichern",
+    title: "Azubis & Fachkräfte aus Marokko gewinnen",
+    desc: "Wir identifizieren, qualifizieren und vermitteln Kandidaten aus Marokko — passend für Ausbildung und Fachkräftebedarf in Deutschland.",
+    cta: "Personal aus Marokko anfragen",
     href: "/kontakt",
     badge: "48h Reaktionszeit",
   },
   {
     icon: GraduationCap,
-    title: "Ausbildung in Deutschland starten — mit strukturiertem Prozess",
-    desc: "Wir unterstützen Sie von der Vorbereitung im Heimatland bis zur erfolgreichen Integration in Deutschland.",
+    title: "Ausbildung oder Arbeit in Deutschland starten",
+    desc: "Wir unterstützen Kandidaten aus Marokko bei Profilprüfung, Vorbereitung und Kontakt zu Unternehmen in Deutschland.",
     cta: "Kostenlos bewerben",
     href: "/kontakt",
     badge: "Kostenlos für Bewerber",
@@ -25,7 +25,10 @@ export default function SegmentationSection() {
   return (
     <section id="bewerber" className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[500px] h-[500px] top-[-100px] right-[-150px]" style={{ background: "var(--blob-primary)" }} />
+      <div
+        className="glow-blob w-[500px] h-[500px] top-[-100px] right-[-150px]"
+        style={{ background: "var(--blob-primary)" }}
+      />
       <div className="mx-auto max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +42,7 @@ export default function SegmentationSection() {
             Wofür interessieren <span className="gradient-text">Sie sich?</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            Strukturierte Lösungen für Unternehmen und internationale Bewerber — wir melden uns innerhalb von 48 Stunden.
+            Strukturierte Lösungen für Unternehmen in Deutschland und Kandidaten aus Marokko.
           </p>
         </motion.div>
 
@@ -60,7 +63,9 @@ export default function SegmentationSection() {
                 </div>
                 <UrgencyBadge text={card.badge} />
               </div>
-              <h3 className="text-2xl font-semibold mb-3 tracking-tight leading-snug">{card.title}</h3>
+              <h3 className="text-2xl font-semibold mb-3 tracking-tight leading-snug">
+                {card.title}
+              </h3>
               <p className="text-muted-foreground text-base leading-relaxed mb-6">{card.desc}</p>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
                 {card.cta} <ArrowRight size={14} />

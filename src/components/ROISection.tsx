@@ -17,26 +17,58 @@ type Mode = "unternehmen" | "bewerber";
 const content = {
   unternehmen: {
     icon: Building2,
-    headline: "Internationale Fachkräfte strukturiert gewinnen",
-    micro: "Individuelle Lösungen für Ihren Bedarf",
+    headline: "Azubis & Fachkräfte aus Marokko strukturiert gewinnen",
+    micro: "Für Unternehmen in Deutschland",
     points: [
-      { icon: Globe2, title: "Zugriff auf geprüfte Talente aus dem Ausland", desc: "Vorqualifizierte Kandidaten mit passender Qualifikation und B1–B2 Sprachniveau." },
-      { icon: Briefcase, title: "Reduzierter interner Aufwand", desc: "Wir übernehmen Auswahl, Vorbereitung, Visum und Onboarding-Koordination." },
-      { icon: CalendarCheck, title: "Planbare Besetzung offener Stellen", desc: "Strukturierte Pipeline mit definierten Zeitfenstern statt Glückstreffer." },
-      { icon: HeartHandshake, title: "Persönliche Betreuung", desc: "Ein fester Ansprechpartner für den gesamten Prozess." },
+      {
+        icon: Globe2,
+        title: "Zugang zu Kandidaten aus Marokko",
+        desc: "Vorqualifizierte Profile mit passender Motivation, Qualifikation und realistisch eingeordnetem Deutschlevel.",
+      },
+      {
+        icon: Briefcase,
+        title: "Reduzierter interner Aufwand",
+        desc: "Wir unterstützen Vorauswahl, Screening, Kommunikation und Prozesskoordination.",
+      },
+      {
+        icon: CalendarCheck,
+        title: "Planbarer Vermittlungsprozess",
+        desc: "Definierte Schritte und klare Zeitfenster statt unstrukturierter Suche.",
+      },
+      {
+        icon: HeartHandshake,
+        title: "Persönliche Betreuung",
+        desc: "Ein fester Ansprechpartner für den gesamten Prozess.",
+      },
     ],
     cta: "Kontakt aufnehmen",
     ctaHref: "#kontakt",
   },
   bewerber: {
     icon: GraduationCap,
-    headline: "Ihr Weg nach Deutschland — klar strukturiert",
-    micro: "Für Bewerber ist unser Service kostenlos",
+    headline: "Aus Marokko nach Deutschland — Ausbildung oder Arbeit",
+    micro: "Für Kandidaten ist unser Service kostenlos",
     points: [
-      { icon: Languages, title: "Vorbereitung im Heimatland", desc: "Sprachkurs bis B1–B2 und fachliche Vorbereitung — bevor Sie einreisen." },
-      { icon: HeartHandshake, title: "Unterstützung im gesamten Prozess", desc: "Von der Bewerbung über das Visum bis zur Integration in Deutschland." },
-      { icon: Sparkles, title: "Kostenloser Service für Bewerber", desc: "Keine versteckten Kosten — komplett kostenfrei für Sie." },
-      { icon: CalendarCheck, title: "Strukturierter Ablauf", desc: "Klare Schritte, klare Erwartungen, ein fester Ansprechpartner." },
+      {
+        icon: Languages,
+        title: "Vorbereitung in Marokko",
+        desc: "Deutschlevel, Unterlagen und fachliche Passung werden vor dem nächsten Schritt geprüft.",
+      },
+      {
+        icon: HeartHandshake,
+        title: "Unterstützung im Prozess",
+        desc: "Von der Bewerbung bis zur Abstimmung mit passenden Unternehmen in Deutschland.",
+      },
+      {
+        icon: Sparkles,
+        title: "Kostenloser Service für Kandidaten",
+        desc: "Keine versteckten Kosten — komplett kostenfrei für Sie.",
+      },
+      {
+        icon: CalendarCheck,
+        title: "Strukturierter Ablauf",
+        desc: "Klare Schritte, klare Erwartungen, ein fester Ansprechpartner.",
+      },
     ],
     cta: "Kostenlos starten",
     ctaHref: "#kontakt",
@@ -68,7 +100,8 @@ export default function ROISection() {
             Ihr nächster Schritt <span className="gradient-text">mit Kassoubi</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-xl mx-auto text-lg">
-            So profitieren Unternehmen und Bewerber — wählen Sie Ihren Weg.
+            So profitieren Unternehmen in Deutschland und Kandidaten aus Marokko — wählen Sie Ihren
+            Weg.
           </p>
         </motion.div>
 
@@ -87,7 +120,9 @@ export default function ROISection() {
                   aria-selected={active}
                   onClick={() => setMode(m)}
                   className="relative z-10 px-5 sm:px-7 py-2.5 text-sm font-semibold rounded-full transition-colors"
-                  style={{ color: active ? "var(--primary-foreground)" : "var(--muted-foreground)" }}
+                  style={{
+                    color: active ? "var(--primary-foreground)" : "var(--muted-foreground)",
+                  }}
                 >
                   {active && (
                     <motion.span
@@ -99,7 +134,7 @@ export default function ROISection() {
                   )}
                   <span className="relative inline-flex items-center gap-2">
                     {m === "unternehmen" ? <Building2 size={14} /> : <GraduationCap size={14} />}
-                    {m === "unternehmen" ? "Für Unternehmen" : "Für Bewerber"}
+                    {m === "unternehmen" ? "Für Unternehmen" : "Für Kandidaten"}
                   </span>
                 </button>
               );

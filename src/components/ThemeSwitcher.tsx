@@ -18,7 +18,7 @@ export default function ThemeSwitcher() {
       type="button"
       onClick={toggleMode}
       aria-label={mode === "dark" ? "Light mode" : "Dark mode"}
-      className="flex h-9 w-9 items-center justify-center rounded-lg transition-all hover:scale-[1.05]"
+      className="flex h-11 w-11 items-center justify-center rounded-xl transition-all hover:scale-[1.05] xl:h-9 xl:w-9 xl:rounded-lg"
       style={buttonStyle}
     >
       <AnimatePresence mode="wait" initial={false}>

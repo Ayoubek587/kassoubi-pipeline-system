@@ -5,30 +5,30 @@ import { Quote, ArrowRight, MapPin, Award, PlayCircle } from "lucide-react";
 const stories = [
   {
     initial: "A.",
-    origin: "Herkunftsland",
+    origin: "Marokko",
     city: "München",
     role: "Ausbildung Pflege",
-    before: "Ausbildungssuche im Ausland, keine Deutschkenntnisse, unklare Perspektive.",
+    before: "Ausbildungssuche in Marokko, Deutsch noch im Aufbau, unklare Perspektive.",
     after: "B2-Zertifikat, Ausbildungsvertrag und Aufenthaltstitel in Deutschland.",
     outcome: "Vertrag + Aufenthalt",
     quote: "Strukturierter Prozess von Anfang bis Ende — ich wurde auf jedem Schritt begleitet.",
   },
   {
     initial: "F.",
-    origin: "Herkunftsland",
+    origin: "Marokko",
     city: "Hamburg",
     role: "Ausbildung Hotelfach",
-    before: "Keine Deutschkenntnisse, kein Plan für die berufliche Zukunft.",
+    before: "Deutschkenntnisse im Aufbau, kein klarer Plan für den Weg nach Deutschland.",
     after: "B2-Niveau erreicht, Ausbildungsplatz und Wohnung in Deutschland.",
     outcome: "Ausbildung + Wohnung",
-    quote: "Die Vorbereitung im Heimatland hat den Einstieg in Deutschland deutlich erleichtert.",
+    quote: "Die Vorbereitung in Marokko hat den Einstieg in Deutschland deutlich erleichtert.",
   },
   {
     initial: "Y.",
-    origin: "Herkunftsland",
+    origin: "Marokko",
     city: "Berlin",
     role: "Ausbildung Elektrotechnik",
-    before: "Studium abgebrochen, finanziell unter Druck, keine internationale Perspektive.",
+    before: "Studium abgebrochen, beruflich unsicher, keine klare Perspektive nach Deutschland.",
     after: "Vertrag mit deutschem Betrieb, Visum und langfristige Karriereperspektive.",
     outcome: "Visum + Festanstellung",
     quote: "Vom ersten Kontakt bis zum Arbeitsantritt — ein klarer Prozess ohne Überraschungen.",
@@ -39,7 +39,10 @@ export default function TestimonialsSection() {
   return (
     <section className="section-padding overflow-hidden">
       <div className="noise-overlay" />
-      <div className="glow-blob w-[450px] h-[450px] top-[10%] left-[-150px]" style={{ background: "var(--blob-primary)" }} />
+      <div
+        className="glow-blob w-[450px] h-[450px] top-[10%] left-[-150px]"
+        style={{ background: "var(--blob-primary)" }}
+      />
       <div className="mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,10 +53,11 @@ export default function TestimonialsSection() {
         >
           <span className="h-eyebrow mb-5">Stories</span>
           <h2 className="h-display mt-5">
-            Vom Herkunftsland <span className="gradient-text">nach Deutschland</span>
+            Von Marokko <span className="gradient-text">nach Deutschland</span>
           </h2>
           <p className="text-muted-foreground mt-5 max-w-2xl mx-auto text-lg">
-            Echte Wege internationaler Auszubildender — von der Vorbereitung im Heimatland bis zum Ausbildungsvertrag in Deutschland.
+            Beispielhafte Wege von Kandidaten aus Marokko — von der Vorbereitung bis zum Gespräch,
+            Vertrag oder Arbeitsbeginn in Deutschland.
           </p>
         </motion.div>
 

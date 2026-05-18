@@ -6,7 +6,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 const links = [
   { label: "Startseite", to: "/" as const },
-  { label: "Für Bewerber", to: "/bewerber" as const },
+  { label: "Für Kandidaten", to: "/bewerber" as const },
   { label: "Für Unternehmen", to: "/unternehmen" as const },
   { label: "Prozess", to: "/prozess" as const },
   { label: "Über uns", to: "/ueber-uns" as const },
@@ -23,26 +23,26 @@ export default function Navbar() {
         WebkitBackdropFilter: "blur(16px)",
       }}
     >
-      <div className="mx-auto flex h-[64px] max-w-7xl items-center justify-between px-6 md:h-[72px]">
+      <div className="mx-auto flex h-[60px] max-w-7xl items-center justify-between px-4 sm:px-6 md:h-[72px]">
         <Link
           to="/"
-          className="mr-5 flex h-[42px] w-[200px] shrink-0 items-center gap-3 overflow-hidden md:mr-8 md:h-12 md:w-[230px]"
+          className="mr-3 flex h-11 w-[172px] shrink-0 items-center gap-2 overflow-hidden sm:w-[200px] md:mr-8 md:h-12 md:w-[230px] md:gap-3"
           aria-label="Kassoubi Vermittlung Startseite"
         >
-          <span className="relative flex h-[42px] w-[60px] shrink-0 items-center overflow-hidden md:h-12 md:w-[72px]">
+          <span className="relative flex h-11 w-[56px] shrink-0 items-center overflow-hidden sm:w-[60px] md:h-12 md:w-[72px]">
             <img
               src="/brand/kv-logo-light-normalized.png"
               alt="Kassoubi Vermittlung"
               width={660}
               height={420}
-              className="absolute left-0 top-1/2 h-[32px] w-auto -translate-y-1/2 object-contain dark:hidden md:h-[38px]"
+              className="absolute left-0 top-1/2 h-[31px] w-auto -translate-y-1/2 object-contain dark:hidden md:h-[38px]"
             />
             <img
               src="/brand/kv-logo-dark-normalized.png"
               alt="Kassoubi Vermittlung"
               width={660}
               height={420}
-              className="absolute left-0 top-1/2 hidden h-[32px] w-auto -translate-y-1/2 object-contain dark:block md:h-[38px]"
+              className="absolute left-0 top-1/2 hidden h-[31px] w-auto -translate-y-1/2 object-contain dark:block md:h-[38px]"
             />
           </span>
           <span
@@ -84,12 +84,12 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-2 xl:hidden">
+        <div className="flex items-center gap-2.5 xl:hidden">
           <ThemeSwitcher />
           <button
             type="button"
             onClick={() => setOpen((current) => !current)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/70 bg-background/40 text-foreground transition hover:bg-primary/10 hover:text-primary"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-border/70 bg-background/40 text-foreground transition hover:bg-primary/10 hover:text-primary"
             aria-label="Menü öffnen"
             aria-expanded={open}
           >
@@ -107,7 +107,7 @@ export default function Navbar() {
             className="overflow-hidden xl:hidden"
             style={{ background: "var(--nav-bg-mobile)", borderTop: "1px solid var(--border-subtle)" }}
           >
-            <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4">
+            <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
               {links.map((link) => (
                 <Link
                   key={link.to}
@@ -116,7 +116,7 @@ export default function Navbar() {
                   activeProps={{ className: "bg-primary/10 text-primary" }}
                   inactiveProps={{ className: "text-muted-foreground" }}
                   onClick={() => setOpen(false)}
-                  className="whitespace-nowrap rounded-xl px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary"
+                  className="flex min-h-11 items-center whitespace-nowrap rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary"
                 >
                   {link.label}
                 </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
               <Link
                 to="/kontakt"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex h-11 min-w-max items-center justify-center whitespace-nowrap rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                className="mt-2 inline-flex min-h-12 min-w-max items-center justify-center whitespace-nowrap rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
               >
                 Erstberatung buchen
               </Link>

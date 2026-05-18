@@ -2,18 +2,17 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Calendar } from "lucide-react";
 
 const trustItems = [
-  "100+ Vermittlungen",
+  "Marokko-Fokus",
   "B1–B2 geprüfte Kandidaten",
   "48h Reaktionszeit",
-  "Internationale Rekrutierung",
+  "Strukturierte Vermittlung",
 ];
 
-const pipelineSteps = ["Herkunftsland", "Vorbereitung", "Matching", "Deutschland"];
+const pipelineSteps = ["Marokko", "Screening", "Matching", "Deutschland"];
 
-// Replace with real Calendly URL when ready
-const BOOKING_URL = "/kontakt";
+const BOOKING_URL = "/analyse";
 
-function PipelineVisualization() {
+function RecruitingVisualization() {
   return (
     <div className="relative mt-12 max-w-xl mx-auto px-4">
       <div
@@ -49,7 +48,9 @@ function PipelineVisualization() {
                 }}
               />
             </div>
-            <span className="text-[11px] font-medium text-muted-foreground text-center">{label}</span>
+            <span className="text-[11px] font-medium text-muted-foreground text-center">
+              {label}
+            </span>
           </motion.div>
         ))}
       </div>
@@ -79,16 +80,24 @@ function GridBackground() {
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-    >
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <GridBackground />
 
-      <div className="glow-blob w-[600px] h-[600px] top-[-150px] left-[-150px]" style={{ background: "var(--blob-primary)" }} />
-      <div className="glow-blob w-[500px] h-[500px] bottom-[-100px] right-[-100px]" style={{ background: "var(--blob-accent)" }} />
+      <div
+        className="glow-blob w-[600px] h-[600px] top-[-150px] left-[-150px]"
+        style={{ background: "var(--blob-primary)" }}
+      />
+      <div
+        className="glow-blob w-[500px] h-[500px] bottom-[-100px] right-[-100px]"
+        style={{ background: "var(--blob-accent)" }}
+      />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div
             className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 text-xs font-medium"
             style={{
@@ -98,7 +107,7 @@ export default function HeroSection() {
             }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            Internationale Fachkräfte-Pipeline für Deutschland
+            Auszubildende & Fachkräfte aus Marokko
           </div>
         </motion.div>
 
@@ -108,10 +117,9 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
         >
-          Wir bauen Ihre{" "}
-          <span className="gradient-text">internationale Fachkräfte-Pipeline</span>
-          <br className="hidden sm:block" />
-          {" "}für Deutschland
+          Wir vermitteln{" "}
+          <span className="gradient-text">Auszubildende und Fachkräfte aus Marokko</span>
+          <br className="hidden sm:block" /> an deutsche Unternehmen
         </motion.h1>
 
         <motion.p
@@ -120,7 +128,8 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-muted-foreground"
         >
-          Wir gewinnen qualifizierte Talente aus dem Ausland, bereiten sie gezielt vor und integrieren sie erfolgreich in deutsche Unternehmen.
+          Wir unterstützen Unternehmen in Deutschland dabei, motivierte Kandidaten aus Marokko zu
+          finden, realistisch zu prüfen und strukturiert durch den Vermittlungsprozess zu führen.
         </motion.p>
 
         <motion.p
@@ -129,7 +138,8 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-4 text-base md:text-lg max-w-2xl mx-auto text-muted-foreground/80"
         >
-          Von der Auswahl im Herkunftsland bis zur erfolgreichen Integration — alles aus einer Hand.
+          Von der Auswahl in Marokko bis zum Start in Deutschland — mit klarer Kommunikation und
+          sprachlicher sowie kultureller Vorbereitung.
         </motion.p>
 
         <motion.div
@@ -144,10 +154,10 @@ export default function HeroSection() {
             rel={BOOKING_URL.startsWith("http") ? "noopener noreferrer" : undefined}
             className="btn-primary group flex items-center gap-2 text-base"
           >
-            <Calendar size={16} /> Fachkräfte anfragen <ArrowRight size={16} />
+            <Calendar size={16} /> Personal aus Marokko anfragen <ArrowRight size={16} />
           </a>
           <a href="/bewerber" className="btn-secondary">
-            Ausbildung starten
+            Ausbildung oder Arbeit starten
           </a>
         </motion.div>
 
@@ -165,8 +175,12 @@ export default function HeroSection() {
           ))}
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}>
-          <PipelineVisualization />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <RecruitingVisualization />
         </motion.div>
       </div>
     </section>
