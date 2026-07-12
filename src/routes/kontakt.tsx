@@ -16,10 +16,9 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MultiStepForm from "../components/MultiStepForm";
+import { CONTACT_EMAIL, MAIN_BOOKING_URL } from "@/lib/contact";
 
-const CALENDLY_URL = "https://calendly.com/omarobakkali/30min";
 const WHATSAPP_URL = "https://wa.me/491234567890";
-const EMAIL = "kontakt@kassoubi.de";
 type Audience = "unternehmen" | "bewerber";
 
 const companyTrustBlocks = [
@@ -66,10 +65,6 @@ export const Route = createFileRoute("/kontakt")({
 
 function KontaktPage() {
   const [activeAudience, setActiveAudience] = useState<Audience>("unternehmen");
-  const calendlyAvailable = CALENDLY_URL.startsWith("https://");
-  const bookingHref = calendlyAvailable
-    ? CALENDLY_URL
-    : `mailto:${EMAIL}?subject=${encodeURIComponent("Erstberatung buchen")}`;
 
   const scrollTo = useCallback((id: string) => {
     window.setTimeout(() => {
@@ -254,9 +249,9 @@ function KontaktPage() {
                       Personal aus Marokko anfragen
                     </button>
                     <a
-                      href={bookingHref}
-                      target={calendlyAvailable ? "_blank" : undefined}
-                      rel={calendlyAvailable ? "noopener noreferrer" : undefined}
+                      href={MAIN_BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn-secondary inline-flex items-center gap-2"
                     >
                       Erstberatung buchen <Calendar size={16} aria-hidden="true" />
@@ -365,7 +360,8 @@ function KontaktPage() {
           <h2 className="text-sm font-bold tracking-tight">Sie haben eine kurze Frage?</h2>
           <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href={`mailto:${EMAIL}`}
+              href={`mailto:${CONTACT_EMAIL}`}
+              aria-label="E-Mail an kontakt@kassoubi-vermittlung.de senden"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-primary/30 dark:border-white/10 dark:bg-white/[0.035]"
             >
               <Mail size={17} className="text-primary" aria-hidden="true" /> E-Mail

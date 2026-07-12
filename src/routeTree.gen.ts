@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UnternehmenRouteImport } from './routes/unternehmen'
 import { Route as UeberUnsRouteImport } from './routes/ueber-uns'
+import { Route as TerminBestaetigtRouteImport } from './routes/termin-bestaetigt'
 import { Route as ProzessRouteImport } from './routes/prozess'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as ImpressumRouteImport } from './routes/impressum'
@@ -42,6 +43,11 @@ const UnternehmenRoute = UnternehmenRouteImport.update({
 const UeberUnsRoute = UeberUnsRouteImport.update({
   id: '/ueber-uns',
   path: '/ueber-uns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerminBestaetigtRoute = TerminBestaetigtRouteImport.update({
+  id: '/termin-bestaetigt',
+  path: '/termin-bestaetigt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProzessRoute = ProzessRouteImport.update({
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
+  '/termin-bestaetigt': typeof TerminBestaetigtRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -190,6 +197,7 @@ export interface FileRoutesByTo {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
+  '/termin-bestaetigt': typeof TerminBestaetigtRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -217,6 +225,7 @@ export interface FileRoutesById {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/prozess': typeof ProzessRoute
+  '/termin-bestaetigt': typeof TerminBestaetigtRoute
   '/ueber-uns': typeof UeberUnsRoute
   '/unternehmen': typeof UnternehmenRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
@@ -245,6 +254,7 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/prozess'
+    | '/termin-bestaetigt'
     | '/ueber-uns'
     | '/unternehmen'
     | '/admin/analytics'
@@ -271,6 +281,7 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/prozess'
+    | '/termin-bestaetigt'
     | '/ueber-uns'
     | '/unternehmen'
     | '/admin/analytics'
@@ -297,6 +308,7 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/prozess'
+    | '/termin-bestaetigt'
     | '/ueber-uns'
     | '/unternehmen'
     | '/admin/analytics'
@@ -324,6 +336,7 @@ export interface RootRouteChildren {
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   ProzessRoute: typeof ProzessRoute
+  TerminBestaetigtRoute: typeof TerminBestaetigtRoute
   UeberUnsRoute: typeof UeberUnsRoute
   UnternehmenRoute: typeof UnternehmenRoute
   AdminAnalyticsRoute: typeof AdminAnalyticsRoute
@@ -354,6 +367,13 @@ declare module '@tanstack/react-router' {
       path: '/ueber-uns'
       fullPath: '/ueber-uns'
       preLoaderRoute: typeof UeberUnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termin-bestaetigt': {
+      id: '/termin-bestaetigt'
+      path: '/termin-bestaetigt'
+      fullPath: '/termin-bestaetigt'
+      preLoaderRoute: typeof TerminBestaetigtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prozess': {
@@ -536,6 +556,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   ProzessRoute: ProzessRoute,
+  TerminBestaetigtRoute: TerminBestaetigtRoute,
   UeberUnsRoute: UeberUnsRoute,
   UnternehmenRoute: UnternehmenRoute,
   AdminAnalyticsRoute: AdminAnalyticsRoute,

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-const STRUCTURE_DIGITAL_URL = "https://wearestructure.com";
+const STRUCTURE_DIGITAL_URL = "https://structure-digital.vercel.app/";
 
 export default function Footer() {
   return (
@@ -138,7 +138,7 @@ export default function Footer() {
               href={STRUCTURE_DIGITAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Crafted by Structure Digital - Premium Digital Systems for Modern Companies."
+              aria-label="Structure Digital Website öffnen"
               className="group mx-auto mt-4 flex w-full max-w-[20rem] items-center justify-center gap-3 rounded-xl border border-border/40 bg-background/35 px-3 py-2.5 text-muted-foreground/75 outline-none transition duration-300 ease-out hover:-translate-y-0.5 hover:border-border/70 hover:bg-background/60 hover:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring/45 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:col-span-2 md:mx-0 md:ml-auto md:w-auto md:justify-end"
             >
               <span

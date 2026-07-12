@@ -52,6 +52,23 @@ Calendly receives:
 
 For best webhook matching, add a Calendly custom question that captures the first custom answer (`a1`) as the internal lead id.
 
+## Booking Confirmation Page
+
+After a successful booking, Calendly must redirect the visitor to the public Kassoubi confirmation page:
+
+```text
+https://kassoubi-vermittlung.de/termin-bestaetigt
+```
+
+Configure this manually in the Calendly event type under the confirmation-page settings by selecting the option to redirect to an external site and entering the URL above. Do not add lead ids, invitee ids, email addresses, or other personal data to the redirect URL.
+
+The browser confirmation page and the Calendly webhook have separate responsibilities:
+
+- `/termin-bestaetigt` only confirms the completed scheduling flow to the visitor. It is public, contains no booking identifiers, and does not update CRM data.
+- The backend `invitee.created` webhook remains the authoritative source for marking the matching lead as booked, storing appointment data, and creating CRM activity and follow-up tasks.
+
+Loading or refreshing the browser confirmation page does not prove that a booking exists and must never be used as a substitute for the webhook.
+
 ## Testing
 
 1. Run the SQL migration in Supabase.

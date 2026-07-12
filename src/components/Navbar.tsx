@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { MAIN_BOOKING_URL } from "@/lib/contact";
 
 const links = [
   { label: "Startseite", to: "/" as const },
@@ -76,12 +77,14 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <ThemeSwitcher />
-          <Link
-            to="/kontakt"
+          <a
+            href={MAIN_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-11 min-w-max items-center justify-center whitespace-nowrap rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 xl:px-6"
           >
             Erstberatung buchen
-          </Link>
+          </a>
         </div>
 
         <div className="flex items-center gap-2.5 xl:hidden">
@@ -121,13 +124,15 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/kontakt"
+              <a
+                href={MAIN_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex min-h-12 min-w-max items-center justify-center whitespace-nowrap rounded-xl bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
               >
                 Erstberatung buchen
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
